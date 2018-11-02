@@ -1,0 +1,16 @@
+(setq-default cursor-type 'bar)
+(setq-default tab-width 4)
+(setq helm-split-window-in-side-p t)
+(desktop-save-mode 1)
+(smartparens-global-mode t)
+(show-smartparens-global-mode 1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(global-hl-line-mode +1)
+(whole-line-or-region-global-mode 1)
+(global-undo-tree-mode 1)
+(set-face-background 'hl-line "#111111")
+;;change highlight color
+(set-face-attribute 'highlight nil :background "#333")
+
+(provide 'init_general)
