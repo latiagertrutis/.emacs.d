@@ -17,12 +17,12 @@
 (global-auto-highlight-symbol-mode t)
 ;;th one in the cursor
 (set-face-attribute 'ahs-plugin-defalt-face nil
-					:foreground "#A7E4F2"
+					:foreground "#C3F3E2"
 					:background "#111111"
 					:underline "#D11754")
 ;;the rest of the buffer
 (set-face-attribute 'ahs-face nil
-					:foreground (face-foreground 'default)
+					:foreground "#FFEACC"
 					:background (face-background 'default)
 					:underline "#F4D4AD")
 (set-face-attribute 'ahs-plugin-whole-buffer-face nil
