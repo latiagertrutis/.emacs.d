@@ -64,4 +64,16 @@
   :ensure t
   )
 
+(use-package anzu
+  :ensure t
+  )
+
+(use-package auto-highlight-symbol
+  :ensure t
+  )
+
+(use-package auto-complete
+  :ensure t
+  )
+
 (provide 'init_packages)
