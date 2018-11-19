@@ -2,42 +2,90 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Nov 11 12:59:08 2018
+;; Created Mon Nov 19 16:51:52 2018
 ;; Desktop file format version 208
 ;; Emacs version 26.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (23528 6540 398512 850000) (desktop . "208") "mateo@computador" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-17-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono 13") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "#bdbdb3") (background-color . "gray13") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . fullheight) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#f57e00") (sticky) (environment) (frameset--id . "EFD5-5589-658D-8A19") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (user-size . t) (height . 56) (width . 103) (left . 950) (top . 19)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 6) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 54) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (pixel-width . 960) (pixel-height . 1007) (total-width . 107) (total-height . 56) (normal-height . 1.0) (normal-width . 1.0) (buffer "init_general.el" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 2 t nil 0 t) (vscroll . 0) (dedicated) (point . 569) (start . 413))))])
+(setq desktop-saved-frameset [frameset 1 (23538 56344 323039 122000) (desktop . "208") "mateo@computador" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-17-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono 13") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bdbdb3") (background-color . "gray13") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . fullboth) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#f57e00") (sticky) (environment) (frameset--id . "EFD5-5589-658D-8A19") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (user-size . t) (fullscreen-restore . fullheight) (height . 60) (width . 211) (left . 0) (top . 0)) ((min-height . 4) (min-width . 30) (min-height-ignore . 2) (min-width-ignore . 12) (min-height-safe . 1) (min-width-safe . 6) (min-pixel-height . 72) (min-pixel-width . 270) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 108) (min-pixel-height-safe . 18) (min-pixel-width-safe . 54)) hc (pixel-width . 1920) (pixel-height . 1062) (total-width . 213) (total-height . 59) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 897) (pixel-height . 1062) (total-width . 100) (total-height . 59) (normal-height . 1.0) (normal-width . 0.467674661105318) (buffer "Makefile<wiki_scrapping>" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 893) (start . 1))) (leaf (pixel-width . 183) (pixel-height . 1062) (total-width . 20) (total-height . 59) (normal-height . 1.0) (normal-width . 0.09482533889468191) (buffer "Makefile<simple_regression>" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1744) (start . 1284))) (leaf (last . t) (pixel-width . 840) (pixel-height . 1062) (total-width . 93) (total-height . 59) (normal-height . 1.0) (normal-width . 0.4375) (buffer "init_hooks.el" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 222) (start . 1)))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring nil)
+(setq search-ring '("header-ins" "heade-inser" "argc"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/.emacs.d/config_lisp/init_general.el" "~/Dropbox/workspace/simple_regression/srcs/main.cpp" "~/.emacs.d/config_lisp/init_general.el" "~/.emacs.d/config_lisp/init_hooks.el" "~/.emacs.d/config_lisp/init_packages.el" "~/Dropbox/workspace/simple_regression/resources/data1.dat" "~/Dropbox/workspace/simple_regression/Makefile" "~/Dropbox/workspace/simple_regression/includes/regression.h" "~/Dropbox/workspace/simple_regression/srcs/data_reader.cpp" "~/.emacs.d/"))
+(setq file-name-history '("~/.emacs.d/config_lisp/init_hooks.el" "~/.emacs.d/plugins/header/header.el" "~/.emacs.d/config_lisp/init_general.el" "~/.emacs.d/plugins/header/header2.el" "~/.emacs.d/config_lisp/init_keys.el" "~/.emacs.d/config_lisp/init_funcs.el" "~/.emacs.d/config_lisp/init_packages.el" "~/Dropbox/workspace/wiki_scrapping" "~/Dropbox/workspace/simple_regression/Makefile" "~/Dropbox/workspace/simple_regression/includes/regression.h" "~/Dropbox/workspace/simple_regression/srcs/data_reader.cpp" "~/Dropbox/workspace/simple_regression/srcs/main.cpp" "~/Downloads/metahtml-5.091/libutils/rx-1.5/rgx-perf/n-shortlitstr/data.c" "~/Downloads/metahtml-5.091/libutils/rx-1.5/rgx-perf/n-shortlitstr/litstr.c" "~/Dropbox/workspace/scrapping/" "~/.emacs.d/config_lisp/init_variables.el" "~/.emacs.d/init.el" "~/Dropbox/workspace/simple_regression/resources/data1.dat" "~/.emacs.d/"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/home/mateo/.emacs.d/config_lisp/init_general.el"
-  "init_general.el"
-  'emacs-lisp-mode
-  '(eldoc-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode)
-  569
-  '(574 nil)
+  "/home/mateo/Dropbox/workspace/wiki_scrapping/Makefile"
+  "Makefile"
+  'makefile-gmake-mode
+  '(smartparens-mode undo-tree-mode rainbow-delimiters-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode)
+  893
+  '(1 nil)
   nil
   nil
-  '((buffer-display-time 23528 6500 646527 630000) (buffer-file-coding-system . prefer-utf-8-unix))
-  '((mark-ring (712 572 574 784 766 1045 992 782 661 1054 928 842 882 413 348 627))))
+  '((indent-tabs-mode . t) (buffer-display-time 23538 56288 60672 612000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (893))))
 
 (desktop-create-buffer 208
   "/home/mateo/.emacs.d/config_lisp/init_hooks.el"
   "init_hooks.el"
   'emacs-lisp-mode
   '(eldoc-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode)
-  97
-  '(1 nil)
+  222
+  '(177 nil)
   nil
   nil
-  '((buffer-display-time 23528 1682 426107 143000) (buffer-file-coding-system . prefer-utf-8-unix))
-  '((mark-ring (98 98 1 98 98 98 98 98 98 98 98 119 120 98 98 98))))
+  '((buffer-display-time 23538 56288 60461 936000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/mateo/.emacs.d/config_lisp/init_packages.el"
+  "init_packages.el"
+  'emacs-lisp-mode
+  '(eldoc-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode)
+  1162
+  '(1117 nil)
+  nil
+  nil
+  '((buffer-display-time 23538 56273 685883 6000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1067 847 1 393))))
+
+(desktop-create-buffer 208
+  "/home/mateo/.emacs.d/plugins/header/header.el"
+  "header.el"
+  'emacs-lisp-mode
+  '(eldoc-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode)
+  1529
+  '(1529 nil)
+  nil
+  nil
+  '((buffer-display-time 23538 56254 681023 442000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/mateo/.emacs.d/plugins/header/header2.el"
+  "header2.el"
+  'emacs-lisp-mode
+  '(eldoc-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode)
+  1592
+  '(1529 nil)
+  nil
+  nil
+  '((buffer-display-time 23538 56230 325338 95000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (2052 2012 1972 1932 1892 1852 1841 1841 1529 1529 1444 1529 7137 7024))))
+
+(desktop-create-buffer 208
+  "/home/mateo/Dropbox/workspace/simple_regression/Makefile"
+  "Makefile"
+  'makefile-gmake-mode
+  '(smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode)
+  1744
+  '(1744 nil)
+  nil
+  nil
+  '((indent-tabs-mode . t) (buffer-display-time 23538 56288 60572 238000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1378 1744 1744 1724 1744 1744 1744))))
 

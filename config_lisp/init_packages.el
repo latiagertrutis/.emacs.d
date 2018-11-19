@@ -76,4 +76,18 @@
   :ensure t
   )
 
+(use-package jedi
+  :ensure t
+  )
+
+(use-package lice
+  :ensure t
+  )
+
+(load-file "~/.emacs.d/plugins/header/list.el")
+(load-file "~/.emacs.d/plugins/header/string.el")
+(load-file "~/.emacs.d/plugins/header/comments.el")
+(load-file "~/.emacs.d/plugins/header/header.el")
+(load-file "~/.emacs.d/plugins/header/header2.el")
+
 (provide 'init_packages)

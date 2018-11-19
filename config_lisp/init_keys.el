@@ -10,5 +10,8 @@
 (global-set-key (kbd "M-<right>") 'windmove-right)
 (global-set-key (kbd "C-<up>") 'beginning-of-defun)
 (global-set-key (kbd "C-<down>") 'end-of-defun)
+(global-set-key (kbd "C-c i") 'indent-buffer)
+(global-set-key (kbd "C-x 3") 'new-window-right)
+
 
 (provide 'init_keys)

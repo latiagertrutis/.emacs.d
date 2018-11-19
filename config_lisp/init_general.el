@@ -10,12 +10,13 @@
 (global-anzu-mode +1)
 (whole-line-or-region-global-mode 1)
 (global-undo-tree-mode 1)
+(scroll-bar-mode -1)
 (ac-config-default)
 (set-face-background 'hl-line "#111111")
 ;;auto highlight config
 (require 'auto-highlight-symbol)
 (global-auto-highlight-symbol-mode t)
-;;th one in the cursor
+;;the one in the cursor
 (set-face-attribute 'ahs-plugin-defalt-face nil
 					:foreground "#C3F3E2"
 					:background "#111111"
@@ -33,5 +34,9 @@
 					:foreground "#FFDD99"
 					:background "#111111"
 					:underline "#FFE2C5")
+
+;;=== PYTHON ========================================================
+
+(setq jedi:complete-on-dot t)
 
 (provide 'init_general)

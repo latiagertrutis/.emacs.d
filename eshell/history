@@ -1,2 +1,28 @@
 echo $CLANG_LIBRARY
 exit
+ls
+make
+make re
+make re
+make re
+./reg 2 resources/data1.dat
+./reg 3 resources/data1.dat
+./reg 1 resources/data1.dat
+make
+./reg 1 resources/data1.dat
+./reg 4 resources/data2.dat
+make fclean
+git status
+git commit -m "little protection" 
+git push
+git add srcs/main.cpp 
+git commit -m "little protection" 
+git push
+exit
+cd ~/.emacs.d/
+ls
+mkdir plugins
+cd plugins/
+wget https://www.emacswiki.org/emacs/download/header2.el
+ls
+exit
