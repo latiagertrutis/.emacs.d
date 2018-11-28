@@ -1,28 +1,128 @@
-echo $CLANG_LIBRARY
-exit
+valgrind --leak-check=full ./scrap 
+make
+./scrap 
+make
+./scrap 
+sudo apt-get install libxml2-dev
+..
 ls
+make re
+make
+make re
 make
 make re
 make re
 make re
-./reg 2 resources/data1.dat
-./reg 3 resources/data1.dat
-./reg 1 resources/data1.dat
+..
+make re
+./scrap 
+./scrap -h
+./scrap -r
+./scrap -r f
+./scrap -h
 make
-./reg 1 resources/data1.dat
-./reg 4 resources/data2.dat
-make fclean
-git status
-git commit -m "little protection" 
-git push
-git add srcs/main.cpp 
-git commit -m "little protection" 
-git push
-exit
-cd ~/.emacs.d/
-ls
-mkdir plugins
-cd plugins/
-wget https://www.emacswiki.org/emacs/download/header2.el
-ls
-exit
+./scrap -h
+make
+make
+./scrap
+make re
+./scrap
+make
+./scrap
+make
+./scrap
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+./scrap
+make 
+./scrap
+make 
+./scrap
+make 
+./scrap
+make 
+./scrap
+make 
+./scrap
+make 
+./scrap
+./scrap -l 2
+./scrap -l -2
+./scrap -l 0
+./scrap -l 1
+./scrap -f sdfg
+make 
+./scrap -f sdfg
+make 
+./scrap -f sdfg
+./scrap
+make 
+./scrap
+./scrap
+make 
+./scrap
+make re
+./scrap
+make re
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+make
+./scrap
+./scrap -f gsfd
+make
+./scrap
+clear
+reset
+delete
+man delete

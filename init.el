@@ -42,9 +42,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(flycheck-clang-include-path (quote ("../includes/" "/usr/include/")))
+ '(flycheck-clang-includes (quote ("../includes/" "/usr/include/")))
+ '(flycheck-gcc-include-path (quote ("../includes/" "/usr/include/")))
  '(package-selected-packages
    (quote
-	(auto-complete company-irony flycheck-irony irony-eldoc irony flycheck company use-package))))
+	(json-mode auto-complete company-irony flycheck-irony irony-eldoc irony flycheck company use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -12,6 +12,7 @@
 (global-set-key (kbd "C-<down>") 'end-of-defun)
 (global-set-key (kbd "C-c i") 'indent-buffer)
 (global-set-key (kbd "C-x 3") 'new-window-right)
+(global-set-key (kbd "C-c a") 'align)
 
 
 (provide 'init_keys)

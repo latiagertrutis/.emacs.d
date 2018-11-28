@@ -83,6 +83,9 @@
 (use-package lice
   :ensure t
   )
+(use-package json-mode
+  :ensure t
+  )
 
 (load-file "~/.emacs.d/plugins/header/list.el")
 (load-file "~/.emacs.d/plugins/header/string.el")
