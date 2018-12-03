@@ -83,7 +83,16 @@
 (use-package lice
   :ensure t
   )
+
 (use-package json-mode
+  :ensure t
+  )
+
+(use-package omnisharp
+  :ensure t
+  )
+
+(use-package org
   :ensure t
   )
 
