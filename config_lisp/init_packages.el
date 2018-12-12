@@ -96,6 +96,8 @@
   :ensure t
   )
 
+(load-file "~/.emacs.d/plugins/hexrgb.el")
+(load-file "~/.emacs.d/plugins/eyedropper.el")
 (load-file "~/.emacs.d/plugins/header/list.el")
 (load-file "~/.emacs.d/plugins/header/string.el")
 (load-file "~/.emacs.d/plugins/header/comments.el")

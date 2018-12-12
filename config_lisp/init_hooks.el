@@ -19,4 +19,7 @@
 (add-hook 'csharp-mode-hook #'company-mode)
 (add-hook 'csharp-mode-hook #'flycheck-mode)
 
+;;=== C++ =================================================================
+(add-hook 'c++-mode-hook
+		  (auto-complete-mode -1))
 (provide 'init_hooks)

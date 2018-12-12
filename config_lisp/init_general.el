@@ -22,20 +22,20 @@
 (global-auto-highlight-symbol-mode t)
 ;;the one in the cursor
 (set-face-attribute 'ahs-plugin-defalt-face nil
-					:foreground "#C3F3E2"
+					:foreground nil
 					:background "#111111"
-					:underline "#D11754")
+					:underline "dark orchid")
 ;;the rest of the buffer
 (set-face-attribute 'ahs-face nil
-					:foreground "#FFEACC"
+					:foreground nil
 					:background (face-background 'default)
 					:underline "#F4D4AD")
 (set-face-attribute 'ahs-plugin-whole-buffer-face nil
-					:foreground "#A7E4F2"
+					:foreground nil
 					:background "#111111"
 					:underline "#D11754")
 (set-face-attribute 'ahs-plugin-bod-face nil
-					:foreground "#FFDD99"
+					:foreground nil
 					:background "#111111"
 					:underline "#FFE2C5")
 

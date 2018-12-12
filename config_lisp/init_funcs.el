@@ -26,5 +26,31 @@ This is to update existing buffers after a Git pull of their underlying files."
             (unless (or (null (buffer-file-name)) (buffer-modified-p))
               (revert-buffer t t)
               (message "Reverted %s\n" (buffer-file-name))))
-(buffer-list))))
+		  (buffer-list))))
+
+(defun eyedrop-foreground-at-point (&optional msg-p)
+  "Return the foreground color under the text cursor.
+Non-nil optional arg MSG-P means display an informative message."
+  (interactive "p")
+  ;; `eyedrop-face-at-point' alone is not sufficient.  It only gets named faces.
+  ;; Need also pick up any face properties that are not associated with named faces.
+  (let* ((face  (or (eyedrop-face-at-point)
+                    (get-char-property (point) 'read-face-name)
+                    (get-char-property (point) 'face)))
+         (fg    (cond ((and face (symbolp face))
+                       (condition-case nil
+                           (face-foreground face nil 'default) ; Emacs 22+.
+                         (error (or (face-foreground face) ; Emacs 20
+                                    (cdr (assq 'foreground-color (frame-parameters)))))))
+                      ((consp face)
+                       (cond ((memq 'foreground-color face)
+                              (cdr (memq 'foreground-color face)))
+                             ((memq ':foreground face)
+                              (cadr (memq ':foreground face)))))
+                      (t nil)))         ; Invalid face value.
+         (fg    (and (not (member fg '("unspecified-fg" "unspecified-bg")))  fg)))
+    (when msg-p
+      (if fg (eyedrop-color-message fg) (message "No foreground color here")))
+    fg))
+
 (provide 'init_funcs)
