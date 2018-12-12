@@ -96,6 +96,14 @@
   :ensure t
   )
 
+(use-package bind-key
+  :ensure t
+  )
+
+(use-package dumb-jump
+  :ensure t
+  )
+
 (load-file "~/.emacs.d/plugins/hexrgb.el")
 (load-file "~/.emacs.d/plugins/eyedropper.el")
 (load-file "~/.emacs.d/plugins/header/list.el")

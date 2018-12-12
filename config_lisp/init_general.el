@@ -28,16 +28,33 @@
 ;;the rest of the buffer
 (set-face-attribute 'ahs-face nil
 					:foreground nil
-					:background (face-background 'default)
+					:background nil
 					:underline "#F4D4AD")
 (set-face-attribute 'ahs-plugin-whole-buffer-face nil
 					:foreground nil
-					:background "#111111"
+					:background nil
 					:underline "#D11754")
 (set-face-attribute 'ahs-plugin-bod-face nil
 					:foreground nil
-					:background "#111111"
+					:background nil
 					:underline "#FFE2C5")
+(set-face-attribute 'ahs-face nil
+					:foreground nil
+					:background nil
+					:underline "#FFE2C5")
+(set-face-attribute 'ahs-warning-face nil
+					:foreground nil
+					:background nil
+					:underline "#FFE2C5")
+(set-face-attribute 'ahs-edit-mode-face nil
+					:foreground nil
+					:background nil
+					:underline "#FFE2C5")
+(set-face-attribute 'ahs-definition-face nil
+					:foreground nil
+					:background nil
+					:underline "#FFE2C5")
+
 
 ;;=== PYTHON ========================================================
 
