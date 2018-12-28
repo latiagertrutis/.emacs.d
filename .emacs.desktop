@@ -2,66 +2,30 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Dec  3 18:02:39 2018
+;; Created Fri Dec 28 09:53:25 2018
 ;; Desktop file format version 208
 ;; Emacs version 26.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (23557 25007 255808 436000) (desktop . "208") "mateo@unchartech" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-17-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono 13") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bdbdb3") (background-color . "gray13") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . fullboth) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#f57e00") (sticky) (environment) (fullscreen-restore . maximized) (frameset--id . "293A-589E-EDEE-190B") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (height . 60) (width . 211) (left . 3840) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 36) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (pixel-width . 1920) (pixel-height . 1062) (total-width . 213) (total-height . 59) (normal-height . 1.0) (normal-width . 1.0) (buffer "main.cs" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 324) (start . 1))))])
+(setq desktop-saved-frameset [frameset 1 (23589 58501 978121 359000) (desktop . "208") "mateo@unchartech" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-17-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono 13") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bdbdb3") (background-color . "gray13") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . maximized) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#f57e00") (sticky) (environment) (frameset--id . "8DC7-01D5-9983-2C59") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (user-size . t) (height . 56) (width . 184) (left . 3600) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 36) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (pixel-width . 1680) (pixel-height . 1004) (total-width . 187) (total-height . 56) (normal-height . 1.0) (normal-width . 1.0) (buffer "init_packages.el" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 956) (start . 660))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring nil)
+(setq search-ring '("write_reboo" "end" "END_FILE" "reboot_flag" "paren" "ERR" "nationa" "national" "get_sp" "get_html" "Top Sto"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/.emacs.d/config_lisp/init_general.el" "~/.emacs.d/config_lisp/init_packages.el" "~/.emacs.d/config_lisp/init_hooks.el" "~/.emacs.d/"))
+(setq file-name-history '("~/.emacs.d/config_lisp/init_packages.el" "~/.emacs.d/config_lisp/init_hooks.el" "~/vm_shared/keith_parser/launcher.c" "~/workspace/simple_regression/srcs/data_reader.cpp" "~/workspace/simple_regression/srcs/main.cpp" "~/vm_shared/keith_parser/time_plot.dat" "~/vm_shared/keith_parser/time.log" "~/vm_shared/keith_parser/srcs/main.py" "~/vm_shared/keith_parser/srcs/header.py" "~/workspace/pdf_parser/test_jp_parser.py" "~/workspace/pdf_parser/test.html" "~/workspace/pdf_parser/MS.pdf" "~/workspace/pdf_parser/test.xml" "~/workspace/pdf_parser/test.txt" "~/workspace/pdf_parser/resources/Investment Research/JPMorganCazenoveEuropeFTM12Nov18StrategynotpositioningforrecessionUniCreditremainOWPosteItalianeOWRichemontNNexansOWArrowGlobalOWSGSNAtlantiaNAOWorldN.pdf" "~/Downloads/freeformatter-out.html" "~/.emacs.d/" "~/workspace/pdf_parser/resources/Investment Research/JPMorganCazenoveEuropeFTM19Nov18StrategytoosoonforUKdomesticsNovoNordiskugOWCopperugFQMOWInsurersReinsurersIntermediateCapitalOWRoyalMailUWBBAOWHugo_1.pdf" "~/workspace/pdf_parser/pdfminer/samples/simple1.pdf" "~/workspace/pdf_parser/pdfminer/samples/simple3.pdf" "~/workspace/pdf_parser/JP_Parser.py"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 208
-  "/home/mateo/workspace/data_scrapping/Excel_scrapper/Keith_parser_c_sharp/srcs/main.cs"
-  "main.cs"
-  'csharp-mode
-  '(eldoc-mode company-mode flycheck-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode omnisharp-mode)
-  324
-  '(263 nil)
-  nil
-  nil
-  '((buffer-display-time 23557 24968 842765 851000) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring (214 98 28 330 177 177 177 72 27 177 164 186 232 237 261 324))))
-
-(desktop-create-buffer 208
-  "/home/mateo/workspace/data_scrapping/Excel_scrapper/Keith_parser_c_sharp/process.org"
-  "process.org"
-  'org-mode
-  '(smartparens-mode undo-tree-mode magit-file-mode whole-line-or-region-local-mode anzu-mode)
-  79
-  '(1 nil)
-  nil
-  nil
-  '((buffer-display-time 23557 22978 142240 807000) (buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
-  '((mark-ring (1))))
-
-(desktop-create-buffer 208
-  "/home/mateo/.emacs.d/config_lisp/init_general.el"
-  "init_general.el"
-  'emacs-lisp-mode
-  '(eldoc-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode)
-  1536
-  '(1407 nil)
-  nil
-  nil
-  '((buffer-display-time 23557 22767 395670 284000) (buffer-file-coding-system . prefer-utf-8-unix))
-  '((mark-ring (623 1233))))
-
 (desktop-create-buffer 208
   "/home/mateo/.emacs.d/config_lisp/init_packages.el"
   "init_packages.el"
   'emacs-lisp-mode
-  '(eldoc-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode)
-  1014
-  '(997 nil)
+  '(eldoc-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
+  956
+  '(956 nil)
   nil
   nil
-  '((buffer-display-time 23557 22674 226400 214000) (buffer-file-coding-system . prefer-utf-8-unix))
-  '((mark-ring (957 1 997 1078 979))))
+  '((buffer-display-time 23589 57480 556288 489000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
 

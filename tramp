@@ -1,6 +1,0 @@
-;; -*- emacs-lisp -*- <18/11/21 14:08:36 /home/mateo/.emacs.d/tramp>
-;; Tramp connection history.  Don't change this file.
-;; You can delete it, forcing Tramp to reapply the checks.
-
-(((tramp-file-name "ssh" "mrodrigu" nil "36.187.145.230" nil nil nil)
-  nil))
