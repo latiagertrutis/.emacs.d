@@ -24,7 +24,11 @@
 
 (provide 'init_packages)
 
-(use-package ample-theme
+;; (use-package ample-theme
+;;   :ensure t
+;;   )
+
+(use-package zenburn-theme
   :ensure t
   )
 

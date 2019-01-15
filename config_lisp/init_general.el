@@ -16,45 +16,19 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
-(set-face-background 'hl-line "#111111")
+;; (set-face-background 'hl-line "#555555")
 ;;auto highlight config
 (require 'auto-highlight-symbol)
 (global-auto-highlight-symbol-mode t)
-;;the one in the cursor
-(set-face-attribute 'ahs-plugin-defalt-face nil
-					:foreground nil
-					:background "#111111"
-					:underline "dark orchid")
-;;the rest of the buffer
-(set-face-attribute 'ahs-face nil
-					:foreground nil
-					:background nil
-					:underline "#F4D4AD")
-(set-face-attribute 'ahs-plugin-whole-buffer-face nil
-					:foreground nil
-					:background nil
-					:underline "#D11754")
-(set-face-attribute 'ahs-plugin-bod-face nil
-					:foreground nil
-					:background nil
-					:underline "#FFE2C5")
-(set-face-attribute 'ahs-face nil
-					:foreground nil
-					:background nil
-					:underline "#FFE2C5")
-(set-face-attribute 'ahs-warning-face nil
-					:foreground nil
-					:background nil
-					:underline "#FFE2C5")
-(set-face-attribute 'ahs-edit-mode-face nil
-					:foreground nil
-					:background nil
-					:underline "#FFE2C5")
-(set-face-attribute 'ahs-definition-face nil
-					:foreground nil
-					:background nil
-					:underline "#FFE2C5")
-
+(require 'server)
+(require 'init_funcs)
+(defadvice server-create-window-system-frame
+  (after set-window-system-frame-colours ())
+  "Set custom frame colours when creating the first frame on a display"
+  (message "Running after frame-initialize")
+  (setup-window-system-frame-colours))
+(ad-activate 'server-create-window-system-frame)
+(add-hook 'after-make-frame-functions 'setup-window-system-frame-colours t)
 
 ;;=== PYTHON ========================================================
 

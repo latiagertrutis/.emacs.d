@@ -53,4 +53,61 @@ Non-nil optional arg MSG-P means display an informative message."
       (if fg (eyedrop-color-message fg) (message "No foreground color here")))
     fg))
 
+;;my windows move
+(defun my-window-move-right ()
+  (interactive)
+  (condition-case err
+	  (windmove-right)
+	(error
+	 (other-frame -1))))
+
+(defun my-window-move-left ()
+  (interactive)
+  (condition-case err
+	  (windmove-left)
+	(error
+	 (other-frame -1))))
+
+;;custom faces
+(defun setup-window-system-frame-colours (&rest frame)
+  (if window-system
+      (let ((f (if (car frame)
+				   (car frame)
+				 (selected-frame))))
+		(progn
+		  ;;the one in the cursor
+		  (set-face-attribute 'ahs-plugin-defalt-face nil
+							  :foreground nil
+							  :background nil
+							  :underline "dark orchid")
+		  ;;the rest of the buffer
+		  (set-face-attribute 'ahs-face nil
+							  :foreground nil
+							  :background nil
+							  :underline "#F4D4AD")
+		  (set-face-attribute 'ahs-plugin-whole-buffer-face nil
+							  :foreground nil
+							  :background nil
+							  :underline "#D11754")
+		  (set-face-attribute 'ahs-plugin-bod-face nil
+							  :foreground nil
+							  :background nil
+							  :underline "#FFE2C5")
+		  (set-face-attribute 'ahs-face nil
+							  :foreground nil
+							  :background nil
+							  :underline "#FFE2C5")
+		  (set-face-attribute 'ahs-warning-face nil
+							  :foreground nil
+							  :background nil
+							  :underline "#FFE2C5")
+		  (set-face-attribute 'ahs-edit-mode-face nil
+							  :foreground nil
+							  :background nil
+							  :underline "#FFE2C5")
+		  (set-face-attribute 'ahs-definition-face nil
+							  :foreground nil
+							  :background nil
+							  :underline "#FFE2C5")))))
+
 (provide 'init_funcs)
