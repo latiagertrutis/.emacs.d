@@ -108,6 +108,15 @@
   :ensure t
   )
 
+(use-package eshell-prompt-extras
+  :ensure t
+  )
+
+(use-package json-navigator
+  :ensure t
+  )
+
+(load-file "~/.emacs.d/plugins/multi-eshell.el")
 (load-file "~/.emacs.d/plugins/hexrgb.el")
 (load-file "~/.emacs.d/plugins/eyedropper.el")
 (load-file "~/.emacs.d/plugins/header/list.el")

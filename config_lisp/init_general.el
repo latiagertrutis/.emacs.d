@@ -1,6 +1,7 @@
 (setq-default cursor-type 'bar)
 (setq-default tab-width 4)
 (setq helm-split-window-in-side-p t)
+(setq max-lisp-eval-depth 10000)
 (desktop-save-mode 1)
 (smartparens-global-mode t)
 (show-smartparens-global-mode 1)
@@ -29,6 +30,12 @@
   (setup-window-system-frame-colours))
 (ad-activate 'server-create-window-system-frame)
 (add-hook 'after-make-frame-functions 'setup-window-system-frame-colours t)
+
+;;eshell prompt
+(with-eval-after-load "esh-opt"
+  (autoload 'epe-theme-lambda "eshell-prompt-extras")
+  (setq eshell-highlight-prompt nil
+        eshell-prompt-function 'epe-theme-lambda))
 
 ;;=== PYTHON ========================================================
 

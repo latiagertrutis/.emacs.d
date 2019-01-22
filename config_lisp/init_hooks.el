@@ -6,13 +6,16 @@
 
 ;;=== C ================================================================
 
-(add-hook 'c-mode-common-hook
+(add-hook 'c-mode-hook
 		  (lambda ()
 			(setq indent-tabs-mode t)
 			(setq backward-delete-char-untabify-method 'all)
 			(setq tab-width 2)
 			(setq c-basic-offset 2)
 			))
+(add-hook 'c-mode-hook 'flycheck-mode)
+(add-hook 'c-mode-hook 'company-mode)
+(add-hook 'c-mode-hook 'irony-mode)
 
 ;;=== PYTHON =================================================================
 
@@ -30,6 +33,16 @@
 (add-hook 'csharp-mode-hook #'flycheck-mode)
 
 ;;=== C++ =================================================================
-(add-hook 'c++-mode-hook (auto-complete-mode -1))
+
+(add-hook 'c++-mode-hook
+		  (lambda ()
+			(setq indent-tabs-mode t)
+			(setq backward-delete-char-untabify-method 'all)
+			(setq tab-width 2)
+			(setq c-basic-offset 2)
+			))
 (add-hook 'c++-mode-hook 'flycheck-mode)
+(add-hook 'c++-mode-hook 'company-mode)
+(add-hook 'c++-mode-hook 'irony-mode)
+
 (provide 'init_hooks)

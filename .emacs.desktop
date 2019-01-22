@@ -2,186 +2,66 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Fri Jan 11 10:28:37 2019
+;; Created Tue Jan 22 10:01:59 2019
 ;; Desktop file format version 208
 ;; Emacs version 26.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (23608 25029 186793 500000) (desktop . "208") "mateo@unchartech" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-17-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono 13") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bdbdb3") (background-color . "gray13") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . fullboth) (visibility . t) (skip-taskbar) (z-group) (environment "_=/usr/local/bin/emacsclient" "SPACESHIP_ROOT=/home/mateo/.oh-my-zsh/custom/themes/spaceship-prompt" "SPACESHIP_VERSION=3.8.1" "LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:" "LSCOLORS=Gxfxcxdxbxegedabagacad" "LC_CTYPE=en_US.UTF-8" "LESS=-R" "PAGER=less" "ZSH=/home/mateo/.oh-my-zsh" "OLDPWD=/home/mateo" "QT_ACCESSIBILITY=1" "HOME=/home/mateo" "GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1" "XDG_RUNTIME_DIR=/run/user/1000" "QT_IM_MODULE=ibus" "XMODIFIERS=@im=ibus" "SSH_AUTH_SOCK=/run/user/1000/keyring/ssh" "PATH=/home/mateo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" "SSH_AGENT_PID=2408" "XDG_CURRENT_DESKTOP=ubuntu:GNOME" "GNOME_TERMINAL_SERVICE=:1.77" "XDG_SESSION_TYPE=x11" "GTK_MODULES=gail:atk-bridge" "SESSION_MANAGER=local/unchartech:@/tmp/.ICE-unix/2312,unix/unchartech:/tmp/.ICE-unix/2312" "TERM=xterm-256color" "LC_TIME=fr_FR.UTF-8" "XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop" "GNOME_SHELL_SESSION_MODE=ubuntu" "SHELL=/bin/zsh" "S_COLORS=auto" "LC_IDENTIFICATION=fr_FR.UTF-8" "XDG_MENU_PREFIX=gnome-" "QT4_IM_MODULE=xim" "TEXTDOMAIN=im-config" "LC_NUMERIC=fr_FR.UTF-8" "CLUTTER_IM_MODULE=xim" "USERNAME=mateo" "VTE_VERSION=5202" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus" "IM_CONFIG_PHASE=2" "LC_MONETARY=fr_FR.UTF-8" "WINDOWPATH=2" "LC_PAPER=fr_FR.UTF-8" "LC_MEASUREMENT=fr_FR.UTF-8" "GNOME_DESKTOP_SESSION_ID=this-is-deprecated" "DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path" "TEXTDOMAINDIR=/usr/share/locale/" "GDMSESSION=ubuntu" "XDG_SESSION_DESKTOP=ubuntu" "DESKTOP_SESSION=ubuntu" "GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/4ab1cad9_5361_4e18_83f7_38d4418847e3" "COLORTERM=truecolor" "XDG_SESSION_ID=3" "USER=mateo" "GTK_IM_MODULE=ibus" "DESKTOP_AUTOSTART_ID=10ea39f8ec39566c27154719574790018600000023120007" "XAUTHORITY=/run/user/1000/gdm/Xauthority" "XDG_SEAT=seat0" "PWD=/home/mateo" "LC_NAME=fr_FR.UTF-8" "MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path" "XDG_VTNR=2" "LOGNAME=mateo" "SHLVL=1" "DISPLAY=:0" "LANG=en_US.UTF-8" "LC_TELEPHONE=fr_FR.UTF-8" "XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg" "LC_ADDRESS=fr_FR.UTF-8") (display-type . color) (background-mode . dark) (cursor-color . "#f57e00") (sticky) (fullscreen-restore) (frameset--id . "BC62-3213-1A18-330A") (frameset--mini t) (height . 58) (width . 184) (modeline . t) (unsplittable) (left . 1920) (top . 0) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 20) (min-height-ignore . 2) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 72) (min-pixel-width . 180) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 72) (min-pixel-height-safe . 18) (min-pixel-width-safe . 36)) hc (pixel-width . 1680) (pixel-height . 1032) (total-width . 187) (total-height . 57) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 843) (pixel-height . 1032) (total-width . 94) (total-height . 57) (normal-height . 1.0) (normal-width . 0.5) (buffer "parser.cpp" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1952) (start . 1504))) (leaf (last . t) (pixel-width . 837) (pixel-height . 1032) (total-width . 93) (total-height . 57) (normal-height . 1.0) (normal-width . 0.5) (buffer "main.cpp" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 2163) (start . 893)))) (((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-17-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono 13") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bdbdb3") (background-color . "gray13") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . fullboth) (visibility . t) (skip-taskbar) (z-group) (environment "_=/usr/local/bin/emacsclient" "SPACESHIP_ROOT=/home/mateo/.oh-my-zsh/custom/themes/spaceship-prompt" "SPACESHIP_VERSION=3.8.1" "LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:" "LSCOLORS=Gxfxcxdxbxegedabagacad" "LC_CTYPE=en_US.UTF-8" "LESS=-R" "PAGER=less" "ZSH=/home/mateo/.oh-my-zsh" "OLDPWD=/home/mateo" "QT_ACCESSIBILITY=1" "HOME=/home/mateo" "GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1" "XDG_RUNTIME_DIR=/run/user/1000" "QT_IM_MODULE=ibus" "XMODIFIERS=@im=ibus" "SSH_AUTH_SOCK=/run/user/1000/keyring/ssh" "PATH=/home/mateo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" "SSH_AGENT_PID=2408" "XDG_CURRENT_DESKTOP=ubuntu:GNOME" "GNOME_TERMINAL_SERVICE=:1.77" "XDG_SESSION_TYPE=x11" "GTK_MODULES=gail:atk-bridge" "SESSION_MANAGER=local/unchartech:@/tmp/.ICE-unix/2312,unix/unchartech:/tmp/.ICE-unix/2312" "TERM=xterm-256color" "LC_TIME=fr_FR.UTF-8" "XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop" "GNOME_SHELL_SESSION_MODE=ubuntu" "SHELL=/bin/zsh" "S_COLORS=auto" "LC_IDENTIFICATION=fr_FR.UTF-8" "XDG_MENU_PREFIX=gnome-" "QT4_IM_MODULE=xim" "TEXTDOMAIN=im-config" "LC_NUMERIC=fr_FR.UTF-8" "CLUTTER_IM_MODULE=xim" "USERNAME=mateo" "VTE_VERSION=5202" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus" "IM_CONFIG_PHASE=2" "LC_MONETARY=fr_FR.UTF-8" "WINDOWPATH=2" "LC_PAPER=fr_FR.UTF-8" "LC_MEASUREMENT=fr_FR.UTF-8" "GNOME_DESKTOP_SESSION_ID=this-is-deprecated" "DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path" "TEXTDOMAINDIR=/usr/share/locale/" "GDMSESSION=ubuntu" "XDG_SESSION_DESKTOP=ubuntu" "DESKTOP_SESSION=ubuntu" "GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/4ab1cad9_5361_4e18_83f7_38d4418847e3" "COLORTERM=truecolor" "XDG_SESSION_ID=3" "USER=mateo" "GTK_IM_MODULE=ibus" "DESKTOP_AUTOSTART_ID=10ea39f8ec39566c27154719574790018600000023120007" "XAUTHORITY=/run/user/1000/gdm/Xauthority" "XDG_SEAT=seat0" "PWD=/home/mateo" "LC_NAME=fr_FR.UTF-8" "MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path" "XDG_VTNR=2" "LOGNAME=mateo" "SHLVL=1" "DISPLAY=:0" "LANG=en_US.UTF-8" "LC_TELEPHONE=fr_FR.UTF-8" "XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg" "LC_ADDRESS=fr_FR.UTF-8") (display-type . color) (background-mode . dark) (cursor-color . "#f57e00") (sticky) (fullscreen-restore) (frameset--id . "D216-44C5-EE4D-34A5") (frameset--mini t . t) (height . 58) (width . 184) (modeline . t) (unsplittable) (left . 3600) (top . 0) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 36) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (pixel-width . 1680) (pixel-height . 1032) (total-width . 186) (total-height . 57) (normal-height . 1.0) (normal-width . 1.0) (buffer "parser.hpp" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 2040) (start . 1296))) (((minibuffer . t) (foreground-color . "#bdbdb3") (background-color . "gray13") (display-type . mono) (background-mode . dark) (cursor-color . "#f57e00") (tool-bar-lines . 0) (menu-bar-lines . 0) (vertical-scroll-bars) (font . "tty") (height . 10) (width . 10) (modeline . t) (unsplittable) (frameset--id . "6108-E6BA-9B85-734A") (frameset--mini t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 2) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 10) (pixel-height . 9) (total-width . 10) (total-height . 9) (normal-height . 1.0) (normal-width . 1.0) (buffer "init_general.el" (selected) (hscroll . 0) (fringes 0 0 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 722) (start . 1))))])
+(setq desktop-saved-frameset [frameset 1 (23622 56327 865410 571000) (desktop . "208") "unchartech_2@supercomputer" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-17-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono 13") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . fullheight) (visibility . t) (skip-taskbar) (z-group) (environment "GJS_DEBUG_TOPICS=JS ERROR;JS LOG" "GJS_DEBUG_OUTPUT=stderr" "GIO_LAUNCHED_DESKTOP_FILE_PID=2007" "GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/org.gnome.Shell.desktop" "SESSION_MANAGER=local/supercomputer:@/tmp/.ICE-unix/1851,unix/supercomputer:/tmp/.ICE-unix/1851" "XDG_MENU_PREFIX=gnome-" "GNOME_DESKTOP_SESSION_ID=this-is-deprecated" "LC_PAPER=fr_FR.UTF-8" "LC_NUMERIC=fr_FR.UTF-8" "XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg" "XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop" "CLUTTER_IM_MODULE=xim" "PWD=/home/unchartech_2" "QT_IM_MODULE=ibus" "XDG_VTNR=2" "LC_IDENTIFICATION=fr_FR.UTF-8" "GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1" "LC_MEASUREMENT=fr_FR.UTF-8" "GDMSESSION=ubuntu" "QT_ACCESSIBILITY=1" "SHELL=/bin/zsh" "LC_NAME=fr_FR.UTF-8" "SSH_AUTH_SOCK=/run/user/1000/keyring/ssh" "XAUTHORITY=/run/user/1000/gdm/Xauthority" "XMODIFIERS=@im=ibus" "XDG_SESSION_DESKTOP=ubuntu" "LC_TELEPHONE=fr_FR.UTF-8" "XDG_CURRENT_DESKTOP=ubuntu:GNOME" "LANG=en_US.UTF-8" "DISPLAY=:0" "XDG_RUNTIME_DIR=/run/user/1000" "LC_ADDRESS=fr_FR.UTF-8" "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" "WINDOWPATH=2" "XDG_SESSION_ID=2" "USERNAME=unchartech_2" "DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path" "GTK_IM_MODULE=ibus" "LOGNAME=unchartech_2" "IM_CONFIG_PHASE=2" "MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus" "LC_MONETARY=fr_FR.UTF-8" "GNOME_SHELL_SESSION_MODE=ubuntu" "GTK_MODULES=gail:atk-bridge" "DESKTOP_SESSION=ubuntu" "HOME=/home/unchartech_2" "QT4_IM_MODULE=xim" "SHLVL=0" "SSH_AGENT_PID=1979" "XDG_SESSION_TYPE=x11" "XDG_SEAT=seat0" "LC_TIME=fr_FR.UTF-8" "USER=unchartech_2") (display-type . color) (background-mode . dark) (cursor-color . "#FFFFEF") (sticky) (frameset--id . "30B2-DD28-75E1-A4EA") (frameset--mini t . t) (height . 56) (width . 104) (modeline . t) (unsplittable) (left + -10) (top . 19) (icon-name) (display . ":0") (explicit-name)) ((min-height . 8) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 4) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 144) (min-pixel-width . 90) (min-pixel-height-ignore . 72) (min-pixel-width-ignore . 36) (min-pixel-height-safe . 36) (min-pixel-width-safe . 18)) vc (pixel-width . 960) (pixel-height . 998) (total-width . 107) (total-height . 55) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 960) (pixel-height . 648) (total-width . 107) (total-height . 36) (normal-height . 0.6525679758308157) (normal-width . 1.0) (buffer "data_base.cpp" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 3094) (start . 2516))) (leaf (last . t) (pixel-width . 960) (pixel-height . 350) (total-width . 107) (total-height . 19) (normal-height . 0.34743202416918406) (normal-width . 1.0) (buffer "*eshell*<2>" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1976) (start . 910)))) (((minibuffer . t) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (display-type . mono) (background-mode . dark) (cursor-color . "#FFFFEF") (tool-bar-lines . 0) (menu-bar-lines . 0) (vertical-scroll-bars) (font . "tty") (height . 10) (width . 10) (modeline . t) (unsplittable) (frameset--id . "7EFB-3CDC-DF74-4E57") (frameset--mini t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 2) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 10) (pixel-height . 9) (total-width . 10) (total-height . 9) (normal-height . 1.0) (normal-width . 1.0) (buffer "parser.cpp" (selected) (hscroll . 0) (fringes 0 0 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 4496) (start . 2966))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("	"))
+(setq search-ring nil)
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/.emacs.d/config_lisp/init_funcs.el" "~/.emacs.d/init.el" "~/.emacs.d/config_lisp/init_general.el" "~/vm_shared/keith_parser/parser/srcs/dir_watcher.cpp" "~/vm_shared/keith_parser/launcher/srcs/communication.c" "~/vm_shared/keith_parser/launcher/srcs/launcher.c" "~/vm_shared/keith_parser/launcher/srcs/server.c" "~/vm_shared/keith_parser/launcher/srcs/data_base.c" "~/vm_shared/keith_parser/protocol.txt" "/usr/include/x86_64-linux-gnu/sys/inotify.h" "~/vm_shared/keith_parser/parser/Makefile" "~/vm_shared/keith_parser/parser/includes/parser.hpp" "~/vm_shared/keith_parser/parser/srcs/client.cpp" "~/.emacs.d/config_lisp/init_keys.el" "~/.emacs.d/config_lisp/init_keys.el" "~/vm_shared/keith_parser/launcher/srcs/main.c" "~/vm_shared/keith_parser/launcher/srcs/inotify.c" "~/vm_shared/keith_parser/parser/parsed_text.txt" "~/vm_shared/keith_parser/parser/srcs/main.cpp" "~/vm_shared/keith_parser/test_network.c" "~/vm_shared/keith_parser/test_network.py" "~/workspace/simple_regression/Makefile" "~/vm_shared/keith_parser/launcher/includes/launcher.h" "~/vm_shared/keith_parser/srcs/main.py" "~/vm_shared/keith_parser/srcs/header.py" "~/vm_shared/keith_parser/tickers/tickers_0.dat" "~/vm_shared/keith_parser/tickers.dat" "~/vm_shared/keith_parser/tickers.txt" "~/vm_shared/keith_parser/Makefile" "~/.emacs.d/"))
+(setq file-name-history '("~/workspace/keith_parser/parser/srcs/data_base.cpp" "~/workspace/keith_parser/parser/srcs/parser.cpp" "~/workspace/keith_parser/Makefile" "~/workspace/keith_parser/parser/Makefile" "~/.emacs.d/config_lisp/init_funcs.el" "~/.emacs.d/config_lisp/init_hooks.el" "~/workspace/keith_parser/launcher/srcs/main.c"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/parser/srcs/parser.cpp"
-  "parser.cpp"
-  'c++-mode
-  '(abbrev-mode eldoc-mode company-mode flycheck-mode irony-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  1952
-  '(1747 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23608 24895 131731 150000) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring (1671 1264 1504 1492 1419 1491 1407 1418 1634 1095 1064 982 948 82 1 892))))
-
-(desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/parser/srcs/main.cpp"
-  "main.cpp"
-  'c++-mode
-  '(abbrev-mode eldoc-mode company-mode flycheck-mode irony-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode flymake-mode)
-  2163
-  '(1759 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23608 24900 933856 511000) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (1537 1618 1063 1221 1309 1423 1343 1308 2209 244 1422 1101 1123 1418 1259 1308))))
-
-(desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/parser/includes/parser.hpp"
-  "parser.hpp"
+  "/home/unchartech_2/workspace/keith_parser/parser/srcs/data_base.cpp"
+  "data_base.cpp"
   'c++-mode
   '(abbrev-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  2040
-  '(1904 nil)
+  3094
+  '(nil nil)
   nil
   nil
-  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23608 24625 402696 450000) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (1929 1859 1830 2007 1904 1884 1521 1515 1826 1417 1395 1472 1681 1664 945 1800))))
+  '((buffer-display-time 23622 56270 566140 508000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
 
 (desktop-create-buffer 208
-  "/home/mateo/.emacs.d/config_lisp/init_general.el"
-  "init_general.el"
-  'emacs-lisp-mode
-  '(eldoc-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  722
-  '(661 nil)
-  nil
-  nil
-  '((buffer-display-time 23608 23342 241690 261000) (buffer-file-coding-system . prefer-utf-8-unix))
-  '((mark-ring (217 678))))
-
-(desktop-create-buffer 208
-  "/home/mateo/.emacs.d/config_lisp/init_funcs.el"
-  "init_funcs.el"
-  'emacs-lisp-mode
-  '(eldoc-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  3969
-  '(3965 nil)
-  nil
-  nil
-  '((buffer-display-time 23608 23227 926475 947000) (buffer-file-coding-system . prefer-utf-8-unix))
-  '((mark-ring (2873 3970 2706 2714))))
-
-(desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/parser/srcs/dir_watcher.cpp"
-  "dir_watcher.cpp"
+  "/home/unchartech_2/workspace/keith_parser/parser/srcs/parser.cpp"
+  "parser.cpp"
   'c++-mode
-  '(abbrev-mode eldoc-mode company-mode flycheck-mode irony-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  2028
-  '(2076 nil)
+  '(abbrev-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
+  5904
+  '(1483 nil)
   nil
   nil
-  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23608 22762 272457 552000) (buffer-file-coding-system . utf-8-unix))
-  '((mark-ring (2076 1101 2063 1404 2110 972 1877 1880 1463 1942 1798 1943 2104 1207 1334 2076))))
+  '((buffer-display-time 23622 56270 515606 487000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (5581 4496 6377 5904))))
 
 (desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/parser/Makefile"
+  "/home/unchartech_2/workspace/keith_parser/parser/Makefile"
   "Makefile"
   'makefile-gmake-mode
   '(smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode override-global-mode)
-  1014
-  '(1014 t)
+  1215
+  '(1215 t)
   nil
   nil
-  '((indent-tabs-mode . t) (buffer-display-time 23608 21439 439486 958000) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (1191 999 1014))))
+  '((indent-tabs-mode . t) (buffer-display-time 23622 55891 253592 200000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1019 1539 1215))))
 
 (desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/launcher/srcs/communication.c"
-  "communication.c"
-  'c-mode
-  '(abbrev-mode eldoc-mode company-mode flycheck-mode irony-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  3177
-  '(2078 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23608 16908 192222 724000) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (1820 1860 3899 3868 3868 3868 3868 3868 3868 3868 3868 3868 3868 3868 3868 1733))))
-
-(desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/protocol.txt"
-  "protocol.txt"
-  'text-mode
-  '(smartparens-mode undo-tree-mode auto-revert-mode magit-file-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode override-global-mode)
-  559
-  '(559 nil)
-  nil
-  nil
-  '((buffer-display-time 23608 14680 165986 719000) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (559))))
-
-(desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/launcher/srcs/launcher.c"
-  "launcher.c"
-  'c-mode
-  '(abbrev-mode eldoc-mode company-mode flycheck-mode irony-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  1673
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23608 13529 827025 323000) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/launcher/srcs/server.c"
-  "server.c"
-  'c-mode
-  '(abbrev-mode eldoc-mode company-mode flycheck-mode irony-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  2758
-  '(3500 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23608 13512 813381 51000) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/launcher/srcs/data_base.c"
-  "data_base.c"
-  'c-mode
-  '(abbrev-mode eldoc-mode company-mode flycheck-mode irony-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  2285
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23608 13502 842075 596000) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/parser/srcs/client.cpp"
-  "client.cpp"
-  'c++-mode
-  '(abbrev-mode flycheck-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  2173
-  '(2447 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23608 13476 316336 418000) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (2176 2357 2068 1987 1940 2234 1848 1797 2174 2173 1985 1661 1611 2172 1 2173))))
-
-(desktop-create-buffer 208
-  "/home/mateo/vm_shared/keith_parser/launcher/srcs/main.c"
+  "/home/unchartech_2/workspace/keith_parser/launcher/srcs/main.c"
   "main.c"
   'c-mode
   '(abbrev-mode eldoc-mode company-mode flycheck-mode irony-mode smartparens-mode undo-tree-mode rainbow-delimiters-mode auto-revert-mode magit-file-mode ws-butler-mode whole-line-or-region-local-mode anzu-mode auto-highlight-symbol-mode auto-complete-mode override-global-mode)
-  1925
-  '(nil nil)
+  992
+  '(992 nil)
   nil
   nil
-  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23608 23228 111413 711000) (buffer-file-coding-system . undecided-unix))
+  '((tab-width . 2) (indent-tabs-mode . t) (buffer-display-time 23622 55466 425704 524000) (buffer-file-coding-system . undecided-unix))
   '((mark-ring nil)))
 
