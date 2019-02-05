@@ -51,7 +51,7 @@
 	("../includes/" "/usr/include/" "/usr/include/libxl/")))
  '(package-selected-packages
    (quote
-	(json-mode auto-complete company-irony flycheck-irony irony-eldoc irony flycheck company use-package))))
+	(nyan-mode smooth-scrolling smartscan json-mode auto-complete company-irony flycheck-irony irony-eldoc irony flycheck company use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

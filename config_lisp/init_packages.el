@@ -13,6 +13,9 @@
 (use-package irony-eldoc
 	     :ensure t
 	     )
+(use-package smooth-scrolling
+	     :ensure t
+	     )
 
 (use-package flycheck-irony
 	     :ensure t
@@ -22,11 +25,9 @@
 	     :ensure t
 	     )
 
-(provide 'init_packages)
-
-;; (use-package ample-theme
-;;   :ensure t
-;;   )
+(use-package smartscan
+  :ensure t
+  )
 
 (use-package zenburn-theme
   :ensure t
@@ -48,10 +49,6 @@
   :ensure t
   )
 
-(use-package iedit
-  :ensure t
-  )
-
 (use-package helm
   :ensure t
   )
@@ -69,6 +66,10 @@
   )
 
 (use-package anzu
+  :ensure t
+  )
+
+(use-package nyan-mode
   :ensure t
   )
 

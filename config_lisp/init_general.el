@@ -11,6 +11,10 @@
 (global-anzu-mode +1)
 (whole-line-or-region-global-mode 1)
 (global-undo-tree-mode 1)
+(global-smartscan-mode 1)
+(smooth-scrolling-mode 1)
+(setq nyan-bar-length 15)
+(nyan-mode 0)
 (scroll-bar-mode -1)
 (ac-config-default)
 (setq backup-directory-alist
