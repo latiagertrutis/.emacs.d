@@ -117,6 +117,18 @@
   :ensure t
   )
 
+(use-package js2-mode
+  :ensure t
+  )
+
+(use-package tern
+  :ensure t
+  )
+
+(use-package company-tern
+  :ensure t
+  )
+
 (load-file "~/.emacs.d/plugins/multi-eshell.el")
 (load-file "~/.emacs.d/plugins/hexrgb.el")
 (load-file "~/.emacs.d/plugins/eyedropper.el")

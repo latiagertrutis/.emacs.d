@@ -13,8 +13,12 @@
 (global-undo-tree-mode 1)
 (global-smartscan-mode 1)
 (smooth-scrolling-mode 1)
+(add-to-list 'company-backends 'company-tern)
 (setq nyan-bar-length 15)
 (nyan-mode 0)
+(setq sp-autodelete-pair nil)
+(setq sp-escape-quotes-after-insert nil)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (scroll-bar-mode -1)
 (ac-config-default)
 (setq backup-directory-alist
@@ -28,7 +32,7 @@
 (require 'server)
 (require 'init_funcs)
 (defadvice server-create-window-system-frame
-  (after set-window-system-frame-colours ())
+	(after set-window-system-frame-colours ())
   "Set custom frame colours when creating the first frame on a display"
   (message "Running after frame-initialize")
   (setup-window-system-frame-colours))

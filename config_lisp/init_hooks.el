@@ -4,6 +4,13 @@
 (add-hook 'prog-mode-hook 'ws-butler-mode)
 (global-set-key (kbd "C-c h") 'header-insert2)
 
+;;=== JS ================================================================
+
+(add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
+(add-hook 'js2-mode-hook (lambda ()
+                           (tern-mode)
+                           (company-mode)))
+
 ;;=== C ================================================================
 
 (add-hook 'c-mode-hook
