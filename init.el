@@ -1,61 +1,35 @@
-;; ====================================================
-;; MELPA
-;; ====================================================
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Filename: init.el
+;Description:
+;Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
+;Maintainer:
+;Created: Tue Sep  8 12:13:52 2020 (+0200)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'package) ;; You might already have this line
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (url (concat (if no-ssl "http" "https") "://melpa.org/packages/")))
-  (add-to-list 'package-archives (cons "melpa" url) t))
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize) ;; You might already have this line
+;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
+;;(setq debug-on-error t)
 
-;; ====================================================
-;; use-package
-;; ====================================================
+(let ((minver "24.4"))
+  (when (version< emacs-version minver)
+    (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
+(when (version< emacs-version "25.1")
+  (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
-(unless (featurep 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package)
-  )
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(require 'init-benchmarking) ;; Measure startup time
 
-;; ====================================================
-;; INIT
-;; ====================================================
+;;----------------------------------------------------------------------------
+;; Adjust garbage collection thresholds during startup, and thereafter
+;;----------------------------------------------------------------------------
+(let ((normal-gc-cons-threshold (* 20 1024 1024))
+      (init-gc-cons-threshold (* 128 1024 1024)))
+  (setq gc-cons-threshold init-gc-cons-threshold)
+  (add-hook 'emacs-startup-hook
+            (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
-(add-to-list 'load-path (expand-file-name "config_lisp" user-emacs-directory))
-
-(require 'init_variables)
-(require 'init_funcs)
-(require 'init_packages)
-(require 'init_irony)
-(require 'init_hooks)
-(require 'init_general)
-(require 'init_keys)
-
-;; ====================================================
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(flycheck-clang-include-path
-   (quote
-	("../includes/" "/usr/include/" "/usr/include/libxl/")))
- '(flycheck-clang-includes (quote ("../includes/" "/usr/include/")))
- '(flycheck-gcc-include-path
-   (quote
-	("../includes/" "/usr/include/" "/usr/include/libxl/")))
- '(package-selected-packages
-   (quote
-	(js2-mode pg nyan-mode smooth-scrolling smartscan json-mode auto-complete company-irony flycheck-irony irony-eldoc irony flycheck company use-package))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(highlight ((t (:background "gray19")))))
-(put 'narrow-to-region 'disabled nil)
+;;----------------------------------------------------------------------------
+;; Bootstrap config
+;;----------------------------------------------------------------------------
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(require 'init-utils)
+(require 'init-elpa)      ;; Machinery for installing required packages
