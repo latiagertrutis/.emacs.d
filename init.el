@@ -41,3 +41,4 @@
 
 (require 'init-themes)
 (require 'init-helm)
+(require 'init-projectile)
