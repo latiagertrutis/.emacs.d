@@ -34,6 +34,10 @@
              (("M-x" . helm-M-x)
               ("C-x C-f" . helm-find-files)
               ("C-x b" . helm-buffers-list)
-              ("C-c h" . helm-command-prefix)))
+              ("C-c h" . helm-command-prefix)
+              (:map helm-map
+                    ("<tab>" . helm-execute-persistent-action)
+                    ("C-i" . helm-execute-persistent-action)
+                    ("C-z" . helm-select-action))))
 
 (provide 'init-helm)
