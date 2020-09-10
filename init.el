@@ -42,3 +42,8 @@
 (require 'init-themes)
 (require 'init-helm)
 (require 'init-projectile)
+(require 'init-windows)
+(require 'init-local)
+(require 'init-editing-utils)
+(require 'init-gui-frames)
+(require 'init-etags)

@@ -9,8 +9,15 @@
 (use-package projectile
              :ensure t
              :ensure helm-projectile
+             :ensure ibuffer-projectile
              :config
              (projectile-mode +1)
+             (setq projectile-indexing-method 'alien
+                   projectile-project-root-files #'(".projectile")
+                   projectile-project-root-files-functions #'(projectile-root-top-down
+                                                              projectile-root-top-down-recurring
+                                                              projectile-root-bottom-up
+                                                              projectile-root-local))
              :bind
              (:map projectile-mode-map
                    ("s-p" . projectile-command-map)
