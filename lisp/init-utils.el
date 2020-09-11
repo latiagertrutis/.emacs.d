@@ -160,6 +160,12 @@ for the current buffer's file name, and the line number at point."
     (kill-new $reference))
   )
 
+;;----------------------------------------------------------------------------
+;; Toggle case sensitive
+;;----------------------------------------------------------------------------
+(defun toggle-case-search ()
+  (interactive)
+  (setq case-fold-search (not case-fold-search)))
 
 (provide 'init-utils)
 ;;; init-utils.el ends here
