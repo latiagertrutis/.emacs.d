@@ -47,3 +47,4 @@
 (require 'init-editing-utils)
 (require 'init-gui-frames)
 (require 'init-etags)
+(require 'init-markdown)

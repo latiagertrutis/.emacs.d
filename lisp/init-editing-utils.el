@@ -6,6 +6,11 @@
 ;;Created: Thu Sep 10 15:43:58 2020 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(use-package smooth-scrolling
+             :ensure t
+             :config
+             (smooth-scrolling-mode 1))
+
 (use-package diminish
              :ensure t)
 
