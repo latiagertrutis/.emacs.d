@@ -48,3 +48,5 @@
 (require 'init-gui-frames)
 (require 'init-etags)
 (require 'init-markdown)
+(require 'init-grep)
+(require 'init-isearch)
