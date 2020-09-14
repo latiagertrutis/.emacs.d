@@ -50,3 +50,6 @@
 (require 'init-markdown)
 (require 'init-grep)
 (require 'init-isearch)
+(require 'init-flycheck)
+(require 'init-ggtags)
+(require 'init-company)
