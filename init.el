@@ -53,3 +53,4 @@
 (require 'init-flycheck)
 (require 'init-ggtags)
 (require 'init-company)
+(require 'init-header)
