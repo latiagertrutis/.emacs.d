@@ -11,9 +11,9 @@
 ;; Created: Tue Aug  4 17:06:46 1987
 ;; Version: 0
 ;; Package-Requires: ()
-;; Last-Updated: Wed Aug 14 07:18:29 2019 (-0700)
-;;           By: dradams
-;;     Update #: 2022
+;; Last-Updated: ma. sep. 29 18:27:21 2020 (+0200)
+;;           By: M0117131
+;;     Update #: 2032
 ;; URL: https://www.emacswiki.org/emacs/download/header2.el
 ;; Doc URL: https://emacswiki.org/emacs/AutomaticFileHeaders
 ;; Keywords: tools, docs, maint, abbrev, local
@@ -77,7 +77,7 @@
 ;; file, put this in your init file (~/.emacs):
 ;;
 ;;   (autoload 'auto-update-file-header "header2")
-;;   (add-hook 'write-file-hooks 'auto-update-file-header)
+  (add-hook 'before-save-hook 'auto-update-file-header)
 ;;
 ;; To have Emacs add a file header whenever you create a new file in
 ;; some mode, put this in your init file (~/.emacs):
@@ -415,15 +415,13 @@ t means use local time with timezone; nil means use UTC."
 ;; copyright is not the first information people are looking for.  Otherwise, this
 ;; default value corresponds to what the Elisp manual recommends for Emacs Lisp.
 (defcustom make-header-hook '(
-                              make-divider
+                              my-make-box-comment
                               header-file-name
                               header-description
                               header-author
                               header-maintainer
                               header-creation-date
-                              ;; header-modification-date
-                              header-end-line
-                              header-code
+                              header-modification-date
                               header-eof
                               )
   "*Functions that insert header elements.
@@ -940,6 +938,30 @@ returned by function `header-prefix-string'."
   (save-excursion
     (insert
      (concat "\n"
+             (header-prefix-string)
+             (make-string (max 2 (- end-col (length comment-end) (current-column)))
+                          (aref comment-start (if (= 1 (length comment-start)) 0 1)))
+             comment-end
+             "\n"))))
+
+;;;###autoload
+(defun my-make-box-comment (&optional end-col)
+  "Insert an empty (mode dependent) box comment.
+The maxium width is `fill-column', by default.  With a numeric prefix
+arg, use that as the maximum width, except use at least 2 + the length
+returned by function `header-prefix-string'."
+  (interactive "P")
+  (setq end-col  (if end-col (prefix-numeric-value end-col) fill-column))
+  (unless (= 0 (current-column)) (forward-line 1))
+  (insert (concat comment-start))
+  (when (= 1 (length comment-start)) (insert comment-start))
+  (unless (char-equal (preceding-char) ?\  ) (insert ?\  ))
+  (insert (concat (make-string (max 2 (- end-col (length comment-end) (current-column)))
+                               (aref comment-start (if (= 1 (length comment-start)) 0 1))))
+          "\n")
+  (save-excursion
+    (insert
+     (concat 
              (header-prefix-string)
              (make-string (max 2 (- end-col (length comment-end) (current-column)))
                           (aref comment-start (if (= 1 (length comment-start)) 0 1)))
