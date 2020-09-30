@@ -11,6 +11,8 @@
 (global-hl-line-mode +1)
 (setq-default cursor-type 'bar)
 
+(setq user-full-name "Mateo Rodriguez Ripolles (teorodrip@posteo.net)")
+
 ;; Custom faces
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
