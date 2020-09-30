@@ -11,9 +11,9 @@
 ;; Created: Tue Aug  4 17:06:46 1987
 ;; Version: 0
 ;; Package-Requires: ()
-;; Last-Updated: ma. sep. 29 18:27:21 2020 (+0200)
+;; Last-Updated: mi. sep. 30 09:48:16 2020 (+0200)
 ;;           By: M0117131
-;;     Update #: 2032
+;;     Update #: 2034
 ;; URL: https://www.emacswiki.org/emacs/download/header2.el
 ;; Doc URL: https://emacswiki.org/emacs/AutomaticFileHeaders
 ;; Keywords: tools, docs, maint, abbrev, local
@@ -77,7 +77,7 @@
 ;; file, put this in your init file (~/.emacs):
 ;;
 ;;   (autoload 'auto-update-file-header "header2")
-  (add-hook 'before-save-hook 'auto-update-file-header)
+(add-hook 'before-save-hook 'auto-update-file-header)
 ;;
 ;; To have Emacs add a file header whenever you create a new file in
 ;; some mode, put this in your init file (~/.emacs):
@@ -355,8 +355,8 @@
 ;;; Code:
 
 (require 'lib-requires nil t)
-  ;; (no error if not found):
-  ;; libreq-insert-lib-requires-as-comment, libreq-file-header
+;; (no error if not found):
+;; libreq-insert-lib-requires-as-comment, libreq-file-header
 
 ;;;;;;;;;;;;;;;;;;;;;;
 
@@ -368,7 +368,7 @@
 (defvar c-style)
 (defvar explicit-shell-file-name)
 (defvar libreq-file-header)
- 
+
 ;; User Options (Variables) --------------------------------
 
 (defgroup Automatic-File-Header nil
@@ -376,16 +376,16 @@
   :group 'files :group 'editing :group 'convenience :group 'programming
   :group 'development
   :link `(url-link :tag "Send Bug Report"
-          ,(concat "mailto:" "drew.adams" "@" "oracle" ".com?subject=\
+                   ,(concat "mailto:" "drew.adams" "@" "oracle" ".com?subject=\
 header2.el bug: \
 &body=Describe bug here, starting with `emacs -q'.  \
 Don't forget to mention your Emacs and library versions."))
   :link '(url-link :tag "Other Libraries by Drew"
-          "https://www.emacswiki.org/emacs/DrewsElispLibraries")
+                   "https://www.emacswiki.org/emacs/DrewsElispLibraries")
   :link '(url-link :tag "Download"
-          "https://www.emacswiki.org/emacs/download/header2.el")
+                   "https://www.emacswiki.org/emacs/download/header2.el")
   :link '(url-link :tag "Description"
-          "https://www.emacswiki.org/emacs/AutomaticFileHeaders#header2")
+                   "https://www.emacswiki.org/emacs/AutomaticFileHeaders#header2")
   :link '(emacs-commentary-link :tag "Commentary" "header2")
   )
 
@@ -395,8 +395,8 @@ Don't forget to mention your Emacs and library versions."))
 
 (defcustom header-copyright-notice nil
   "*Copyright notice to be inserted into file headers."
-    :type '(choice (const :tag "No copyright notice (value nil)" nil) string)
-    :group 'Automatic-File-Header)
+  :type '(choice (const :tag "No copyright notice (value nil)" nil) string)
+  :group 'Automatic-File-Header)
 
 (defcustom header-date-format t
   "*Date/time format for header timestamp.
@@ -467,7 +467,7 @@ along with GNU Emacs.  If not, see <https://www.gnu.org/licenses/>."
 (defcustom make-box-comment-region-replace-prefix-flag nil
   "Non-nil means remove any comment prefix from lines, before boxing."
   :type 'boolean :group 'Automatic-File-Header)
- 
+
 ;;; Internal variables -------------------------------------
 
 (defvar header-auto-update-enabled t
@@ -492,7 +492,7 @@ the function to call if the string is found near the start of the file.")
 
 (defvar header-prefix-string ""
   "Mode-specific comment prefix string for use in headers.")
- 
+
 ;;; Functions ----------------------------------------------
 
 (defsubst nonempty-comment-start ()
@@ -699,8 +699,8 @@ This is normally overwritten with each file save."
 (defsubst header-rcs-log ()
   "Insert lines to record RCS log information (\"$Log$\n\")."
   (insert (concat header-prefix-string
-                   "RCS $"  ; String split prevents `vc.el' overwrite.
-                   "Log$\n")))           ; Thanks to Steve Taylor.
+                  "RCS $"  ; String split prevents `vc.el' overwrite.
+                  "Log$\n")))           ; Thanks to Steve Taylor.
 
 (defsubst header-AFS ()
   "Insert a line to record SHAPE information."
@@ -961,9 +961,7 @@ returned by function `header-prefix-string'."
           "\n")
   (save-excursion
     (insert
-     (concat 
-             (header-prefix-string)
-             (make-string (max 2 (- end-col (length comment-end) (current-column)))
+     (concat (make-string (max 2 (- end-col (length comment-end) (current-column)))
                           (aref comment-start (if (= 1 (length comment-start)) 0 1)))
              comment-end
              "\n"))))
@@ -1171,82 +1169,82 @@ result of `update-lib-requires'."
 ;; customizations to startup.el to allow command-line-hooks.
 ;; ---------------------------------------------------------------
 ;;;(setq command-line-hooks  (cons 'touch-headers command-line-hooks))
-;(defun touch-headers ()
-;  (if (or (string= argi "-touch")  (string= argi "-touch-headers"))
-;      (let ((trim-versions-without-asking  t)
-;            ;; Next line should have a Control-G char, not a space, before `true'.
-;            (executing-macro " true"));; suppress "Mark Set" messages
-;        ;; Consume all following arguments until one starts with a "-"
-;        (while (and command-line-args-left
-;                    (not (char-equal ?- (aref (car command-line-args-left) 0))))
-;          (if (headerable-file-p (car command-line-args-left))
-;              (progn
-;                (set-buffer (find-file-noselect (car command-line-args-left)))
-;                (make-revision)
-;                (write-file nil)
-;                (kill-buffer (current-buffer))))
-;          (setq command-line-args-left  (cdr command-line-args-left))))))
+                                        ;(defun touch-headers ()
+                                        ;  (if (or (string= argi "-touch")  (string= argi "-touch-headers"))
+                                        ;      (let ((trim-versions-without-asking  t)
+                                        ;            ;; Next line should have a Control-G char, not a space, before `true'.
+                                        ;            (executing-macro " true"));; suppress "Mark Set" messages
+                                        ;        ;; Consume all following arguments until one starts with a "-"
+                                        ;        (while (and command-line-args-left
+                                        ;                    (not (char-equal ?- (aref (car command-line-args-left) 0))))
+                                        ;          (if (headerable-file-p (car command-line-args-left))
+                                        ;              (progn
+                                        ;                (set-buffer (find-file-noselect (car command-line-args-left)))
+                                        ;                (make-revision)
+                                        ;                (write-file nil)
+                                        ;                (kill-buffer (current-buffer))))
+                                        ;          (setq command-line-args-left  (cdr command-line-args-left))))))
 
 
 ;; Define a make-headers command line option.
 ;; ------------------------------------------
 ;;;(setq command-line-hooks  (cons 'make-headers command-line-hooks))
-;(defun make-headers ()
-;  (if (or (string= argi "-make-headers")  (string= argi "-make"))
-;      (let ((trim-versions-without-asking  t)
-;            ;; Next line should have a Control-G char, not a space, before `true'.
-;            (executing-macro " true"));; suppress "Mark Set" messages
-;        ;; Consume all following arguments until one starts with a "-"
-;        (while (and command-line-args-left
-;                    (not (char-equal ?- (aref (car command-line-args-left) 0))))
+                                        ;(defun make-headers ()
+                                        ;  (if (or (string= argi "-make-headers")  (string= argi "-make"))
+                                        ;      (let ((trim-versions-without-asking  t)
+                                        ;            ;; Next line should have a Control-G char, not a space, before `true'.
+                                        ;            (executing-macro " true"));; suppress "Mark Set" messages
+                                        ;        ;; Consume all following arguments until one starts with a "-"
+                                        ;        (while (and command-line-args-left
+                                        ;                    (not (char-equal ?- (aref (car command-line-args-left) 0))))
 
-;          (if (headerable-file-p (car command-line-args-left))
-;              (progn
-;                (set-buffer (find-file-noselect (car command-line-args-left)))
-;                (if header-required-mode
-;                    (funcall header-required-mode))
-;                (make-header)
-;                (write-file nil)
-;                (message "  Mode was %s" major-mode)
-;                (kill-buffer (current-buffer))))
-;          (setq command-line-args-left  (cdr command-line-args-left))))))
+                                        ;          (if (headerable-file-p (car command-line-args-left))
+                                        ;              (progn
+                                        ;                (set-buffer (find-file-noselect (car command-line-args-left)))
+                                        ;                (if header-required-mode
+                                        ;                    (funcall header-required-mode))
+                                        ;                (make-header)
+                                        ;                (write-file nil)
+                                        ;                (message "  Mode was %s" major-mode)
+                                        ;                (kill-buffer (current-buffer))))
+                                        ;          (setq command-line-args-left  (cdr command-line-args-left))))))
 
 ;; Define a -default-mode command line option.
 ;; -------------------------------------------
 ;;;(setq command-line-hooks  (cons 'set-header-mode command-line-hooks))
-;(defun set-header-mode ()
-;  (if (or (string= argi "-default-mode")  (string= argi "-default"))
-;      (let ((trim-versions-without-asking  t)
-;            ;; Next line should have a Control-G char, not a space, before `true'.
-;            (executing-macro " true");; suppress "Mark Set" messages
-;            (mode (intern (car command-line-args-left))))
-;        (if (memq mode (mapcar 'cdr auto-mode-alist))
-;            (progn
-;              (setq default-major-mode  mode)
-;              (message "Default mode is %s" default-major-mode)
-;              (setq command-line-args-left  (cdr command-line-args-left)))
-;          (message "Mode \"%s\" is invalid.  Try one of %s" mode
-;                   (uniquify-list (mapcar 'cdr auto-mode-alist)))
-;          (kill-emacs 1)))))
+                                        ;(defun set-header-mode ()
+                                        ;  (if (or (string= argi "-default-mode")  (string= argi "-default"))
+                                        ;      (let ((trim-versions-without-asking  t)
+                                        ;            ;; Next line should have a Control-G char, not a space, before `true'.
+                                        ;            (executing-macro " true");; suppress "Mark Set" messages
+                                        ;            (mode (intern (car command-line-args-left))))
+                                        ;        (if (memq mode (mapcar 'cdr auto-mode-alist))
+                                        ;            (progn
+                                        ;              (setq default-major-mode  mode)
+                                        ;              (message "Default mode is %s" default-major-mode)
+                                        ;              (setq command-line-args-left  (cdr command-line-args-left)))
+                                        ;          (message "Mode \"%s\" is invalid.  Try one of %s" mode
+                                        ;                   (uniquify-list (mapcar 'cdr auto-mode-alist)))
+                                        ;          (kill-emacs 1)))))
 
 
 ;; Define a -required-mode command line option.
 ;; --------------------------------------------
 ;;;(setq command-line-hooks  (cons 'set-header-required-mode command-line-hooks))
-;(defun set-header-required-mode ()
-;  (if (or (string= argi "-required-mode")  (string= argi "-mode"))
-;      (let ((trim-versions-without-asking  t)
-;            ;; Next line should have a Control-G, not a space, char before `true'.
-;            (executing-macro " true");; suppress "Mark Set" messages
-;            (mode (intern (car command-line-args-left))))
-;        (if (memq mode (mapcar 'cdr auto-mode-alist))
-;            (progn
-;              (setq header-required-mode  mode)
-;              (message "Required mode is %s" header-required-mode)
-;              (setq command-line-args-left  (cdr command-line-args-left)))
-;          (message "Mode \"%s\" is invalid.  Try one of %s" mode
-;                   (uniquify-list (mapcar 'cdr auto-mode-alist)))
-;          (kill-emacs 1)))))
+                                        ;(defun set-header-required-mode ()
+                                        ;  (if (or (string= argi "-required-mode")  (string= argi "-mode"))
+                                        ;      (let ((trim-versions-without-asking  t)
+                                        ;            ;; Next line should have a Control-G, not a space, char before `true'.
+                                        ;            (executing-macro " true");; suppress "Mark Set" messages
+                                        ;            (mode (intern (car command-line-args-left))))
+                                        ;        (if (memq mode (mapcar 'cdr auto-mode-alist))
+                                        ;            (progn
+                                        ;              (setq header-required-mode  mode)
+                                        ;              (message "Required mode is %s" header-required-mode)
+                                        ;              (setq command-line-args-left  (cdr command-line-args-left)))
+                                        ;          (message "Mode \"%s\" is invalid.  Try one of %s" mode
+                                        ;                   (uniquify-list (mapcar 'cdr auto-mode-alist)))
+                                        ;          (kill-emacs 1)))))
 
 
 ;; Things in the works or still to do.
