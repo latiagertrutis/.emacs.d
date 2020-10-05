@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: Mon Oct  5 09:35:50 2020 (+0200)
+;; Last-Updated: Mon Oct  5 12:59:04 2020 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package lsp-mode
@@ -19,7 +19,9 @@
 (use-package lsp-ui
   :ensure t
   :hook
-  (lsp-mode .lsp-ui-mode)
+  (lsp-mode . lsp-ui-mode)
+  :bind
+  ("C-c l" . lsp-ui-doc-mode)
   :config
   (define-key lsp-ui-mode-map
     [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
