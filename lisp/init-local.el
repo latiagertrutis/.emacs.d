@@ -11,6 +11,9 @@
 (global-hl-line-mode +1)
 (setq-default cursor-type 'bar)
 
+;; Save session
+(desktop-save-mode 1)
+
 (setq user-full-name "Mateo Rodriguez Ripolles (teorodrip@posteo.net)")
 
 ;; Custom faces

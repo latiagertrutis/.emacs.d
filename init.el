@@ -53,4 +53,7 @@
 (require 'init-flycheck)
 (require 'init-ggtags)
 (require 'init-company)
+(require 'init-go)
+(require 'init-lsp)
+(require 'init-git)
 (require 'init-header)
