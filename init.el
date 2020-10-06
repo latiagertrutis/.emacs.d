@@ -56,4 +56,5 @@
 (require 'init-go)
 (require 'init-lsp)
 (require 'init-git)
+(require 'init-org)
 (require 'init-header)
