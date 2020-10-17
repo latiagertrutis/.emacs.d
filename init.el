@@ -57,4 +57,5 @@
 (require 'init-lsp)
 (require 'init-git)
 (require 'init-org)
+(require 'init-powerline)
 (require 'init-header)
