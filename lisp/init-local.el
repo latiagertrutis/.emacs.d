@@ -9,6 +9,7 @@
 (require 'bind-key)
 
 (global-hl-line-mode +1)
+(menu-bar-mode -1)
 (setq-default cursor-type 'bar)
 
 ;; Save session
