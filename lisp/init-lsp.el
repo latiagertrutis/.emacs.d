@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: Mon Oct  5 12:59:04 2020 (+0200)
+;; Last-Updated: Wed Oct 28 16:13:39 2020 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package lsp-mode
@@ -14,7 +14,7 @@
   (use-package company-lsp
     :ensure t
     :config
-    (add-to-list 'company-backends 'company-lsp)))
+    (add-to-list 'company-backends 'company-capf)))
 
 (use-package lsp-ui
   :ensure t
