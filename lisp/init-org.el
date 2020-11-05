@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Tue Oct  6 09:50:41 2020 (+0200)
-;; Last-Updated: Tue Oct  6 09:53:45 2020 (+0200)
+;; Last-Updated: Thu Nov  5 18:19:33 2020 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Function to determine work time
@@ -50,6 +50,9 @@ Each day counts with WORKTIME-PER-DAY hours."
             "   |---+---------+--------+-------|\n"
             "   |   |         |        |       |\n"
             "   #+TBLFM: $4=dateDiffToHMS($3,$2,8)::@>$>=vsum(@I$>..@II$>)\n")))
+
+;; Show whole lines in buffer
+(add-hook 'org-mode-hook #'visual-line-mode)
 
 (provide 'init-org)
 
