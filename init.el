@@ -58,4 +58,5 @@
 (require 'init-git)
 (require 'init-org)
 (require 'init-powerline)
+(require 'init-yaml)
 (require 'init-header)
