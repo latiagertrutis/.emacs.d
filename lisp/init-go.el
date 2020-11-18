@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:28:53 2020 (+0200)
-;; Last-Updated: Mon Oct  5 12:18:32 2020 (+0200)
+;; Last-Updated: Wed Nov 18 10:41:30 2020 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package go-mode
@@ -26,7 +26,11 @@
 			     (setq tab-width 4)))
   (add-hook 'go-mode-hook (lambda ()
 			    (set (make-local-variable 'company-backends) '(company-go))
-			    (company-mode))))
+			    (company-mode)))
+  (add-hook 'go-mode-hook (lambda ()
+                            (if (not (string-match "go" compile-command))
+                                (set (make-local-variable 'compile-command)
+                                     "go build -v")))))
 
 (provide 'init-go)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
