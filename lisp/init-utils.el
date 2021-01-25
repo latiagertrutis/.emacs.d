@@ -12,6 +12,17 @@
 
 
 ;;----------------------------------------------------------------------------
+;; Ztree
+;;----------------------------------------------------------------------------
+
+(use-package ztree
+  :ensure t
+  :custom-face
+  (ztreep-diff-model-add-face ((nil(:foreground "chartreuse"))))
+  (ztreep-diff-model-diff-face ((nil(:foreground "coral"))))
+  (ztreep-diff-model-normal-face ((nil(:foreground "gainsboro")))))
+
+;;----------------------------------------------------------------------------
 ;; Handier way to add modes to auto-mode-alist
 ;;----------------------------------------------------------------------------
 (defun add-auto-mode (mode &rest patterns)
