@@ -4,12 +4,15 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: Wed Oct 28 16:13:39 2020 (+0100)
+;; Last-Updated: Thu Jan 28 12:35:53 2021 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package lsp-mode
   :ensure t
   :commands (lsp)
+  :hook
+  (go-mode . lsp)
+  (c-mode . lsp)
   :config
   (use-package company-lsp
     :ensure t
@@ -18,6 +21,7 @@
 
 (use-package lsp-ui
   :ensure t
+  :commands (lsp-ui-mode)
   :hook
   (lsp-mode . lsp-ui-mode)
   :bind

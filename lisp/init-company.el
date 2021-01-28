@@ -8,11 +8,7 @@
 
 (use-package company
              :ensure t
-             :hook
-             (after-init . global-company-mode)
              :config
-             (add-hook 'c-mode-common-hook
-                       (lambda ()
-                         (define-key c-mode-base-map [(tab)] 'company-complete))))
+             (global-company-mode 1))
 
 (provide 'init-company)

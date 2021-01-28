@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:28:53 2020 (+0200)
-;; Last-Updated: Wed Nov 18 10:41:30 2020 (+0100)
+;; Last-Updated: Thu Jan 28 11:29:24 2021 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package go-mode
@@ -13,10 +13,8 @@
   ; Use goimports instead of go-fmt
   (setq gofmt-command "goimports")
   (flycheck-mode)
-  (add-hook 'go-mode-hook 'company-mode)
   ;; Call Gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save)
-  (add-hook 'go-mode-hook #'lsp)
   (add-hook 'go-mode-hook #'flycheck-mode)
   (add-hook 'go-mode-hook '(lambda ()
 			     (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
