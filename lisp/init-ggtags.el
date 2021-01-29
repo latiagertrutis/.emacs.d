@@ -34,6 +34,9 @@
              (:map helm-gtags-mode-map
                    ("C-c g a" . helm-gtags-tags-in-this-function)
                    ("C-j" . helm-gtags-select)
+                   ("M-]" . helm-gtags-find-rtag)
+                   ("M-[" . helm-gtags-find-tag)
+                   ("C-c f" . helm-gtags-parse-file)
                    ("M-." . helm-gtags-dwim)
                    ("M-," . helm-gtags-pop-stack)
                    ("C-c <" . helm-gtags-previous-history)
