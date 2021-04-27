@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:28:53 2020 (+0200)
-;; Last-Updated: Thu Jan 28 11:29:24 2021 (+0100)
+;; Last-Updated: Tue Apr 27 14:07:10 2021 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package go-mode
@@ -16,6 +16,7 @@
   ;; Call Gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save)
   (add-hook 'go-mode-hook #'flycheck-mode)
+  (add-hook 'go-mode-hook #'yas-minor-mode)
   (add-hook 'go-mode-hook '(lambda ()
 			     (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
   (add-hook 'go-mode-hook '(lambda ()
