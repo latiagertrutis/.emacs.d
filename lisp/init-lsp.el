@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: Thu Jan 28 12:35:53 2021 (+0100)
+;; Last-Updated: Tue May 18 09:15:31 2021 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package lsp-mode
@@ -12,12 +12,7 @@
   :commands (lsp)
   :hook
   (go-mode . lsp)
-  (c-mode . lsp)
-  :config
-  (use-package company-lsp
-    :ensure t
-    :config
-    (add-to-list 'company-backends 'company-capf)))
+  (c-mode . lsp))
 
 (use-package lsp-ui
   :ensure t
