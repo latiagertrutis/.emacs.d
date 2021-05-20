@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Thu Jan 28 11:12:29 2021 (+0100)
-;; Last-Updated: Mon Feb  8 12:56:39 2021 (+0100)
+;; Last-Updated: Thu May 20 12:10:05 2021 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Insal ccls (language server) client for emacs
@@ -20,6 +20,8 @@
 (defun c-mode-delete-trailing-whitespace ()
   (when (derived-mode-p 'c-mode)
     (delete-trailing-whitespace)))
+
+(add-hook 'c-mode-hook 'flycheck-mode)
 
 (add-hook 'before-save-hook 'c-mode-delete-trailing-whitespace)
 
