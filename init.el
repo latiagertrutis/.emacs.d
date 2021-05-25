@@ -60,6 +60,7 @@
 (require 'init-org)
 (require 'init-powerline)
 (require 'init-yaml)
+(require 'init-treemacs)
 (require 'init-web)
 (require 'init-js)
 (require 'init-header)

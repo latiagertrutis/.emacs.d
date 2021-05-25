@@ -185,4 +185,12 @@ for the current buffer's file name, and the line number at point."
   (setq case-fold-search (not case-fold-search)))
 
 (provide 'init-utils)
+
+;;----------------------------------------------------------------------------
+;; Better grep
+;;----------------------------------------------------------------------------
+
+(use-package rg
+  :ensure t)
+
 ;;; init-utils.el ends here
