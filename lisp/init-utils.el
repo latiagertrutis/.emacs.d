@@ -184,13 +184,20 @@ for the current buffer's file name, and the line number at point."
   (interactive)
   (setq case-fold-search (not case-fold-search)))
 
-(provide 'init-utils)
-
 ;;----------------------------------------------------------------------------
 ;; Better grep
 ;;----------------------------------------------------------------------------
-
 (use-package rg
   :ensure t)
 
+;;----------------------------------------------------------------------------
+;; plantuml
+;;----------------------------------------------------------------------------
+(use-package plantuml-mode
+  :ensure t
+  :config
+  (setq plantuml-jar-path (expand-file-name "~/.emacs.d/resources/plantuml.jar"))
+  (setq plantuml-default-exec-mode 'jar))
+
+(provide 'init-utils)
 ;;; init-utils.el ends here
