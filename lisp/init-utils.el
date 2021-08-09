@@ -191,6 +191,15 @@ for the current buffer's file name, and the line number at point."
 ;;----------------------------------------------------------------------------
 
 (use-package rg
-  :ensure t)
+  :ensure t
+  :config
+  (rg-define-search rg-c-mode
+    "Search files in a C project"
+    :dir (projectile-project-root)
+    :files "*.{c, h, C, H}"))
+
+(use-package deadgrep
+  :ensure t
+  )
 
 ;;; init-utils.el ends here

@@ -18,6 +18,8 @@
                                                               projectile-root-top-down-recurring
                                                               projectile-root-bottom-up
                                                               projectile-root-local))
+             (projectile-register-project-type 'c '(".cproject")
+                                               :project-file ".cproject")
              :bind
              (:map projectile-mode-map
                    ("s-p" . projectile-command-map)
