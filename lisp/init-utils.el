@@ -193,7 +193,7 @@ for the current buffer's file name, and the line number at point."
   (rg-define-search rg-c-mode
     "Search files in a C project"
     :dir (projectile-project-root)
-    :files "*.{c, h, C, H}")
+    :files "*.[chCH]")
   :bind ("C-c r" . rg-c-mode)
   )
 (use-package deadgrep
