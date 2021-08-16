@@ -47,7 +47,7 @@ This is to update existing buffers after a Git pull of their underlying files."
           (buffer-list))))
 
 ;;default font
-(add-to-list 'default-frame-alist '(font . "Free Mono 12"))
+(add-to-list 'default-frame-alist '(font . "mononoki 12"))
 
 ;;deleteword without add to kill ring
 (defun my-delete-word (arg)
