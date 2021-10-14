@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: Thu Oct 14 13:36:33 2021 (+0200)
+;; Last-Updated: jue oct 14 13:22:09 2021 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: rememeber to use either compile_commands.json or compile_flags.txt
@@ -22,6 +22,7 @@
   :commands (lsp-ui-mode)
   :hook
   (lsp-mode . lsp-ui-mode)
+  (lsp-mode . yas-minor-mode)
   :bind
   ("C-c l" . lsp-ui-doc-mode)
   :config
