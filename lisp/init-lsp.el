@@ -4,8 +4,11 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: Tue May 18 09:15:31 2021 (+0200)
+;; Last-Updated: Thu Oct 14 13:36:33 2021 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; NOTE: rememeber to use either compile_commands.json or compile_flags.txt
+;; in the C projects in order to find the includes
 
 (use-package lsp-mode
   :ensure t
