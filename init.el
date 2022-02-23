@@ -64,3 +64,4 @@
 (require 'init-web)
 (require 'init-js)
 (require 'init-header)
+(require 'init-eshell)
