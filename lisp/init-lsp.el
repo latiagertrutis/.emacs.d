@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: jue oct 14 13:22:09 2021 (+0200)
+;; Last-Updated: mar mar  1 19:02:55 2022 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: rememeber to use either compile_commands.json or compile_flags.txt
@@ -15,7 +15,10 @@
   :commands (lsp)
   :hook
   (go-mode . lsp)
-  (c-mode . lsp))
+  (c-mode . lsp)
+  :bind
+  ("M-g r" . lsp-find-references)
+  ("M-g d" . lsp-find-definition))
 
 (use-package lsp-ui
   :ensure t
@@ -23,15 +26,14 @@
   :hook
   (lsp-mode . lsp-ui-mode)
   (lsp-mode . yas-minor-mode)
+  (lsp-ui-mode . lsp-ui-doc-mode)
   :bind
   ("C-c l" . lsp-ui-doc-mode)
   :config
-  (define-key lsp-ui-mode-map
-    [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-  (define-key lsp-ui-mode-map
-    [remap xref-find-references] #'lsp-ui-peek-find-references)
   (setq lsp-ui-sideline-enable nil
         lsp-ui-doc-enable t
+        lsp-ui-doc-show-with-cursor t
+        lsp-ui-doc-show-with-mouse nil
         lsp-ui-flycheck-enable nil
         lsp-ui-imenu-enable t
 	lsp-ui-sideline-ignore-duplicate t))

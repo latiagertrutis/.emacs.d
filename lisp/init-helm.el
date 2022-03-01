@@ -41,4 +41,7 @@
          ("C-i" . helm-execute-persistent-action)
          ("C-z" . helm-select-action))))
 
+(use-package helm-xref
+  :ensure t)
+
 (provide 'init-helm)
