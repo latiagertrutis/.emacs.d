@@ -4,10 +4,11 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: mar mar  1 19:02:55 2022 (+0100)
+;; Last-Updated: mié mar  2 13:32:51 2022 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; NOTE: rememeber to use either compile_commands.json or compile_flags.txt
+;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
+;; compile_commands.json can be generated with the Bear tool: https://github.com/rizsotto/Bear
 ;; in the C projects in order to find the includes
 
 (use-package lsp-mode
@@ -18,7 +19,9 @@
   (c-mode . lsp)
   :bind
   ("M-g r" . lsp-find-references)
-  ("M-g d" . lsp-find-definition))
+  ("M-g d" . lsp-find-definition)
+  :config
+  (setq lsp-clients-clangd-args '("--background-index")))
 
 (use-package lsp-ui
   :ensure t
