@@ -9,7 +9,7 @@
 (use-package helm
   :ensure t
   :config
-  (setq helm-split-window-in-side-p           nil ; open helm buffer inside current window, not occupy whole other window
+  (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
         helm-move-to-line-cycle-in-source     nil ; move to end or beginning of source when reaching top or bottom of source.
         helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
         helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
@@ -27,6 +27,7 @@
         helm-semantic-fuzzy-match             t)
 
   ;; (setq helm-autoresize-max-height 0)
+  (setq helm-show-completion-display-function #'helm-show-completion-default-display-function)
   (setq helm-autoresize-min-height 30)
   (setq helm-boring-buffer-regexp-list '("\\` " "\\`\\*helm" "\\`\\*Echo Area" "\\`\\*Minibuf" "\\*lsp-log" "\\*clangd" "\\*projectile" "magit:"))
   (helm-autoresize-mode 1)
