@@ -38,7 +38,7 @@
    ("C-x b" . helm-buffers-list)
    ("C-c h" . helm-command-prefix)
    (:map helm-map
-         ("<tab>" . helm-next-line)
+         ;; ("<tab>" . helm-execute-persistent-action)
          ("C-i" . helm-execute-persistent-action)
          ("C-z" . helm-select-action))))
 
