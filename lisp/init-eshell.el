@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mié feb 23 16:14:27 2022 (+0100)
-;; Last-Updated: jue mar  3 17:35:13 2022 (+0100)
+;; Last-Updated: lun mar 14 12:08:31 2022 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package eshell-prompt-extras
@@ -18,11 +18,8 @@
 ;; https://github.com/emacs-helm/helm/wiki/Eshell#completion
 (add-hook 'eshell-mode-hook
           (lambda ()
-            (eshell-cmpl-initialize)
             (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)
-            (define-key eshell-mode-map (kbd "M-p") 'helm-eshell-history)
-            ;; Bind tab key for helm only in eshell mode
-            (local-key-binding helm-map (kbd "<tab>") 'helm-next-line)))
+            (define-key eshell-mode-map (kbd "M-p") 'helm-eshell-history)))
 
 ;; Alias definition
 (defalias 'o 'find-file)
