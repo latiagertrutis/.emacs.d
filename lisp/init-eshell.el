@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mié feb 23 16:14:27 2022 (+0100)
-;; Last-Updated: lun mar 14 12:08:31 2022 (+0100)
+;; Last-Updated: lun mar 14 12:17:58 2022 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package eshell-prompt-extras
@@ -12,7 +12,8 @@
   :config
   (autoload 'epe-theme-lambda "eshell-prompt-extras")
   (setq eshell-highlight-prompt nil
-        eshell-prompt-function 'epe-theme-multiline-with-status))
+        eshell-prompt-function 'epe-theme-multiline-with-status
+        helm-eshell-fuzzy-match t))
 
 ;; Add Helm support to eshell complete:
 ;; https://github.com/emacs-helm/helm/wiki/Eshell#completion
