@@ -73,7 +73,11 @@ This command does not push text to `kill-ring'."
 
 ;; get rid of backup files
 ;; Don't clutter up directories with files~
-(setq dotfiles-dir "~/.emacs.d/dotfiles/")
+(setq dotfiles-dir (expand-file-name "dotfiles" user-emacs-directory))
+
+(unless (file-directory-p dotfiles-dir)
+  (make-directory dotfiles-dir))
+
 (setq backup-directory-alist `(("." . ,(expand-file-name
                                         (concat dotfiles-dir "backups")))))
 
