@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Tue Oct  6 09:50:41 2020 (+0200)
-;; Last-Updated: Thu Nov  5 18:19:33 2020 (+0100)
+;; Last-Updated: lun mar 21 13:05:41 2022 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Function to determine work time
@@ -54,6 +54,9 @@ Each day counts with WORKTIME-PER-DAY hours."
 ;; Show whole lines in buffer
 (add-hook 'org-mode-hook #'visual-line-mode)
 
+(org-babel-do-load-languages 'org-babel-load-languages '((shell . t)))
+
+(setq org-confirm-babel-evaluate nil)
 (provide 'init-org)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
