@@ -15,7 +15,7 @@
 ;; Save session
 (desktop-save-mode 1)
 
-(setq user-full-name "Mateo Rodriguez Ripolles (teorodrip@posteo.net)")
+(setq user-full-name "Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)")
 
 ;; Custom faces
 (custom-set-faces
@@ -30,7 +30,7 @@
 (defun indent-buffer ()
   "Just indent all the buffer."
   (interactive)
-  (save-excursion (indent-region (point-min) (point-max) nil)))
+  (save-excursion (astyle-region (point-min) (point-max))))
 (bind-key* "C-c i" 'indent-buffer)
 
 ;; revert all the buffers

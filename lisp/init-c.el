@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Thu Jan 28 11:12:29 2021 (+0100)
-;; Last-Updated: mar mar 29 12:32:32 2022 (+0200)
+;; Last-Updated: lun abr  4 11:48:28 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun c-mode-delete-trailing-whitespace ()
@@ -15,7 +15,7 @@
   (setq c-basic-offset 4
         tab-width 4
         indent-tabs-mode t
-        ;; lsp-enable-indentation nil
+        lsp-enable-indentation nil
         ))
 
 (add-hook 'c-mode-hook 'my-c-mode-hook)
