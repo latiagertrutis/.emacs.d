@@ -10,10 +10,12 @@
              :ensure t
              :config
              (setq-local imenu-create-index-function #'ggtags-build-imenu-index)
-             :hook
-             (c-mode-common . (lambda ()
-                                (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-                                  (ggtags-mode 1)))))
+             ;; Disable: now using lsp for c lang
+             ;; :hook
+             ;; (c-mode-common . (lambda ()
+             ;;                    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+             ;;                      (ggtags-mode 1))))
+             )
 
 (use-package helm-gtags
              :ensure t
@@ -25,11 +27,12 @@
               helm-gtags-pulse-at-cursor t
               helm-gtags-prefix-key "\C-cg"
               helm-gtags-suggested-key-mapping t)
-             :hook
-             ((dired-mode
-               eshell-mode
-               c-mode
-               asm-mode) . helm-gtags-mode)
+             ;; Disable: now using lsp for c lang
+             ;; :hook
+             ;; ((dired-mode
+             ;;   eshell-mode
+             ;;   c-mode
+             ;;   asm-mode) . helm-gtags-mode)
              :bind
              (:map helm-gtags-mode-map
                    ("C-c g a" . helm-gtags-tags-in-this-function)
