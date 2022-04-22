@@ -10,7 +10,6 @@
   ;; This is not perfect yet. It completes too quickly outside programming modes, but while programming it is just right.
   :custom
   (company-idle-delay 0.1)
-  (global-company-mode t)
   (debug-on-error nil) ;; otherwise this throws lots of errors on completion errors
   :custom-face
   (company-preview ((nil(:background "dark slate blue"))))
@@ -34,8 +33,6 @@
       'company-select-next-if-tooltip-visible-or-complete-selection)
     (define-key company-active-map (kbd "TAB")
       'company-select-next-if-tooltip-visible-or-complete-selection))
-
-  (company-ac-setup)
-  (global-company-mode 1))
+  (company-ac-setup))
 
 (provide 'init-company)
