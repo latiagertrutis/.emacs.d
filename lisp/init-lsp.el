@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: mié mar  2 13:32:51 2022 (+0100)
+;; Last-Updated: vie abr 22 11:39:43 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
@@ -29,14 +29,11 @@
   :hook
   (lsp-mode . lsp-ui-mode)
   (lsp-mode . yas-minor-mode)
-  (lsp-ui-mode . lsp-ui-doc-mode)
   :bind
   ("C-c l" . lsp-ui-doc-mode)
+  ("C-x m" . lsp-ui-imenu)
   :config
   (setq lsp-ui-sideline-enable nil
-        lsp-ui-doc-enable t
-        lsp-ui-doc-show-with-cursor t
-        lsp-ui-doc-show-with-mouse nil
         lsp-ui-flycheck-enable nil
         lsp-ui-imenu-enable t
 	lsp-ui-sideline-ignore-duplicate t))
