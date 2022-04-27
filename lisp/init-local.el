@@ -85,4 +85,9 @@ This command does not push text to `kill-ring'."
 (setq auto-save-file-name-transforms
       `((".*" ,(expand-file-name (concat dotfiles-dir "backups")))))
 
+;; Change align-current behavior to use spaces instead of tabs
+(defadvice align-current (around align-regexp-with-spaces activate)
+  (let ((indent-tabs-mode nil))
+    ad-do-it))
+
 (provide 'init-local)
