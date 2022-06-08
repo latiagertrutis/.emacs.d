@@ -284,7 +284,9 @@
 (use-package whole-line-or-region
              :ensure t
              :hook
-             (after-init . whole-line-or-region-global-mode))
+             (after-init . whole-line-or-region-global-mode)
+             :bind
+             ("C-M-w" . whole-line-or-region-delete-region))
 (after-load 'whole-line-or-region
   (diminish 'whole-line-or-region-local-mode))
 
