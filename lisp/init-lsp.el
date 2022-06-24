@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: vie abr 22 11:39:43 2022 (+0200)
+;; Last-Updated: mar jun 14 14:47:27 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
@@ -14,6 +14,8 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp)
+  :init
+  (setq lsp-keymap-prefix "C-;")
   :hook
   (go-mode . lsp)
   (c-mode . lsp)

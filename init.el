@@ -66,3 +66,4 @@
 (require 'init-header)
 (require 'init-eshell)
 (require 'init-local)
+(require 'init-vterm)
