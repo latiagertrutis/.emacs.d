@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Mon Oct  5 09:22:44 2020 (+0200)
-;; Last-Updated: mar jun 14 14:47:27 2022 (+0200)
+;; Last-Updated: vie jul  8 11:15:57 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
@@ -23,7 +23,9 @@
   ("M-g r" . lsp-find-references)
   ("M-g d" . lsp-find-definition)
   :config
-  (setq lsp-clients-clangd-args '("--background-index")))
+  (setq lsp-clients-clangd-args '("--background-index")
+        lsp-enable-on-type-formatting nil
+        lsp-enable-indentation nil))
 
 (use-package lsp-ui
   :ensure t

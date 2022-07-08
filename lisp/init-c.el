@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Thu Jan 28 11:12:29 2021 (+0100)
-;; Last-Updated: vie jun 24 17:19:51 2022 (+0200)
+;; Last-Updated: vie jul  8 11:15:51 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun c-mode-delete-trailing-whitespace ()
@@ -15,7 +15,6 @@
   (setq c-basic-offset 4
         tab-width 4
         indent-tabs-mode t
-        lsp-enable-indentation nil
         c-block-comment-prefix "*"
         ))
 
