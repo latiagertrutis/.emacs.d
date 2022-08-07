@@ -4,8 +4,22 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:18:22 2022 (+0200)
-;; Last-Updated: dom ago  7 14:23:51 2022 (+0200)
+;; Last-Updated: dom ago  7 15:24:30 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; get rid of backup files
+;; Don't clutter up directories with files~
+(setq dotfiles-dir (expand-file-name "dotfiles" user-emacs-directory))
+
+(unless (file-directory-p dotfiles-dir)
+  (make-directory dotfiles-dir))
+
+(setq backup-directory-alist `(("." . ,(expand-file-name
+                                        (concat dotfiles-dir "backups")))))
+
+;; Don't clutter with #files either
+(setq auto-save-file-name-transforms
+      `((".*" ,(expand-file-name (concat dotfiles-dir "backups")))))
 
 (use-package ztree
   :ensure t

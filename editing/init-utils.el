@@ -4,8 +4,10 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:09:06 2022 (+0200)
-;; Last-Updated: dom ago  7 14:15:36 2022 (+0200)
+;; Last-Updated: dom ago  7 15:26:20 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'bind-key)
 
 ;;----------------------------------------------------------------------------
 ;; Delete the current file
@@ -126,6 +128,48 @@ for the current buffer's file name, and the line number at point."
 (defun toggle-case-search ()
   (interactive)
   (setq case-fold-search (not case-fold-search)))
+
+;; indent all the buffer
+(defun indent-buffer ()
+  "Just indent all the buffer."
+  (interactive)
+  (save-excursion (astyle-region (point-min) (point-max))))
+(bind-key* "C-c i" 'indent-buffer)
+
+;; revert all the buffers
+(defun revert-all-buffers ()
+  "Revert all non-modified buffers associated with a file.
+This is to update existing buffers after a Git pull of their underlying files."
+  (interactive)
+  (save-current-buffer
+    (mapc (lambda (b)
+            (set-buffer b)
+            (unless (or (null (buffer-file-name)) (buffer-modified-p))
+              (revert-buffer t t)
+              (message "Reverted %s\n" (buffer-file-name))))
+          (buffer-list))))
+
+;;deleteword without add to kill ring
+(defun my-delete-word (arg)
+  "Delete characters forward until encountering the end of a word.
+With argument, do this that many times.
+This command does not push text to `kill-ring'."
+  (interactive "p")
+  (delete-region
+   (point)
+   (progn
+     (forward-word arg)
+     (point))))
+
+(defun my-backward-delete-word (arg)
+  "Delete characters backward until encountering the beginning of a word.
+With argument, do this that many times.
+This command does not push text to `kill-ring'."
+  (interactive "p")
+  (my-delete-word (- arg)))
+
+(bind-key* "M-d" 'my-delete-word)
+(bind-key* "<C-backspace>" 'my-backward-delete-word)
 
 (provide 'init-utils)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
