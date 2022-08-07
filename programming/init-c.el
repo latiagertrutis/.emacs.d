@@ -4,8 +4,13 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:58:11 2022 (+0200)
-;; Last-Updated: dom ago  7 14:58:21 2022 (+0200)
+;; Last-Updated: dom ago  7 15:42:19 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package astyle
+  :ensure t
+  :when (executable-find "astyle")
+  :hook (c-mode . astyle-on-save-mode))
 
 (defun c-mode-delete-trailing-whitespace ()
   (when (derived-mode-p 'c-mode)

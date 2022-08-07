@@ -4,17 +4,46 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 20:30:22 2022 (+0200)
-;; Last-Updated: dom ago  7 15:23:07 2022 (+0200)
+;; Last-Updated: dom ago  7 15:49:47 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-(global-hl-line-mode +1)
+;;----------------------------------------------------------------------------
+;; Suppress GUI features
+;;----------------------------------------------------------------------------
 
 (menu-bar-mode -1)
 
+(setq use-file-dialog nil)
+
+(setq use-dialog-box nil)
+
+(setq inhibit-startup-screen t)
+
 (setq-default cursor-type 'bar)
 
+;;----------------------------------------------------------------------------
+;; Window size and features
+;;----------------------------------------------------------------------------
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+(when (fboundp 'set-scroll-bar-mode)
+  (set-scroll-bar-mode nil))
+
+(let ((no-border '(internal-border-width . 0)))
+  (add-to-list 'default-frame-alist no-border)
+  (add-to-list 'initial-frame-alist no-border))
+
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
+
+;; Save session
+(desktop-save-mode 1)
+
 (setq user-full-name "Mateo Rodriguez Ripolles (teorodrip@posteo.net)")
+
+(global-hl-line-mode +1)
 
 ;; Custom faces
 (custom-set-faces
