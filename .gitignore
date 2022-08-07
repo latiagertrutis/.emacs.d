@@ -4,3 +4,5 @@ elpa
 .lsp-session*
 projectile-bookmarks.eld
 transient
+dotfilesbackups
+.emacs.desktop
