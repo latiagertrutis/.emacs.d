@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 21:06:24 2022 (+0200)
-;; Last-Updated: sáb ago  6 21:06:36 2022 (+0200)
+;; Last-Updated: dom ago  7 15:08:52 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package helm
@@ -46,7 +46,13 @@
          ("C-p" . helm-previous-line))))
 
 (use-package helm-xref
-  :ensure t)
+  :ensure t
+  :bind
+  (("M-g d" . xref-find-definitions)
+   ("M-g r" . xref-find-references)
+   ("M-g b" . xref-pop-marker-stack)
+   ("M-g o" . xref-find-definitions-other-window))
+  )
 
 (provide 'init-minibuffer)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
