@@ -232,9 +232,11 @@ This command does not push text to `kill-ring'."
 
 (use-package symbol-overlay
              :ensure t
-             :config
-             (dolist (hook '(prog-mode-hook html-mode-hook yaml-mode-hook conf-mode-hook))
-               (add-hook hook 'symbol-overlay-mode))
+	     :hook
+	     (prog-mode . symbol-overlay-mode)
+	     (html-mode . symbol-overlay-mode)
+	     (yaml-mode . symbol-overlay-mode)
+	     (conf-mode . symbol-overlay-mode)
 	     :bind (:map symbol-overlay-mode-map
 			 ("M-n" . symbol-overlay-jump-next)
 			 ("M-p" . symbol-overlay-jump-prev))
