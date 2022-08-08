@@ -230,6 +230,16 @@ This command does not push text to `kill-ring'."
   (setq-default display-line-numbers-width 3)
   (add-hook 'prog-mode-hook 'display-line-numbers-mode))
 
+(use-package symbol-overlay
+             :ensure t
+             :config
+             (dolist (hook '(prog-mode-hook html-mode-hook yaml-mode-hook conf-mode-hook))
+               (add-hook hook 'symbol-overlay-mode))
+	     :bind (:map symbol-overlay-mode-map
+			 ("M-n" . symbol-overlay-jump-next)
+			 ("M-p" . symbol-overlay-jump-prev))
+	     )
+
 (provide 'init-utils)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-utils.el ends here
