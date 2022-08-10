@@ -244,6 +244,22 @@ This command does not push text to `kill-ring'."
 			 ("M-p" . symbol-overlay-jump-prev))
 	     )
 
+(defface separator-face '((t (:foreground "hot pink" :weight bold))) nil)
+
+(use-package browse-kill-ring
+  :ensure t
+  :config
+  (setq browse-kill-ring-separator "--------------------------------------------------------------------------------"
+	browse-kill-ring-highlight-current-entry t
+	browse-kill-ring-separator-face 'separator-face)
+  :bind
+  ("M-Y" . browse-kill-ring)
+  (:map browse-kill-ring-mode-map
+	("C-g" . browse-kill-ring-quit)
+	("M-n" . browse-kill-ring-forward)
+	("M-p" . browse-kill-ring-previous))
+  )
+
 (provide 'init-utils)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-utils.el ends here
