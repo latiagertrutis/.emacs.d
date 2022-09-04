@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 20:30:22 2022 (+0200)
-;; Last-Updated: dom ago  7 15:49:47 2022 (+0200)
+;; Last-Updated: dom sep  4 22:25:41 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;----------------------------------------------------------------------------
@@ -65,6 +65,12 @@
              (setq-default beacon-size 20)
              :hook
              (after-init . beacon-mode))
+
+(use-package linum-relative
+  :ensure t
+  :config
+  (setq linum-relative-backend 'display-line-numbers-mode)
+  )
 
 (provide 'init-interface)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
