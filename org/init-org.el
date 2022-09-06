@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: mar sep  6 12:20:46 2022 (+0200)
+;; Last-Updated: mar sep  6 12:47:06 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -16,6 +16,13 @@
 (setq org-agenda-files '("~/org"))
 (unless (file-exists-p org-directory)
     (make-directory org-directory))
+
+;; Capture templates
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
+         "* TODO %?\n  %T\n  %i")
+        ("j" "Journal" entry (file+datetree org-default-notes-file)
+         "* %?\nEntered on %U\n  %i\n  %a")))
 
 ;; Define TODO and TAG keywords with smooth colors.
 (setq org-todo-keywords
