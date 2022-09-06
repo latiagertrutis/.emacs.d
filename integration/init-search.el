@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:30:37 2022 (+0200)
-;; Last-Updated: dom ago  7 14:40:41 2022 (+0200)
+;; Last-Updated: mar sep  6 12:19:57 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;----------------------------------------------------------------------------
@@ -23,7 +23,7 @@
     :files "*")
   :bind
   ("C-c r" . rg-c-mode)
-  ("C-c a" . rg-all-mode)
+  ("C-c w" . rg-all-mode)
   )
 
 (provide 'init-search)
