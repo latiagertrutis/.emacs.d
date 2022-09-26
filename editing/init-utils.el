@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:09:06 2022 (+0200)
-;; Last-Updated: dom ago  7 16:39:09 2022 (+0200)
+;; Last-Updated: lun sep 26 13:08:44 2022 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'bind-key)
@@ -208,7 +208,20 @@ This command does not push text to `kill-ring'."
              (smooth-scrolling-mode 1))
 
 (when (fboundp 'electric-pair-mode)
-  (add-hook 'after-init-hook 'electric-pair-mode))
+  (add-hook 'after-init-hook 'electric-pair-mode)
+  (defun electric-pair ()
+    "If at end of line, insert character pair without surrounding spaces.
+    Otherwise, just insert the typed character."
+    (interactive)
+    (if (eolp) (let (parens-require-spaces) (insert-pair)) (self-insert-command 1)))
+  (add-hook 'c-mode-hook
+            (lambda ()
+              (define-key c-mode-map "(" 'electric-pair)
+              (define-key c-mode-map ")" 'electric-pair)
+              (define-key c-mode-map "[" 'electric-pair)
+              (define-key c-mode-map "]" 'electric-pair)
+              (define-key c-mode-map "{" 'electric-pair)
+	      (define-key c-mode-map "}" 'electric-pair))))
 
 (defun sanityinc/newline-at-end-of-line ()
   "Move to end of line, enter a newline, and reindent."
