@@ -21,6 +21,7 @@
     "Search files of all types in a C project"
     :dir (projectile-project-root)
     :files "*")
+  (setq rg-command-line-flags '("--pcre2"))
   :bind
   ("C-c r" . rg-c-mode)
   ("C-c w" . rg-all-mode)
