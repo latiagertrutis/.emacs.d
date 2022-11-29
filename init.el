@@ -74,6 +74,7 @@
 (require 'init-error-check)
 (require 'init-lisp)
 (require 'init-yaml)
+(require 'init-programming-utils)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Version control config
