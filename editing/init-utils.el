@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:09:06 2022 (+0200)
-;; Last-Updated: lun sep 26 13:08:44 2022 (+0200)
+;; Last-Updated: jue dic  1 13:16:11 2022 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'bind-key)
@@ -193,7 +193,29 @@ This command does not push text to `kill-ring'."
   (my-delete-word (- arg)))
 
 (bind-key* "M-d" 'my-delete-word)
-(bind-key* "<C-backspace>" 'my-backward-delete-word)
+
+;; --------------------------------------------------------------------------------
+;; Add my own minor mode to gain preference on key bindings
+;; https://www.masteringemacs.org/article/mastering-key-bindings-emacs#keymap-lookup-order
+;; --------------------------------------------------------------------------------
+
+(defvar my-keys-keymap (make-keymap)
+  "Keymap for my-keys-mode")
+
+(define-minor-mode my-keys-mode
+  "Minor mode for my personal keybindings."
+  :init-value t
+  :global t
+  :keymap my-keys-keymap)
+
+;; The keymaps in `emulation-mode-map-alists' take precedence over
+;; `minor-mode-map-alist'
+(add-to-list 'emulation-mode-map-alists
+             `((my-keys-mode . ,my-keys-keymap)))
+
+(define-key my-keys-keymap (kbd "<C-backspace>") 'my-backward-delete-word)
+
+;; --------------------------------------------------------------------------------
 
 (use-package whole-line-or-region
              :ensure t
