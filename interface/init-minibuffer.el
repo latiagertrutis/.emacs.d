@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 21:06:24 2022 (+0200)
-;; Last-Updated: mar abr 18 17:54:35 2023 (+0200)
+;; Last-Updated: mar abr 18 18:03:34 2023 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-filter-dired-buffers (buffer-list)
@@ -38,7 +38,7 @@
   ;; (setq helm-autoresize-max-height 0)
   (setq helm-show-completion-display-function #'helm-show-completion-default-display-function)
   (setq helm-autoresize-min-height 30)
-  (setq helm-boring-buffer-regexp-list '("\\` " "\\`\\*helm" "\\`\\*Echo Area" "\\`\\*Minibuf" "\\*lsp-log" "\\*clangd" "\\*projectile" "magit:" "\\`\\*Messages"))
+  (setq helm-boring-buffer-regexp-list '("\\` " "\\`\\*helm" "\\`\\*Echo Area" "\\`\\*Minibuf" "\\*lsp-log" "\\*clangd" "\\*projectile" "magit[:-]" "\\`\\*Messages"))
   (advice-add 'helm-skip-boring-buffers :filter-return 'my-filter-dired-buffers)
   
   (helm-autoresize-mode 1)
