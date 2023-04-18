@@ -4,8 +4,16 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 21:06:24 2022 (+0200)
-;; Last-Updated: dom ago  7 15:08:52 2022 (+0200)
+;; Last-Updated: mar abr 18 17:54:35 2023 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun my-filter-dired-buffers (buffer-list)
+  (delq nil (mapcar
+             (lambda (buffer)
+               (if (eq (with-current-buffer buffer major-mode)  'dired-mode)
+                   nil
+                 buffer))
+             buffer-list)))
 
 (use-package helm
   :ensure t
@@ -30,7 +38,9 @@
   ;; (setq helm-autoresize-max-height 0)
   (setq helm-show-completion-display-function #'helm-show-completion-default-display-function)
   (setq helm-autoresize-min-height 30)
-  (setq helm-boring-buffer-regexp-list '("\\` " "\\`\\*helm" "\\`\\*Echo Area" "\\`\\*Minibuf" "\\*lsp-log" "\\*clangd" "\\*projectile" "magit:"))
+  (setq helm-boring-buffer-regexp-list '("\\` " "\\`\\*helm" "\\`\\*Echo Area" "\\`\\*Minibuf" "\\*lsp-log" "\\*clangd" "\\*projectile" "magit:" "\\`\\*Messages"))
+  (advice-add 'helm-skip-boring-buffers :filter-return 'my-filter-dired-buffers)
+  
   (helm-autoresize-mode 1)
   (helm-mode 1)
   :bind
