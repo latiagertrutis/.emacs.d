@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:18:22 2022 (+0200)
-;; Last-Updated: dom ago  7 15:24:30 2022 (+0200)
+;; Last-Updated: mié abr 19 15:10:44 2023 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; get rid of backup files
@@ -27,6 +27,8 @@
   (ztreep-diff-model-add-face ((nil(:foreground "chartreuse"))))
   (ztreep-diff-model-diff-face ((nil(:foreground "coral"))))
   (ztreep-diff-model-normal-face ((nil(:foreground "gainsboro")))))
+
+(setq dired-recursive-copies 'always)
 
 (provide 'init-file-management)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
