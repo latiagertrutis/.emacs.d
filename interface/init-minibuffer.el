@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 21:06:24 2022 (+0200)
-;; Last-Updated: mié abr 19 15:12:01 2023 (+0200)
+;; Last-Updated: lun jun 26 16:28:44 2023 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-filter-dired-buffers (buffer-list)
@@ -46,7 +46,7 @@
   :bind
   (("M-x" . helm-M-x)
    ("C-x C-f" . helm-find-files)
-   ("C-x b" . helm-buffers-list)
+   ("C-x C-b" . helm-buffers-list)
    ("C-c h" . helm-command-prefix)
    (:map helm-map
          ("<tab>" . helm-execute-persistent-action)
