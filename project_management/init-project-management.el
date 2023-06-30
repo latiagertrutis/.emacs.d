@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:43:21 2022 (+0200)
-;; Last-Updated: lun jun 26 16:30:10 2023 (+0200)
+;; Last-Updated: vie jun 30 18:27:07 2023 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-generate-projects-dirs (root-workspace)
@@ -29,7 +29,6 @@
              :bind
              (:map projectile-mode-map
                    ("s-p" . projectile-command-map)
-                   ("C-x b" . helm-projectile-switch-to-buffer)
                    ("C-c p" . projectile-command-map))
              :hook
              (after-init . projectile-mode))
