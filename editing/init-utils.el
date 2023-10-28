@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:09:06 2022 (+0200)
-;; Last-Updated: jue dic  1 13:16:11 2022 (+0100)
+;; Last-Updated: sáb oct 28 19:46:42 2023 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'bind-key)
@@ -153,12 +153,21 @@ for the current buffer's file name, and the line number at point."
   (interactive)
   (setq case-fold-search (not case-fold-search)))
 
-;; indent all the buffer
 (defun indent-buffer ()
+  (interactive)
+  (save-excursion
+    (indent-region (point-min) (point-max) nil)))
+
+(defun indent-buffer-astyle ()
   "Just indent all the buffer."
   (interactive)
   (save-excursion (astyle-region (point-min) (point-max))))
-(bind-key* "C-c i" 'indent-buffer)
+
+(bind-keys ("C-c i" . indent-buffer))
+
+(with-eval-after-load 'cc-mode
+  (bind-keys :map c-mode-base-map
+	     ("C-c i" . indent-buffer-astyle)))
 
 ;; revert all the buffers
 (defun revert-all-buffers ()
@@ -294,6 +303,11 @@ This command does not push text to `kill-ring'."
 	("M-n" . browse-kill-ring-forward)
 	("M-p" . browse-kill-ring-previous))
   )
+
+(use-package indent-guide
+  :ensure t
+  :config
+  (indent-guide-global-mode))
 
 (provide 'init-utils)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
