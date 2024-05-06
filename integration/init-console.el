@@ -4,19 +4,22 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mié ago 10 17:17:10 2022 (+0200)
-;; Last-Updated: lun may  6 09:59:51 2024 (+0200)
+;; Last-Updated: lun may  6 10:04:25 2024 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package vterm
   :ensure t
-  :bind (("C-c t" . vterm)
-         :map vterm-mode-map
+  :bind (:map vterm-mode-map
          ("C-y" . vterm-yank)))
 
-(use-package multi-vterm :ensure t)
+(use-package multi-vterm :ensure t
+  :bind ("C-c t" . multi-vterm))
 
 ;; Disable hl-line in major console modes
 (add-hook 'comint-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
+
+;; Do not prompt for confirmation when killing buffer
+(setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
 (use-package eshell-prompt-extras
   :ensure t
