@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mié ago 10 17:17:10 2022 (+0200)
-;; Last-Updated: lun may  6 10:04:25 2024 (+0200)
+;; Last-Updated: lun may  6 10:14:21 2024 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package vterm
@@ -12,8 +12,15 @@
   :bind (:map vterm-mode-map
          ("C-y" . vterm-yank)))
 
+(defun multi-vterm-other-window ()
+  (interactive)
+  (split-window-right)
+  (other-window 1)
+  (multi-vterm))
+
 (use-package multi-vterm :ensure t
-  :bind ("C-c t" . multi-vterm))
+  :bind ("C-c t" . multi-vterm)
+  ("C-c o" . multi-vterm-other-window))
 
 ;; Disable hl-line in major console modes
 (add-hook 'comint-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
