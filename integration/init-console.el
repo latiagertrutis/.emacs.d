@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mié ago 10 17:17:10 2022 (+0200)
-;; Last-Updated: lun may  6 09:57:47 2024 (+0200)
+;; Last-Updated: lun may  6 09:59:51 2024 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package vterm
@@ -12,6 +12,8 @@
   :bind (("C-c t" . vterm)
          :map vterm-mode-map
          ("C-y" . vterm-yank)))
+
+(use-package multi-vterm :ensure t)
 
 ;; Disable hl-line in major console modes
 (add-hook 'comint-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
