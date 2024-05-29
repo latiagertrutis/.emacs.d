@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: mar sep 13 13:15:47 2022 (+0200)
+;; Last-Updated: mié may 29 11:22:24 2024 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -22,7 +22,9 @@
       '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
          "* TODO %?\n  %T\n  %i")
         ("j" "Journal" entry (file+datetree org-default-notes-file)
-         "* %?\nEntered on %U\n  %i\n  %a")))
+         "* %?")
+	("a" "Append Journal" plain (file org-default-notes-file)
+	 "%?")))
 
 ;; Define TODO and TAG keywords with smooth colors.
 (setq org-todo-keywords
