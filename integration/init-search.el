@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:30:37 2022 (+0200)
-;; Last-Updated: vie nov 17 11:34:21 2023 (+0100)
+;; Last-Updated: vie nov 29 11:18:07 2024 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;----------------------------------------------------------------------------
@@ -21,7 +21,7 @@
     "Search files of all types in a C project"
     :dir (projectile-project-root)
     :files "*")
-  (setq rg-command-line-flags '("--pcre2" "--sort path"))
+  (setq rg-command-line-flags '("--pcre2" "--sort path" "--hidden"))
   :bind
   ("C-c r" . rg-c-mode)
   ("C-c w" . rg-all-mode)
