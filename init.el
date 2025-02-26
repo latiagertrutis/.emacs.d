@@ -17,6 +17,7 @@
 (add-to-list 'load-path (expand-file-name "programming" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "version_control" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "org" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "apps" user-emacs-directory))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Package management config
@@ -90,6 +91,11 @@
 ;; Org mode config
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'init-org)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Apps
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'init-telega)
 
 
 (setenv "SHELL" "/bin/bash")
