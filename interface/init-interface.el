@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 20:30:22 2022 (+0200)
-;; Last-Updated: dom sep  4 22:25:41 2022 (+0200)
+;; Last-Updated: Wed Mar 26 13:54:56 2025 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;----------------------------------------------------------------------------
@@ -13,11 +13,11 @@
 
 (menu-bar-mode -1)
 
-(setq use-file-dialog nil)
+(setq-default use-file-dialog nil)
 
-(setq use-dialog-box nil)
+(setq-default use-dialog-box nil)
 
-(setq inhibit-startup-screen t)
+(setq-default inhibit-startup-screen t)
 
 (setq-default cursor-type 'bar)
 
@@ -41,9 +41,14 @@
 ;; Save session
 (desktop-save-mode 1)
 
-(setq user-full-name "Mateo Rodriguez Ripolles (teorodrip@posteo.net)")
+(setq-default user-full-name "Mateo Rodriguez Ripolles (teorodrip@posteo.net)")
 
 (global-hl-line-mode +1)
+
+(when (fboundp 'display-line-numbers-mode)
+  (setq-default display-line-numbers-width 1)
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  (add-hook 'yaml-mode-hook 'display-line-numbers-mode))
 
 ;; Custom faces
 (custom-set-faces
@@ -65,12 +70,6 @@
              (setq-default beacon-size 20)
              :hook
              (after-init . beacon-mode))
-
-(use-package linum-relative
-  :ensure t
-  :config
-  (setq linum-relative-backend 'display-line-numbers-mode)
-  )
 
 (provide 'init-interface)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:09:06 2022 (+0200)
-;; Last-Updated: sáb oct 28 19:46:42 2023 (+0200)
+;; Last-Updated: Wed Mar 26 14:05:07 2025 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'bind-key)
@@ -272,10 +272,6 @@ This command does not push text to `kill-ring'."
              :config
              (global-set-key (kbd "C-o") 'avy-goto-char-timer))
 
-(when (fboundp 'display-line-numbers-mode)
-  (setq-default display-line-numbers-width 3)
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode))
-
 (use-package symbol-overlay
              :ensure t
 	     :hook
@@ -307,7 +303,10 @@ This command does not push text to `kill-ring'."
 (use-package indent-guide
   :ensure t
   :config
-  (indent-guide-global-mode))
+  (indent-guide-global-mode)
+  :custom-face
+  (indent-guide-face ((t (:inherit markdown-footnote-marker-face))))
+  )
 
 (provide 'init-utils)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
