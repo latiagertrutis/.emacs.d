@@ -17,6 +17,8 @@
 
 (use-package helm
   :ensure t
+  :custom-face
+  (helm-ff-directory ((t (:foreground "light sky blue"))))
   :config
   (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
         helm-move-to-line-cycle-in-source     nil ; move to end or beginning of source when reaching top or bottom of source.
