@@ -79,6 +79,7 @@
 (require 'init-cider)
 (require 'init-docker)
 (require 'init-web)
+(require 'init-robot)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Version control config
