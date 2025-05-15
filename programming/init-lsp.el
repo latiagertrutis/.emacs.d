@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:55:15 2022 (+0200)
-;; Last-Updated: Mon Apr 21 19:44:41 2025 (+0200)
+;; Last-Updated: Thu May 15 23:22:12 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
@@ -21,6 +21,7 @@
   (c-mode . lsp)
   (yaml-mode . lsp)
   (python-mode . lsp)
+  (shell-script-mode . lsp)
   :bind
   ("M-g r" . lsp-find-references)
   ("M-g d" . lsp-find-definition)
