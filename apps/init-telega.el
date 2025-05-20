@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: Wed Feb 26 12:50:19 2025 (+0100)
-;; Last-Updated: Tue May 13 22:24:35 2025 (+0200)
+;; Last-Updated: Tue May 20 12:32:51 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun telega-chat-other-window ()
@@ -17,6 +17,10 @@
 	  (other-window 1)
 	  (telega-chat-with chat))
       (message "No Chat Found!"))))
+
+(defun telega-chat-new-user (username)
+  (interactive "sUser: ")
+  (telega-chat-with (telega--searchPublicChat username)))
 
 (use-package telega
   :ensure t
