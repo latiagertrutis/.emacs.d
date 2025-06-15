@@ -4,18 +4,21 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: lun jun  3 18:06:35 2024 (+0200)
+;; Last-Updated: Sun Jun 15 20:06:19 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 
 ;; Default directories
-(setq org-directory (expand-file-name "~/org"))
+(setq org-directory (expand-file-name "~/workspace/dotfiles/org"))
 (setq org-default-notes-file (concat org-directory "/notes.org"))
-(setq org-agenda-files '("~/org"))
-(unless (file-exists-p org-directory)
-    (make-directory org-directory))
+(setq org-agenda-files '("~/workspace/dotfiles/org/"))
+
+(dolist (f (list org-directory))
+  (unless (file-exists-p f)
+    (make-directory f)))
+
 
 ;; Capture templates
 (setq org-capture-templates
