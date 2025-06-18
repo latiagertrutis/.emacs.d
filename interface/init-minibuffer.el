@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 21:06:24 2022 (+0200)
-;; Last-Updated: vie jun 30 18:27:19 2023 (+0200)
+;; Last-Updated: Wed Jun 18 20:42:37 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-filter-dired-buffers (buffer-list)
@@ -14,6 +14,32 @@
                    nil
                  buffer))
              buffer-list)))
+
+(defun helm-rg (directory &optional with-types)
+  "Search in DIRECTORY with RG.
+With WITH-TYPES, ask for file types to search in."
+  (require 'helm-adaptive)
+  (helm-grep-ag-1 (expand-file-name directory)
+                  (helm-aif (and with-types
+                                 (helm-grep-ag-get-types))
+                      (helm-comp-read
+                       "RG type: " it
+                       :must-match t
+                       :marked-candidates t
+                       :fc-transformer 'helm-adaptive-sort
+                       :buffer "*helm rg types*"))))
+
+(defun helm-project-search (&optional with-types)
+  "Search in current project with RG.
+With WITH-TYPES, ask for file types to search in."
+  (interactive "P")
+  (helm-rg (projectile-project-root) with-types))
+
+(defun helm-file-search (&optional with-types)
+  "Search in current project with RG.
+With WITH-TYPES, ask for file types to search in."
+  (interactive "P")
+  (helm-rg default-directory with-types))
 
 (use-package helm
   :ensure t
@@ -34,6 +60,7 @@
         helm-mode-fuzzy-match                 t
         helm-locate-fuzzy-match               t
         helm-quick-update                     t
+	helm-follow-mode-persistent           t
         helm-recentf-fuzzy-match              t
         helm-semantic-fuzzy-match             t)
 
@@ -42,14 +69,16 @@
   (setq helm-autoresize-min-height 30)
   (setq helm-boring-buffer-regexp-list '("\\` " "\\`\\*helm" "\\`\\*Echo Area" "\\`\\*Minibuf" "\\*lsp-log" "\\*clangd" "\\*projectile" "magit[:-]" "\\*Async-native-comp" "\\*Warnings" "\\*Help" "\\*Messages"))
   (advice-add 'helm-skip-boring-buffers :filter-return 'my-filter-dired-buffers)
-  
-  (helm-autoresize-mode 1)
+
   (helm-mode 1)
+  (helm-autoresize-mode 1)
   :bind
   (("M-x" . helm-M-x)
    ("C-x C-f" . helm-find-files)
    ("C-x b" . helm-buffers-list)
    ("C-c h" . helm-command-prefix)
+   ("C-c r" . helm-project-search)
+   ("C-c f" . helm-file-search)
    (:map helm-map
          ("<tab>" . helm-execute-persistent-action)
          ("C-i" . helm-execute-persistent-action)
@@ -65,6 +94,12 @@
    ("M-g b" . xref-pop-marker-stack)
    ("M-g o" . xref-find-definitions-other-window))
   )
+
+(use-package helm-ls-git
+  :ensure t)
+
+(use-package helm-ls-hg
+  :ensure t)
 
 (provide 'init-minibuffer)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
