@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 21:06:24 2022 (+0200)
-;; Last-Updated: Wed Jun 18 20:42:37 2025 (+0200)
+;; Last-Updated: Thu Jun 19 13:21:53 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-filter-dired-buffers (buffer-list)
@@ -46,7 +46,7 @@ With WITH-TYPES, ask for file types to search in."
   :custom-face
   (helm-ff-directory ((t (:foreground "light sky blue"))))
   :config
-  (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
+  (setq helm-split-window-inside-p            nil ; open helm buffer inside current window, not occupy whole other window
         helm-move-to-line-cycle-in-source     nil ; move to end or beginning of source when reaching top or bottom of source.
         helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
         helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
@@ -79,6 +79,7 @@ With WITH-TYPES, ask for file types to search in."
    ("C-c h" . helm-command-prefix)
    ("C-c r" . helm-project-search)
    ("C-c f" . helm-file-search)
+   ("C-c b" . helm-browse-project)
    (:map helm-map
          ("<tab>" . helm-execute-persistent-action)
          ("C-i" . helm-execute-persistent-action)
