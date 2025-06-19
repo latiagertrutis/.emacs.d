@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:30:37 2022 (+0200)
-;; Last-Updated: Wed Jun 18 20:25:05 2025 (+0200)
+;; Last-Updated: Thu Jun 19 13:24:11 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;----------------------------------------------------------------------------
@@ -22,6 +22,8 @@
     :dir (projectile-project-root)
     :files "*")
   (setq rg-command-line-flags '("--sort path" "--hidden"))
+  :bind
+  ("C-c w" . rg-all-mode)
   )
 
 (provide 'init-search)
