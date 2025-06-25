@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 21:06:24 2022 (+0200)
-;; Last-Updated: Thu Jun 19 13:21:53 2025 (+0200)
+;; Last-Updated: Wed Jun 25 15:06:35 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-filter-dired-buffers (buffer-list)
@@ -89,11 +89,6 @@ With WITH-TYPES, ask for file types to search in."
 
 (use-package helm-xref
   :ensure t
-  :bind
-  (("M-g d" . xref-find-definitions)
-   ("M-g r" . xref-find-references)
-   ("M-g b" . xref-pop-marker-stack)
-   ("M-g o" . xref-find-definitions-other-window))
   )
 
 (use-package helm-ls-git
