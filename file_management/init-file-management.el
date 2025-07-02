@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:18:22 2022 (+0200)
-;; Last-Updated: Sun Jun 29 18:01:44 2025 (+0200)
+;; Last-Updated: Wed Jul  2 04:22:52 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; get rid of backup files
@@ -30,7 +30,9 @@
 
 (setq ztree-diff-additional-options '("--no-dereference"))
 
-(setq dired-recursive-copies 'always)
+(setq dired-recursive-copies 'always
+      dired-deletion-confirmer '(lambda (x) t)
+      dired-clean-confirm-killing-deleted-buffers nil)
 
 (defun dirvish-fd-and-narrow ()
   (interactive)
@@ -43,7 +45,8 @@
   (dirvish-override-dired-mode)
   :custom
   (dirvish-quick-access-entries ; It's a custom option, `setq' won't work
-   '(("h" "~/"                          "Home")))
+   '(("h" "~/"                          "Home"))
+   '(("w" "~/workspace/"                "Workspace")))
   :config
   ;; (dirvish-peek-mode)             ; Preview files in minibuffer
   ;; (dirvish-side-follow-mode)      ; similar to `treemacs-follow-mode'
