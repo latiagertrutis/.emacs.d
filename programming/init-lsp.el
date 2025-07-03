@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:55:15 2022 (+0200)
-;; Last-Updated: Thu May 15 23:22:12 2025 (+0200)
+;; Last-Updated: Thu Jul  3 15:45:42 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
@@ -22,9 +22,6 @@
   (yaml-mode . lsp)
   (python-mode . lsp)
   (shell-script-mode . lsp)
-  :bind
-  ("M-g r" . lsp-find-references)
-  ("M-g d" . lsp-find-definition)
   :config
   (setq lsp-clients-clangd-args '("--background-index")
         lsp-enable-on-type-formatting nil
@@ -39,11 +36,14 @@
   (lsp-mode . lsp-ui-mode)
   (lsp-mode . yas-minor-mode)
   :bind
-  ("C-c l" . lsp-ui-doc-mode)
+  ("C-c l" . lsp-ui-doc-toggle)
   ("C-x m" . lsp-ui-imenu)
+  ("M-g r" . lsp-ui-peek-find-references)
+  ("M-g d" . lsp-ui-peek-find-definitions)
   :config
-  (setq lsp-ui-sideline-enable nil
-        lsp-ui-flycheck-enable nil
+  (setq lsp-ui-sideline-enable t
+	lsp-ui-sideline-delay 1
+	lsp-ui-doc-position 'at-point
         lsp-ui-imenu-enable t
 	lsp-ui-sideline-ignore-duplicate t))
 
@@ -71,9 +71,9 @@
                               company-pseudo-tooltip-unless-just-one-frontend-with-delay
                               company-preview-frontend))
     (define-key company-active-map [tab]
-      'company-select-next-if-tooltip-visible-or-complete-selection)
+		'company-select-next-if-tooltip-visible-or-complete-selection)
     (define-key company-active-map (kbd "TAB")
-      'company-select-next-if-tooltip-visible-or-complete-selection))
+		'company-select-next-if-tooltip-visible-or-complete-selection))
   (company-ac-setup))
 
 (provide 'init-lsp)
