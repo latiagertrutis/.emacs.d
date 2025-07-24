@@ -37,6 +37,7 @@
 (require 'init-minibuffer)
 (require 'init-mode-line)
 (require 'init-theme)
+(require 'init-presentation-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Editing Enhancement config
