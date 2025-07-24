@@ -44,6 +44,7 @@
   ;; Enable mode line
   (doom-modeline-mode)
 
+  ;; Clean the original buffer
   (find-alternate-file (buffer-file-name)))
 
 (use-package org-present
