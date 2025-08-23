@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:55:15 2022 (+0200)
-;; Last-Updated: Thu Jul  3 15:45:42 2025 (+0200)
+;; Last-Updated: Sat Aug 23 19:58:35 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
@@ -26,6 +26,7 @@
   (setq lsp-clients-clangd-args '("--background-index")
         lsp-enable-on-type-formatting nil
 	lsp-signature-mode nil
+	lsp-signature-auto-activate nil
         lsp-enable-indentation nil))
 
 (use-package lsp-ui
