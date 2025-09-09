@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 21:06:24 2022 (+0200)
-;; Last-Updated: Fri Jul  4 18:11:53 2025 (+0200)
+;; Last-Updated: Tue Sep  9 16:11:10 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-filter-dired-buffers (buffer-list)
@@ -54,6 +54,7 @@ With WITH-TYPES, ask for file types to search in."
         helm-M-x-fuzzy-match                  t
         helm-bookmark-show-location           t
         helm-buffers-fuzzy-matching           t
+	helm-buffers-sort-fn                  'helm-fuzzy-matching-sort-fn-preserve-ties-order
         helm-completion-in-region-fuzzy-match t
         helm-file-cache-fuzzy-match           t
         helm-imenu-fuzzy-match                t
@@ -69,13 +70,12 @@ With WITH-TYPES, ask for file types to search in."
   (setq helm-autoresize-min-height 30)
   (setq helm-boring-buffer-regexp-list '("\\` " "\\`\\*helm" "\\`\\*Echo Area" "\\`\\*Minibuf" "\\*lsp-log" "\\*clangd" "\\*projectile" "magit[:-]" "\\*Async-native-comp" "\\*Warnings" "\\*Help" "\\*Messages"))
   (advice-add 'helm-skip-boring-buffers :filter-return 'my-filter-dired-buffers)
-
   (helm-mode 1)
   (helm-autoresize-mode 1)
   :bind
   (("M-x" . helm-M-x)
    ("C-x C-f" . helm-find-files)
-   ("C-x b" . helm-buffers-list)
+   ("C-x b" . helm-mini)
    ("C-c h" . helm-command-prefix)
    ("C-c r" . helm-project-search)
    ("C-c f" . helm-file-search)

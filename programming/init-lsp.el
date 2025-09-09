@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:55:15 2022 (+0200)
-;; Last-Updated: Sat Aug 23 19:58:35 2025 (+0200)
+;; Last-Updated: Tue Sep  9 14:48:56 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
@@ -44,6 +44,7 @@
   :config
   (setq lsp-ui-sideline-enable t
 	lsp-ui-sideline-delay 1
+	lsp-ui-sideline-diagnostic-max-line-length 90
 	lsp-ui-doc-position 'at-point
         lsp-ui-imenu-enable t
 	lsp-ui-sideline-ignore-duplicate t))

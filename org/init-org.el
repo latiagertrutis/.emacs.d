@@ -4,21 +4,27 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: Sun Jun 15 20:06:19 2025 (+0200)
+;; Last-Updated: Sat Aug  2 09:28:12 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 
 ;; Default directories
-(setq org-directory (expand-file-name "~/workspace/dotfiles/org"))
+(setq org-directory (expand-file-name "~/org"))
 (setq org-default-notes-file (concat org-directory "/notes.org"))
-(setq org-agenda-files '("~/workspace/dotfiles/org/"))
+(setq org-agenda-files (concat org-directory "/agenda/"))
 
 (dolist (f (list org-directory))
   (unless (file-exists-p f)
     (make-directory f)))
 
+(defun my/new-note ()
+  (let ((fpath (read-file-name "Project file name: "
+                               (concat org-directory "/notes/")
+                               nil nil nil)))
+    (find-file fpath)
+    (goto-char (point-min))))
 
 ;; Capture templates
 (setq org-capture-templates
@@ -26,6 +32,8 @@
          "* TODO %?\n  %T\n  %i")
         ("j" "Journal" entry (file+datetree org-default-notes-file)
          "* %?\n  %T\n  %i")
+	("n" "New note in Inbox" plain
+         (function my/new-note))
 	("a" "Append Journal" plain (file org-default-notes-file)
 	 "%?\n  %i")))
 
