@@ -73,6 +73,7 @@
 (require 'init-lsp)
 (require 'init-c)
 (require 'init-go)
+(require 'init-rust)
 (require 'init-error-check)
 (require 'init-lisp)
 (require 'init-yaml)

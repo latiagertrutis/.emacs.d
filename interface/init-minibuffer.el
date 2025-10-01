@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 21:06:24 2022 (+0200)
-;; Last-Updated: Tue Sep  9 16:11:10 2025 (+0200)
+;; Last-Updated: Tue Sep  9 16:17:58 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-filter-dired-buffers (buffer-list)
@@ -55,6 +55,7 @@ With WITH-TYPES, ask for file types to search in."
         helm-bookmark-show-location           t
         helm-buffers-fuzzy-matching           t
 	helm-buffers-sort-fn                  'helm-fuzzy-matching-sort-fn-preserve-ties-order
+	helm-buffers-fuzzy-matching           t
         helm-completion-in-region-fuzzy-match t
         helm-file-cache-fuzzy-match           t
         helm-imenu-fuzzy-match                t

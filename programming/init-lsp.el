@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:55:15 2022 (+0200)
-;; Last-Updated: Tue Sep  9 14:48:56 2025 (+0200)
+;; Last-Updated: Wed Oct  1 19:03:36 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
@@ -22,6 +22,7 @@
   (yaml-mode . lsp)
   (python-mode . lsp)
   (shell-script-mode . lsp)
+  (rust-mode . lsp)
   :config
   (setq lsp-clients-clangd-args '("--background-index")
         lsp-enable-on-type-formatting nil
