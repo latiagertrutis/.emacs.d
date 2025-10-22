@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:55:15 2022 (+0200)
-;; Last-Updated: Wed Oct  1 19:03:36 2025 (+0200)
+;; Last-Updated: Wed Oct 22 15:07:51 2025 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
@@ -28,7 +28,10 @@
         lsp-enable-on-type-formatting nil
 	lsp-signature-mode nil
 	lsp-signature-auto-activate nil
-        lsp-enable-indentation nil))
+        lsp-enable-indentation nil
+	lsp-rust-analyzer-completion-add-call-parenthesis t
+	lsp-rust-analyzer-completion-add-call-argument-snippets t
+	lsp-rust-analyzer-completion-auto-import-enable nil))
 
 (use-package lsp-ui
   :ensure t
