@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:18:22 2022 (+0200)
-;; Last-Updated: Wed Jul  2 04:22:52 2025 (+0200)
+;; Last-Updated: Wed Oct 29 22:30:22 2025 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; get rid of backup files
@@ -60,6 +60,8 @@
   (setq dirvish-large-directory-threshold 20000)
   :bind ; Bind `dirvish-fd|dirvish-side|dirvish-dwim' as you see fit
   (("C-c d" . dirvish)
+   ("C-c s" . dirvish-side)
+   ("C-c m" . dirvish-dwim)
    :map dirvish-mode-map               ; Dirvish inherits `dired-mode-map'
    (";"   . dired-up-directory)        ; So you can adjust `dired' bindings here
    ("?"   . dirvish-dispatch)          ; [?] a helpful cheatsheet
@@ -72,7 +74,8 @@
    ("v"   . dirvish-vc-menu)           ; [v]ersion control commands
    ("*"   . dirvish-mark-menu)
    ("y"   . dirvish-yank-menu)
-   ("n"   . dirvish-fd-and-narrow)
+   ("N"   . dirvish-fd-and-narrow)
+   ("n"   . dirvish-narrow)
    ("^"   . dirvish-history-last)
    ("TAB" . dirvish-subtree-toggle)
    ("M-f" . dirvish-history-go-forward)
