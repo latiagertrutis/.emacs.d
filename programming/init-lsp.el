@@ -82,6 +82,11 @@
 		'company-select-next-if-tooltip-visible-or-complete-selection))
   (company-ac-setup))
 
+;; Better forntend for company
+(use-package company-box  
+  :ensure t
+  :hook (company-mode . company-box-mode))
+
 (provide 'init-lsp)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-lsp.el ends here
