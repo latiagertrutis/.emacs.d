@@ -45,6 +45,9 @@
   ("C-x m" . lsp-ui-imenu)
   ("M-g r" . lsp-ui-peek-find-references)
   ("M-g d" . lsp-ui-peek-find-definitions)
+  :bind (:map lsp-ui-imenu-mode-map
+	      ("p" . lsp-ui-imenu--prev-kind)
+	      ("n" . lsp-ui-imenu--next-kind))
   :config
   (setq lsp-ui-sideline-enable t
 	lsp-ui-sideline-delay 1
