@@ -1,7 +1,9 @@
 (use-package rustic
   :ensure t
   :config
-  (setq rustic-format-on-save t)
+  (setq rustic-format-on-save t
+	rustic-rustfmt-bin "/usr/bin/cargo"
+	rustic-rustfmt-args "fmt")
   :hook
   (rustik-mode . rustic-mode-hook))
 
