@@ -4,8 +4,22 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: Sat Aug  2 09:28:12 2025 (+0200)
+;; Last-Updated: Thu Feb  5 17:27:42 2026 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Org roam
+
+(use-package org-roam
+  :ensure t
+  :custom
+  (org-roam-directory "~/.org-roam")
+  :config
+  (org-roam-db-autosync-mode)
+  :bind
+  ("C-c n i" . org-roam-node-insert)
+  ("C-c n f" . org-roam-node-find)
+  ("C-c n c" . org-roam-capture)
+)
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
