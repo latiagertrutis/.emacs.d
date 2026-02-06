@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 19:49:50 2022 (+0200)
-;; Last-Updated: Sat Mar  1 22:01:06 2025 (+0100)
+;; Last-Updated: Fri Feb  6 14:47:55 2026 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Load source file paths
@@ -17,7 +17,6 @@
 (add-to-list 'load-path (expand-file-name "programming" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "version_control" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "org" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "apps" user-emacs-directory))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Package management config
@@ -93,12 +92,6 @@
 ;; Org mode config
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'init-org)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Apps
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'init-telega)
-
 
 (setenv "SHELL" "/bin/bash")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
