@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: Thu Feb  5 21:41:27 2026 (+0100)
+;; Last-Updated: Fri Feb  6 14:20:20 2026 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Org roam
@@ -21,8 +21,11 @@
   ("C-c n c" . org-roam-capture)
   )
 
-(keymap-set org-mode-map "C-;" #'org-shiftleft)
-(keymap-set org-mode-map "C-'" #'org-shiftright)
+(eval-after-load "org"
+  '(progn
+     (keymap-set org-mode-map "C-;" #'org-shiftleft)
+     (keymap-set org-mode-map "C-'" #'org-shiftright)
+     ))
 
 (provide 'init-org)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
