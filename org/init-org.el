@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: Fri Feb  6 14:20:20 2026 (+0100)
+;; Last-Updated: Mon Feb  9 16:51:09 2026 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Org roam
@@ -25,6 +25,7 @@
   '(progn
      (keymap-set org-mode-map "C-;" #'org-shiftleft)
      (keymap-set org-mode-map "C-'" #'org-shiftright)
+     (setq org-startup-truncated nil)
      ))
 
 (provide 'init-org)
