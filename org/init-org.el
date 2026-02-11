@@ -27,6 +27,33 @@
      (keymap-set org-mode-map "C-'" #'org-shiftright)
      (setq org-startup-truncated nil)
      ))
+;; Example on configuring org-publish.
+;; NOTE: Use org-<format>-publish, not org-<format>-export
+;; (setq org-publish-project-alist
+;;       `(("org-roam"
+;; 	 :base-directory "~/.org-roam/"
+;; 	 :base-extension "org"
+;; 	 :exclude ".*badass\.org"
+;; 	 :publishing-function org-org-publish-to-org
+;; 	 :publishing-directory "~/Documents/"
+;; 	 :recursive t
+;; 	 )
+;; 	("org-roam-badass"
+;; 	 :base-directory "~/.org-roam/"
+;; 	 :base-extension "org"
+;; 	 :exclude ".*"
+;; 	 :include ("20260209163815-badass.org")
+;; 	 :publishing-function (org-md-publish-to-md)
+;; 	 :publishing-directory "~/workspace/BADASS/"
+;; 	 :completion-function (lambda (plist)
+;; 				(rename-file (concat
+;; 					      (plist-get plist :publishing-directory)
+;; 					      (file-name-with-extension
+;; 					       (car (plist-get plist :include)) "md"))
+;; 					     (concat
+;; 					      (plist-get plist :publishing-directory)
+;; 					      "README.md")
+;; 					     t)))))
 
 (provide 'init-org)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
