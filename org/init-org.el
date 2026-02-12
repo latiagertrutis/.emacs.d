@@ -25,6 +25,7 @@
   '(progn
      (keymap-set org-mode-map "C-;" #'org-shiftleft)
      (keymap-set org-mode-map "C-'" #'org-shiftright)
+     (keymap-set org-mode-map "M-p" #'org-publish-current-project)
      (setq org-startup-truncated nil)
      ))
 ;; Example on configuring org-publish.
