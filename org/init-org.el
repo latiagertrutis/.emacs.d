@@ -26,8 +26,12 @@
      (keymap-set org-mode-map "C-;" #'org-shiftleft)
      (keymap-set org-mode-map "C-'" #'org-shiftright)
      (keymap-set org-mode-map "M-p" #'org-publish-current-project)
-     (setq org-startup-truncated nil)
+     (setq org-startup-truncated nil
+	   org-return-follows-link t
+	   org-clock-persist 'history)
+     (org-clock-persistence-insinuate)
      ))
+
 ;; Example on configuring org-publish.
 ;; NOTE: Use org-<format>-publish, not org-<format>-export
 ;; (setq org-publish-project-alist
