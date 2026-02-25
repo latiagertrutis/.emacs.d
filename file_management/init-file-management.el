@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:18:22 2022 (+0200)
-;; Last-Updated: Wed Oct 29 22:30:22 2025 (+0100)
+;; Last-Updated: Wed Feb 25 15:24:55 2026 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; get rid of backup files
@@ -69,7 +69,7 @@
    ("f"   . dirvish-file-info-menu)    ; [f]ile info
    ("o"   . dirvish-quick-access)      ; [o]pen `dirvish-quick-access-entries'
    ("s"   . dirvish-quicksort)         ; [s]ort flie list
-   ("r"   . dirvish-history-jump)      ; [r]ecent visited
+   ("r"   . dirvish-move)              ; [r]move marked files
    ("l"   . dirvish-ls-switches-menu)  ; [l]s command flags
    ("v"   . dirvish-vc-menu)           ; [v]ersion control commands
    ("*"   . dirvish-mark-menu)
