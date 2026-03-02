@@ -32,18 +32,10 @@
      (org-clock-persistence-insinuate)
      ))
 
-;; Example on configuring org-publish.
-;; NOTE: Use org-<format>-publish, not org-<format>-export
+;; ;; Example on configuring org-publish.
+;; ;; NOTE: Use org-<format>-publish, not org-<format>-export
 ;; (setq org-publish-project-alist
-;;       `(("org-roam"
-;; 	 :base-directory "~/.org-roam/"
-;; 	 :base-extension "org"
-;; 	 :exclude ".*badass\.org"
-;; 	 :publishing-function org-org-publish-to-org
-;; 	 :publishing-directory "~/Documents/"
-;; 	 :recursive t
-;; 	 )
-;; 	("org-roam-badass"
+;;       `(("org-roam-badass"
 ;; 	 :base-directory "~/.org-roam/"
 ;; 	 :base-extension "org"
 ;; 	 :exclude ".*"
@@ -58,7 +50,25 @@
 ;; 					     (concat
 ;; 					      (plist-get plist :publishing-directory)
 ;; 					      "README.md")
+;; 					     t)))
+;; 	("org-roam-walker"
+;; 	 :base-directory "~/.org-roam/"
+;; 	 :base-extension "org"
+;; 	 :exclude ".*"
+;; 	 :include ("20260209190229-org_roam_walker.org")
+;; 	 :publishing-function (org-md-publish-to-md)
+;; 	 :publishing-directory "~/workspace/org-roam-walker/"
+;; 	 :completion-function (lambda (plist)
+;; 				(rename-file (concat
+;; 					      (plist-get plist :publishing-directory)
+;; 					      (file-name-with-extension
+;; 					       (car (plist-get plist :include)) "md"))
+;; 					     (concat
+;; 					      (plist-get plist :publishing-directory)
+;; 					      "README.md")
 ;; 					     t)))))
+
+;; (require 'org-roam-walker)
 
 (provide 'init-org)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
