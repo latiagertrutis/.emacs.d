@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: Mon Feb  9 16:51:09 2026 (+0100)
+;; Last-Updated: Tue Mar  3 15:20:44 2026 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Org roam
@@ -31,6 +31,17 @@
 	   org-clock-persist 'history)
      (org-clock-persistence-insinuate)
      ))
+
+(defun my/org-table-clock-report-formatter (&rest args)
+  "Custom clocktable writer.
+Uses the default writer but shifts the first column right."
+  (apply #'org-clocktable-write-default args)
+  (save-excursion
+    (forward-char) ;; move into the first table field
+    (org-table-move-column-right)
+    (org-table-move-column-right)
+    (org-table-move-column-right)
+    (org-table-move-column-right)))
 
 ;; ;; Example on configuring org-publish.
 ;; ;; NOTE: Use org-<format>-publish, not org-<format>-export
