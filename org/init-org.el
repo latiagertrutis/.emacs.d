@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: Tue Mar 17 18:15:32 2026 (+0100)
+;; Last-Updated: Fri Mar 27 00:37:36 2026 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Org roam
@@ -28,6 +28,7 @@
      (keymap-set org-mode-map "M-p" #'org-publish-current-project)
      (setq org-startup-truncated nil
 	   org-return-follows-link t
+	   org-duration-format 'h:mm
 	   org-clock-persist 'history)
      (org-clock-persistence-insinuate)
      ))

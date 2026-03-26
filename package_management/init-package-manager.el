@@ -8,7 +8,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (unless (package-installed-p 'use-package)
-  (package-refresh-contents)
+  (package-refresh-contents t)
   (package-install 'use-package))
 
 ;; This is only needed once, near the top of the file

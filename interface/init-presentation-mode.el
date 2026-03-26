@@ -31,7 +31,6 @@
   (org-present-hide-cursor)
 
   ;; Center the presentation and wrap lines
-  (visual-fill-column-mode 1)
   (visual-line-mode 1))
 
 (defun my/end-presentation ()
