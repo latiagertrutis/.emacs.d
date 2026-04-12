@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: Fri Mar 27 00:37:36 2026 (+0100)
+;; Last-Updated: Sun Apr 12 20:17:03 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Org roam
@@ -20,6 +20,17 @@
   ("C-c n f" . org-roam-node-find)
   ("C-c n c" . org-roam-capture)
   )
+
+(use-package git-auto-commit-mode
+  :ensure t)
+
+(defun my/org-roam-git-sync ()
+  (let ((current-file (buffer-file-name)))
+    (when (org-roam-db-query `[:select id :from nodes :where (= file ,current-file)])
+      (setq gac-automatically-push-p t)
+      (git-auto-commit-mode))))
+
+(add-hook 'org-mode-hook #'my/org-roam-git-sync)
 
 (eval-after-load "org"
   '(progn
