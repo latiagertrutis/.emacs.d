@@ -13,8 +13,6 @@
 
 (use-package lsp-mode
   :commands (lsp)
-  :init
-  (setq lsp-keymap-prefix "C-;")
   :after (go-mode
 	  c-mode
 	  yaml-mode
@@ -37,6 +35,7 @@
   :config
   (setq lsp-clients-clangd-args '("--background-index")
         lsp-enable-on-type-formatting nil
+	lsp-keymap-prefix "C-;"
 	lsp-signature-mode nil
 	lsp-signature-auto-activate nil
         lsp-enable-indentation nil
