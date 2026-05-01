@@ -11,10 +11,10 @@
   :config
   (setq gofmt-command "goimports")
   :hook
+  (go-mode . lsp)
   (before-save . gofmt-before-save)
   ((go-mode . flycheck-mode)
-   (go-mode . yas-minor-mode)
-   (go-mode . lsp)))
+   (go-mode . yas-minor-mode)))
 
 (provide 'init-go)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
