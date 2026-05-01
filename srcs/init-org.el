@@ -21,9 +21,6 @@
   ("C-c n c" . org-roam-capture)
   )
 
-(use-package git-auto-commit-mode
-  
-  )
 
 (defun my/org-roam-git-sync ()
   (let ((current-file (buffer-file-name)))
@@ -31,18 +28,18 @@
       (setq gac-automatically-push-p t)
       (git-auto-commit-mode))))
 
-(add-hook 'org-mode-hook #'my/org-roam-git-sync)
+(use-package git-auto-commit-mode
+  :after org-roam
+  :hook (org-mode . #'my/org-roam-git-sync))
 
-(eval-after-load "org"
-  '(progn
-     (keymap-set org-mode-map "C-;" #'org-shiftleft)
-     (keymap-set org-mode-map "C-'" #'org-shiftright)
-     (keymap-set org-mode-map "M-p" #'org-publish-current-project)
-     (setq org-startup-truncated nil
-	   org-return-follows-link t
-	   org-duration-format 'h:mm
-	   org-clock-persist 'history)
-     (org-clock-persistence-insinuate)))
+(with-eval-after-load 'org
+  (keymap-set org-mode-map "C-;" #'org-shiftleft)
+  (keymap-set org-mode-map "C-'" #'org-shiftright)
+  (keymap-set org-mode-map "M-p" #'org-publish-current-project)
+  (setq org-startup-truncated nil
+	org-return-follows-link t
+	org-duration-format 'h:mm
+	org-clock-persist nil))
 
 (defun my/org-clock-table-report-hours ()
   (interactive)

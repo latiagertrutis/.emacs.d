@@ -12,10 +12,10 @@
 ;; in the C projects in order to find the includes
 
 (use-package lsp-mode
-  
   :commands (lsp)
   :init
   (setq lsp-keymap-prefix "C-;")
+  :after (go-mode c-mode yaml-mode python-mode shell-script-mode javascript-mode rust-mode)
   :hook
   (go-mode . lsp)
   (c-mode . lsp)
@@ -34,11 +34,16 @@
 	lsp-rust-analyzer-completion-add-call-argument-snippets t
 	lsp-rust-analyzer-completion-auto-import-enable nil))
 
+(use-package yasnippet
+  :after lsp-mode
+  :hook
+  (lsp-mode . yas-minor-mode))
+
 (use-package lsp-ui
+  :after lsp-mode
   :commands (lsp-ui-mode)
   :hook
   (lsp-mode . lsp-ui-mode)
-  (lsp-mode . yas-minor-mode)
   :bind
   ("C-c l" . lsp-ui-doc-toggle)
   ("C-x m" . lsp-ui-imenu)
@@ -56,20 +61,18 @@
 	lsp-ui-sideline-ignore-duplicate t))
 
 (use-package company
-  
   :defer 20
   ;; This is not perfect yet. It completes too quickly outside programming modes, but while programming it is just right.
   :custom
   (company-idle-delay 0.1)
-  (debug-on-error nil) ;; otherwise this throws lots of errors on completion errors
   :custom-face
   (company-preview ((nil(:background "dark slate blue"))))
   :config
   (setq company-frontends '(company-preview-frontend)))
 
 ;; Better forntend for company
-(use-package company-box  
-  
+(use-package company-box
+  :after company
   :hook (company-mode . company-box-mode))
 
 (provide 'init-lsp)
