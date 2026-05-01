@@ -227,16 +227,14 @@ This command does not push text to `kill-ring'."
 ;; --------------------------------------------------------------------------------
 
 (use-package whole-line-or-region
-             
-             :hook
-             (after-init . whole-line-or-region-global-mode)
-             :bind
-             ("C-M-w" . whole-line-or-region-delete-region))
+  :hook
+  (after-init . whole-line-or-region-global-mode)
+  :bind
+  ("C-M-w" . whole-line-or-region-delete-region))
 
 (use-package smooth-scrolling
-             
-             :config
-             (smooth-scrolling-mode 1))
+  :config
+  (smooth-scrolling-mode 1))
 
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode)
@@ -254,40 +252,33 @@ This command does not push text to `kill-ring'."
               (define-key c-mode-map "{" 'electric-pair)
 	      (define-key c-mode-map "}" 'electric-pair))))
 
-(defun sanityinc/newline-at-end-of-line ()
-  "Move to end of line, enter a newline, and reindent."
-  (interactive)
-  (move-end-of-line 1)
-  (newline-and-indent))
-
-(bind-key* "S-<return>" 'sanityinc/newline-at-end-of-line)
-
 (use-package rainbow-delimiters
-             
-             :hook
-             (prog-mode . rainbow-delimiters-mode))
+  :hook
+  (prog-mode . rainbow-delimiters-mode))
 
 (use-package avy
-             
-             :config
-             (global-set-key (kbd "C-o") 'avy-goto-char-timer))
+  :bind
+  ("C-o" . avy-goto-char-timer))
 
 (use-package symbol-overlay
-             
-	     :hook
-	     (prog-mode . symbol-overlay-mode)
-	     (html-mode . symbol-overlay-mode)
-	     (yaml-mode . symbol-overlay-mode)
-	     (conf-mode . symbol-overlay-mode)
-	     :bind (:map symbol-overlay-mode-map
-			 ("M-n" . symbol-overlay-jump-next)
-			 ("M-p" . symbol-overlay-jump-prev))
-	     )
+  :after (prog-mode yaml-mode)
+  :hook
+  (prog-mode . symbol-overlay-mode)
+  (html-mode . symbol-overlay-mode)
+  (yaml-mode . symbol-overlay-mode)
+  (conf-mode . symbol-overlay-mode)
+  :bind
+  (:map symbol-overlay-mode-map
+	("M-n" . symbol-overlay-jump-next)
+	("M-p" . symbol-overlay-jump-prev)))
 
-(defface separator-face '((t (:foreground "hot pink" :weight bold))) nil)
+(use-package flycheck)
+
+(use-package yasnippet)
 
 (use-package browse-kill-ring
-  
+  :custom-face
+  (separator-face ((t (:foreground "hot pink" :weight bold))))
   :config
   (setq browse-kill-ring-separator "--------------------------------------------------------------------------------"
 	browse-kill-ring-highlight-current-entry t
@@ -297,8 +288,7 @@ This command does not push text to `kill-ring'."
   (:map browse-kill-ring-mode-map
 	("C-g" . browse-kill-ring-quit)
 	("M-n" . browse-kill-ring-forward)
-	("M-p" . browse-kill-ring-previous))
-  )
+	("M-p" . browse-kill-ring-previous)))
 
 (use-package indent-bars
   :hook ((rust-mode . indent-bars-mode)))

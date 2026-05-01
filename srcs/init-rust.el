@@ -1,19 +1,8 @@
 (use-package rustic
-  
   :config
   (setq rustic-format-on-save t
 	rustic-rustfmt-bin "/usr/bin/cargo"
-	rustic-rustfmt-args "fmt")
-  :hook
-  (rustik-mode . rustic-mode-hook))
+	rustic-rustfmt-args "fmt"))
 
-(defun rustic-mode-hook ()
-  ;; so that run C-c C-c C-r works without having to confirm, but don't try to
-  ;; save rust buffers that are not file visiting. Once
-  ;; https://github.com/brotzeit/rustic/issues/253 has been resolved this should
-  ;; no longer be necessary.
-  (when buffer-file-name
-    (setq-local buffer-save-without-query t))
-  (add-hook 'before-save-hook 'lsp-format-buffer nil t))
 
 (provide 'init-rust)

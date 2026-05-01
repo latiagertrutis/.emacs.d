@@ -30,7 +30,7 @@
 
 (use-package git-auto-commit-mode
   :after org-roam
-  :hook (org-mode . #'my/org-roam-git-sync))
+  :hook (org-mode . my/org-roam-git-sync))
 
 (with-eval-after-load 'org
   (keymap-set org-mode-map "C-;" #'org-shiftleft)

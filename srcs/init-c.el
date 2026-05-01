@@ -12,7 +12,6 @@
     (astyle-on-save-mode)))
 
 (use-package astyle
-  
   :when (executable-find "astyle")
   :hook (c-mode . my-astyle-on-save-mode))
 
@@ -27,9 +26,10 @@
         c-block-comment-prefix "*"
         ))
 
-(add-hook 'c-mode-hook 'my-c-mode-hook)
+(with-eval-after-load 'flycheck
+  (add-hook 'c-mode-hook 'flycheck-mode))
 
-(add-hook 'c-mode-hook 'flycheck-mode)
+(add-hook 'c-mode-hook 'my-c-mode-hook)
 
 (add-hook 'before-save-hook 'c-mode-delete-trailing-whitespace)
 

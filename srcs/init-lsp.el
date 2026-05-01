@@ -15,7 +15,15 @@
   :commands (lsp)
   :init
   (setq lsp-keymap-prefix "C-;")
-  :after (go-mode c-mode yaml-mode python-mode shell-script-mode javascript-mode rust-mode)
+  :after (go-mode
+	  c-mode
+	  yaml-mode
+	  python-mode
+	  shell-script-mode
+	  javascript-mode
+	  rustic
+	  yasnippet
+	  lsp-ui)
   :hook
   (go-mode . lsp)
   (c-mode . lsp)
@@ -24,6 +32,8 @@
   (shell-script-mode . lsp)
   (javascript-mode . lsp)
   (rust-mode . lsp)
+  ((lsp-mode . yas-minor-mode)
+   (lsp-mode . lsp-ui-mode))
   :config
   (setq lsp-clients-clangd-args '("--background-index")
         lsp-enable-on-type-formatting nil
@@ -34,16 +44,8 @@
 	lsp-rust-analyzer-completion-add-call-argument-snippets t
 	lsp-rust-analyzer-completion-auto-import-enable nil))
 
-(use-package yasnippet
-  :after lsp-mode
-  :hook
-  (lsp-mode . yas-minor-mode))
-
 (use-package lsp-ui
-  :after lsp-mode
   :commands (lsp-ui-mode)
-  :hook
-  (lsp-mode . lsp-ui-mode)
   :bind
   ("C-c l" . lsp-ui-doc-toggle)
   ("C-x m" . lsp-ui-imenu)
