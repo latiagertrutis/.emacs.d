@@ -300,13 +300,8 @@ This command does not push text to `kill-ring'."
 	("M-p" . browse-kill-ring-previous))
   )
 
-(use-package indent-guide
-  
-  :config
-  (indent-guide-global-mode)
-  :custom-face
-  (indent-guide-face ((t (:inherit markdown-footnote-marker-face))))
-  )
+(use-package indent-bars
+  :hook ((rust-mode . indent-bars-mode)))
 
 (provide 'init-utils)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
