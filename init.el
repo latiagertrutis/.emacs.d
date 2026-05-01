@@ -68,7 +68,6 @@
 (require 'init-lisp)
 (require 'init-yaml)
 (require 'init-programming-utils)
-(require 'init-cider)
 (require 'init-docker)
 (require 'init-web)
 (require 'init-robot)
