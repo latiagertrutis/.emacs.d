@@ -6,3 +6,8 @@ projectile-bookmarks.eld
 transient
 dotfilesbackups
 .emacs.desktop
+auto-save-list
+projects
+recentf
+straight
+tramp

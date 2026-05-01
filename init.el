@@ -4,26 +4,16 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 19:49:50 2022 (+0200)
-;; Last-Updated: Wed Mar 25 15:21:04 2026 (+0100)
+;; Last-Updated: Fri May  1 14:23:22 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Load source file paths
-(add-to-list 'load-path (expand-file-name "package_management" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "interface" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "editing" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "file_management" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "integration" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "project_management" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "programming" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "version_control" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "org" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "srcs" user-emacs-directory))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Package management config
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(require 'init-repository)
 (require 'init-package-manager)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -94,8 +84,5 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'init-org)
 
-(setenv "SHELL" "/bin/bash")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
-
-(put 'narrow-to-region 'disabled nil)
