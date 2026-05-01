@@ -1,5 +1,3 @@
-(use-package cider
-  
-  )
+(use-package cider)
 
 (provide 'init-cider)

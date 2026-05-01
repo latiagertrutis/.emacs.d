@@ -4,8 +4,10 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 19:49:50 2022 (+0200)
-;; Last-Updated: Fri May  1 14:23:22 2026 (+0200)
+;; Last-Updated: Fri May  1 14:38:36 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq warning-minimum-level :error)
 
 ;; Load source file paths
 (add-to-list 'load-path (expand-file-name "srcs" user-emacs-directory))
@@ -34,7 +36,6 @@
 
 (require 'init-icons)
 (require 'init-utils)
-(require 'init-header)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; File management config

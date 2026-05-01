@@ -7,10 +7,10 @@
 ;; Last-Updated: Fri May  1 13:46:15 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defvar bootstrap-version)
-
 (setq package-enable-at-startup nil
       straight-use-package-by-default t)
+
+(defvar bootstrap-version)
 
 (let ((bootstrap-file
        (expand-file-name
