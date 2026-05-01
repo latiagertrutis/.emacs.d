@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 21:06:24 2022 (+0200)
-;; Last-Updated: Tue Sep  9 16:17:58 2025 (+0200)
+;; Last-Updated: Fri May  1 13:52:00 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-filter-dired-buffers (buffer-list)
@@ -42,7 +42,7 @@ With WITH-TYPES, ask for file types to search in."
   (helm-rg default-directory with-types))
 
 (use-package helm
-  :ensure t
+  
   :custom-face
   (helm-ff-directory ((t (:foreground "light sky blue"))))
   :config
@@ -89,17 +89,19 @@ With WITH-TYPES, ask for file types to search in."
          ("C-p" . helm-previous-line))))
 
 (use-package helm-xref
-  :ensure t
+  
   :bind
   ("M-g b" . xref-go-back)
   ("M-g o" . xref-find-definitions-other-window)
   )
 
 (use-package helm-ls-git
-  :ensure t)
+  
+  )
 
 (use-package helm-ls-hg
-  :ensure t)
+  
+  )
 
 (provide 'init-minibuffer)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

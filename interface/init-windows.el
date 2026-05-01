@@ -8,7 +8,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package switch-window
-             :ensure t
+             
              :config
              (setq switch-window-shortcut-style 'alphabet)
              (setq switch-window-timeout nil)

@@ -4,18 +4,28 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 20:16:14 2022 (+0200)
-;; Last-Updated: sáb ago  6 20:16:26 2022 (+0200)
+;; Last-Updated: Fri May  1 13:46:15 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents t)
-  (package-install 'use-package))
+(defvar bootstrap-version)
 
-;; This is only needed once, near the top of the file
-(eval-when-compile
-  ;; Following line is not needed if use-package.el is in ~/.emacs.d
-  ;; (add-to-list 'load-path "<path where use-package is installed>")
-  (require 'use-package))
+(setq package-enable-at-startup nil
+      straight-use-package-by-default t)
+
+(let ((bootstrap-file
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
 (provide 'init-package-manager)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

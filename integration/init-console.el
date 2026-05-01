@@ -4,11 +4,11 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mié ago 10 17:17:10 2022 (+0200)
-;; Last-Updated: lun may  6 10:14:21 2024 (+0200)
+;; Last-Updated: Fri May  1 13:52:00 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package vterm
-  :ensure t
+  
   :bind (:map vterm-mode-map
          ("C-y" . vterm-yank)))
 
@@ -18,7 +18,8 @@
   (other-window 1)
   (multi-vterm))
 
-(use-package multi-vterm :ensure t
+(use-package multi-vterm
+  
   :bind ("C-c t" . multi-vterm)
   ("C-c o" . multi-vterm-other-window))
 
@@ -29,7 +30,7 @@
 (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
 (use-package eshell-prompt-extras
-  :ensure t
+  
   :config
   (autoload 'epe-theme-lambda "eshell-prompt-extras")
   (setq eshell-highlight-prompt nil

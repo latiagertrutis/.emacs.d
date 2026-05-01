@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:09:06 2022 (+0200)
-;; Last-Updated: Wed Mar 26 14:05:07 2025 (+0100)
+;; Last-Updated: Fri May  1 13:52:00 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'bind-key)
@@ -227,14 +227,14 @@ This command does not push text to `kill-ring'."
 ;; --------------------------------------------------------------------------------
 
 (use-package whole-line-or-region
-             :ensure t
+             
              :hook
              (after-init . whole-line-or-region-global-mode)
              :bind
              ("C-M-w" . whole-line-or-region-delete-region))
 
 (use-package smooth-scrolling
-             :ensure t
+             
              :config
              (smooth-scrolling-mode 1))
 
@@ -263,17 +263,17 @@ This command does not push text to `kill-ring'."
 (bind-key* "S-<return>" 'sanityinc/newline-at-end-of-line)
 
 (use-package rainbow-delimiters
-             :ensure t
+             
              :hook
              (prog-mode . rainbow-delimiters-mode))
 
 (use-package avy
-             :ensure t
+             
              :config
              (global-set-key (kbd "C-o") 'avy-goto-char-timer))
 
 (use-package symbol-overlay
-             :ensure t
+             
 	     :hook
 	     (prog-mode . symbol-overlay-mode)
 	     (html-mode . symbol-overlay-mode)
@@ -287,7 +287,7 @@ This command does not push text to `kill-ring'."
 (defface separator-face '((t (:foreground "hot pink" :weight bold))) nil)
 
 (use-package browse-kill-ring
-  :ensure t
+  
   :config
   (setq browse-kill-ring-separator "--------------------------------------------------------------------------------"
 	browse-kill-ring-highlight-current-entry t
@@ -301,7 +301,7 @@ This command does not push text to `kill-ring'."
   )
 
 (use-package indent-guide
-  :ensure t
+  
   :config
   (indent-guide-global-mode)
   :custom-face

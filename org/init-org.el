@@ -4,13 +4,13 @@
 ;; Author: Mateo Rodriguez Ripolles (teorodrip@posteo.net)
 ;; Maintainer: 
 ;; Created: mar sep  6 11:45:11 2022 (+0200)
-;; Last-Updated: Sun Apr 12 20:17:03 2026 (+0200)
+;; Last-Updated: Fri May  1 13:52:00 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Org roam
 
 (use-package org-roam
-  :ensure t
+  
   :custom
   (org-roam-directory "~/.org-roam")
   :config
@@ -22,7 +22,8 @@
   )
 
 (use-package git-auto-commit-mode
-  :ensure t)
+  
+  )
 
 (defun my/org-roam-git-sync ()
   (let ((current-file (buffer-file-name)))
@@ -41,8 +42,7 @@
 	   org-return-follows-link t
 	   org-duration-format 'h:mm
 	   org-clock-persist 'history)
-     (org-clock-persistence-insinuate)
-     ))
+     (org-clock-persistence-insinuate)))
 
 (defun my/org-clock-table-report-hours ()
   (interactive)

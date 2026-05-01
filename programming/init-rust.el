@@ -1,5 +1,5 @@
 (use-package rustic
-  :ensure t
+  
   :config
   (setq rustic-format-on-save t
 	rustic-rustfmt-bin "/usr/bin/cargo"

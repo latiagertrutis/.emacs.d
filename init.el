@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: sáb ago  6 19:49:50 2022 (+0200)
-;; Last-Updated: Tue Mar 17 15:54:46 2026 (+0100)
+;; Last-Updated: Wed Mar 25 15:21:04 2026 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Load source file paths
@@ -98,3 +98,4 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
 
+(put 'narrow-to-region 'disabled nil)

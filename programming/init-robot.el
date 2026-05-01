@@ -14,7 +14,7 @@
   (revert-buffer nil 't))
 
 (use-package robot-mode
-  :ensure t
+  
   :hook
   ;; https://emacs.stackexchange.com/questions/5452/before-save-hook-for-cc-mode
   (robot-mode . (lambda () (add-hook 'after-save-hook #'my-robot-mode-format nil 'local))))

@@ -47,7 +47,7 @@
   (find-alternate-file (buffer-file-name)))
 
 (use-package org-present
-  :ensure t
+  
   :config
   ;; Make sure certain org faces use the fixed-pitch face when variable-pitch-mode is on
   (set-face-attribute 'org-block nil :foreground nil :font "mononoki")

@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:30:37 2022 (+0200)
-;; Last-Updated: Tue Dec 30 15:21:37 2025 (+0100)
+;; Last-Updated: Fri May  1 13:50:54 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;----------------------------------------------------------------------------
@@ -19,7 +19,7 @@
   )
 
 (use-package rg
-  :ensure t
+  
   :config
   (rg-define-search rg-c-mode
     "Search files in a C project"

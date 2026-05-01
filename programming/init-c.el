@@ -12,7 +12,7 @@
     (astyle-on-save-mode)))
 
 (use-package astyle
-  :ensure t
+  
   :when (executable-find "astyle")
   :hook (c-mode . my-astyle-on-save-mode))
 

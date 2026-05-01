@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:18:22 2022 (+0200)
-;; Last-Updated: Wed Feb 25 15:24:55 2026 (+0100)
+;; Last-Updated: Fri May  1 13:52:00 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; get rid of backup files
@@ -22,7 +22,7 @@
       `((".*" ,(expand-file-name (concat dotfiles-dir "backups")))))
 
 (use-package ztree
-  :ensure t
+  
   :custom-face
   (ztreep-diff-model-add-face ((nil(:foreground "chartreuse"))))
   (ztreep-diff-model-diff-face ((nil(:foreground "coral"))))
@@ -40,7 +40,7 @@
   (dirvish-narrow))
 
 (use-package dirvish
-  :ensure t
+  
   :init
   (dirvish-override-dired-mode)
   :custom

@@ -4,7 +4,7 @@
 ;; Author: Mateo Rodriguez Ripolles (mateorodriguez@geotab.com)
 ;; Maintainer: 
 ;; Created: dom ago  7 14:55:15 2022 (+0200)
-;; Last-Updated: Tue Mar 17 15:56:54 2026 (+0100)
+;; Last-Updated: Fri May  1 13:52:09 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; NOTE: on clangd rememeber to use either compile_commands.json or compile_flags.txt
@@ -12,7 +12,7 @@
 ;; in the C projects in order to find the includes
 
 (use-package lsp-mode
-  :ensure t
+  
   :commands (lsp)
   :init
   (setq lsp-keymap-prefix "C-;")
@@ -35,8 +35,6 @@
 	lsp-rust-analyzer-completion-auto-import-enable nil))
 
 (use-package lsp-ui
-  :ensure t
-  :ensure yasnippet
   :commands (lsp-ui-mode)
   :hook
   (lsp-mode . lsp-ui-mode)
@@ -57,7 +55,9 @@
         lsp-ui-imenu-enable t
 	lsp-ui-sideline-ignore-duplicate t))
 
-(use-package company :ensure t :defer 20
+(use-package company
+  
+  :defer 20
   ;; This is not perfect yet. It completes too quickly outside programming modes, but while programming it is just right.
   :custom
   (company-idle-delay 0.1)
@@ -69,7 +69,7 @@
 
 ;; Better forntend for company
 (use-package company-box  
-  :ensure t
+  
   :hook (company-mode . company-box-mode))
 
 (provide 'init-lsp)

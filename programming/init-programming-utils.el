@@ -8,7 +8,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package yafolding
-  :ensure t
+  
   :hook
   (prog-mode . yafolding-mode))
 
