@@ -35,13 +35,17 @@
   :config
   (setq lsp-clients-clangd-args '("--background-index")
         lsp-enable-on-type-formatting nil
-	lsp-keymap-prefix "C-;"
 	lsp-signature-mode nil
 	lsp-signature-auto-activate nil
         lsp-enable-indentation nil
 	lsp-rust-analyzer-completion-add-call-parenthesis t
 	lsp-rust-analyzer-completion-add-call-argument-snippets t
 	lsp-rust-analyzer-completion-auto-import-enable nil))
+
+;; Fix to prefix not set correctly with setq:
+;; https://github.com/emacs-lsp/lsp-mode/issues/1672
+(with-eval-after-load 'lsp-mode
+  (define-key lsp-mode-map (kbd "C-;") lsp-command-map))
 
 (use-package lsp-ui
   :commands (lsp-ui-mode)
