@@ -29,6 +29,8 @@
 (with-eval-after-load 'flycheck
   (add-hook 'c-mode-hook 'flycheck-mode))
 
+(add-hook 'c-mode-hook 'lsp)
+
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 
 (add-hook 'before-save-hook 'c-mode-delete-trailing-whitespace)

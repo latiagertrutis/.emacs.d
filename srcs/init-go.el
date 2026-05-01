@@ -7,15 +7,14 @@
 ;; Last-Updated: Sat Dec 14 17:09:10 2024 (+0100)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package go-mode
-  :after (flycheck yasnippet)
+(use-package go-mode  
   :config
-  ; Use goimports instead of go-fmt
   (setq gofmt-command "goimports")
   :hook
   (before-save . gofmt-before-save)
   ((go-mode . flycheck-mode)
-   (go-mode . yas-minor-mode)))
+   (go-mode . yas-minor-mode)
+   (go-mode . lsp)))
 
 (provide 'init-go)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

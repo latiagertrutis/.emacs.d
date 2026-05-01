@@ -261,7 +261,6 @@ This command does not push text to `kill-ring'."
   ("C-o" . avy-goto-char-timer))
 
 (use-package symbol-overlay
-  :after (prog-mode yaml-mode)
   :hook
   (prog-mode . symbol-overlay-mode)
   (html-mode . symbol-overlay-mode)
@@ -274,7 +273,9 @@ This command does not push text to `kill-ring'."
 
 (use-package flycheck)
 
-(use-package yasnippet)
+(use-package yasnippet
+  :hook
+  (lsp-mode . yas-minor-mode))
 
 (use-package browse-kill-ring
   :custom-face

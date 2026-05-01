@@ -11,27 +11,13 @@
 ;; compile_commands.json can be generated with the Bear tool: https://github.com/rizsotto/Bear
 ;; in the C projects in order to find the includes
 
+;; IMPORTANT: Do not add hooks here, lsp should not depend on anything since
+;; many packages load lsp and if they go first this configuration will not be
+;; loaded. For this reasons add lsp hooks on each individual package
 (use-package lsp-mode
+  :init
+  (setq lsp-keymap-prefix "C-;")
   :commands (lsp)
-  :after (go-mode
-	  c-mode
-	  yaml-mode
-	  python-mode
-	  shell-script-mode
-	  javascript-mode
-	  rustic
-	  yasnippet
-	  lsp-ui)
-  :hook
-  (go-mode . lsp)
-  (c-mode . lsp)
-  (yaml-mode . lsp)
-  (python-mode . lsp)
-  (shell-script-mode . lsp)
-  (javascript-mode . lsp)
-  (rust-mode . lsp)
-  ((lsp-mode . yas-minor-mode)
-   (lsp-mode . lsp-ui-mode))
   :config
   (setq lsp-clients-clangd-args '("--background-index")
         lsp-enable-on-type-formatting nil
@@ -42,13 +28,10 @@
 	lsp-rust-analyzer-completion-add-call-argument-snippets t
 	lsp-rust-analyzer-completion-auto-import-enable nil))
 
-;; Fix to prefix not set correctly with setq:
-;; https://github.com/emacs-lsp/lsp-mode/issues/1672
-(with-eval-after-load 'lsp-mode
-  (define-key lsp-mode-map (kbd "C-;") lsp-command-map))
-
 (use-package lsp-ui
   :commands (lsp-ui-mode)
+  :hook
+  (lsp-mode . lsp-ui-mode)
   :bind
   ("C-c l" . lsp-ui-doc-toggle)
   ("C-x m" . lsp-ui-imenu)
@@ -77,7 +60,6 @@
 
 ;; Better forntend for company
 (use-package company-box
-  :after company
   :hook (company-mode . company-box-mode))
 
 (provide 'init-lsp)
