@@ -62,6 +62,10 @@ Uses the default writer but shifts the first column right."
     (org-table-move-column-right)
     (org-table-move-column-right)))
 
+(use-package org-roam-walker
+  :straight (org-roam-walker :type git
+			     :repo "ssh://git@hub.sealcode.org/source/org-roam-walker.git"))
+
 ;; Example on configuring org-publish.
 ;; NOTE: Use org-<format>-publish, not org-<format>-export
 ;; (setq org-publish-project-alist
@@ -97,8 +101,6 @@ Uses the default writer but shifts the first column right."
 ;; 					      (plist-get plist :publishing-directory)
 ;; 					      "README.md")
 ;; 					     t)))))
-
-;; (require 'org-roam-walker)
 
 (provide 'init-org)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
