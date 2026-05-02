@@ -19,6 +19,23 @@
 (require 'init-package-manager)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Programming config
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'init-lsp)
+(require 'init-c)
+(require 'init-go)
+(require 'init-rust)
+(require 'init-error-check)
+(require 'init-lisp)
+(require 'init-yaml)
+(require 'init-programming-utils)
+(require 'init-docker)
+(require 'init-web)
+(require 'init-robot)
+(require 'init-js)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Interface Enhancement config
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -57,23 +74,6 @@
 (require 'init-project-management)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Programming config
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(require 'init-lsp)
-(require 'init-c)
-(require 'init-go)
-(require 'init-rust)
-(require 'init-error-check)
-(require 'init-lisp)
-(require 'init-yaml)
-(require 'init-programming-utils)
-(require 'init-docker)
-(require 'init-web)
-(require 'init-robot)
-(require 'init-js)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Version control config
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -86,3 +86,17 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-vc-selected-packages
+   '((ultra-scroll :url "https://github.com/jdtsmith/ultra-scroll"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(highlight ((t (:inherit isearch))))
+ '(hl-line ((t (:background "#383838")))))
