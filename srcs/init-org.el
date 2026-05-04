@@ -17,8 +17,7 @@
   :bind
   ("C-c n i" . org-roam-node-insert)
   ("C-c n f" . org-roam-node-find)
-  ("C-c n c" . org-roam-capture)
-  )
+  ("C-c n c" . org-roam-capture))
 
 
 (defun my/org-roam-git-sync ()
@@ -105,6 +104,14 @@
 (use-package org-roam-walker
   :straight (org-roam-walker :type git
 			     :repo "ssh://git@hub.sealcode.org/source/org-roam-walker.git"))
+
+(use-package org-mru-clock
+  :bind*
+  ("C-c C-x i" . org-mru-clock-in)
+  ("C-c C-x o" . org-clock-out)
+  ("C-c C-x j" . org-mru-clock-goto)
+  :config
+  (setq org-mru-clock-how-many 100))
 
 ;; Example on configuring org-publish.
 ;; NOTE: Use org-<format>-publish, not org-<format>-export
