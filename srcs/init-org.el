@@ -10,7 +10,6 @@
 ;; Org roam
 
 (use-package org-roam
-  
   :custom
   (org-roam-directory "~/.org-roam")
   :config
@@ -60,6 +59,7 @@
   "Custom clocktable formatter that adds EUR column."
   (let ((pay-rate 14)
 	default-table
+	(not-paid-sum 0)
 	(y-pos 4)
 	;; Add helper to get x y position
 	(get-val #'(lambda (l x y)
@@ -75,14 +75,29 @@
     ;; iterate in the rows starting at 4 (hline take 2 rows) until the end (-1 for pos)
     (cl-loop for x from 4 to (1- (length default-table)) do
 	     (let ((y y-pos)
-		   val)
+		   val
+		   to-be-paid
+		   (first-col (funcall get-val default-table x 0)))
+
 	       (while (progn
 			(setq val (funcall get-val default-table x y))
 			(if (equal "" val) t nil))
 		 (setq y (1- y)))
-	       (nconc (nth x default-table)
-		      `(,(format "%.2f" (* pay-rate (mmss-to-decimal val)))))))
 
+	       (setq to-be-paid (* pay-rate (mmss-to-decimal val)))
+
+	       ;; Add the values to the EUR column
+	       (nconc (nth x default-table)
+		      `(,(format "%.2f" to-be-paid)))
+
+	       ;; Compute what is left to be paid
+	       (when (string-match "<[^>]+>\\(--<[^>]+>\\)?" first-col)
+		 (unless (string-match "PAID" first-col)
+		   (setq not-paid-sum (+ not-paid-sum to-be-paid))))))
+
+    ;; Add the sum row at the end
+    (nconc default-table
+	   `(hline ("" "" "" "" " To be paid",(format "%.2f" not-paid-sum))))
     ;; Regenerate the table from the list and insert
     (insert (orgtbl-to-orgtbl default-table nil))
     (org-table-align)))
