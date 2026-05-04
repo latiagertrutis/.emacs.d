@@ -45,22 +45,48 @@
   (interactive)
   (let ((org-clock-clocktable-default-properties
 	 '(:scope subtree
-		  :maxlevel 2
+		  :maxlevel 4
 		  :link t
-		  :properties ("EUR")
-		  :formula "@4$1..@>$1=$4*14;t"
 		  :formatter my/org-table-clock-report-formatter)))
     (org-clock-report)))
 
+(defun mmss-to-decimal (time-str)
+  (when (string-match "\\`\\([0-9]+\\):\\([0-9]+\\)\\'" time-str)
+    (let ((min (string-to-number (match-string 1 time-str)))
+          (sec (string-to-number (match-string 2 time-str))))
+      (+ min (/ sec 60.0)))))
+
 (defun my/org-table-clock-report-formatter (&rest args)
-  "Custom clocktable writer.
-Uses the default writer but shifts the first column right."
-  (apply #'org-clocktable-write-default args)
-  (save-excursion
-    (forward-char) ;; move into the first table field
-    (org-table-move-column-right)
-    (org-table-move-column-right)
-    (org-table-move-column-right)))
+  "Custom clocktable formatter that adds EUR column."
+  (let ((pay-rate 14)
+	default-table
+	(y-pos 4)
+	;; Add helper to get x y position
+	(get-val #'(lambda (l x y)
+		     (nth y (nth x l)))))
+    (with-temp-buffer
+      (apply #'org-clocktable-write-default args)
+      (goto-char (org-table-begin))
+      (setq default-table (org-table-to-lisp)))
+
+    ;; Add the EUR column at end
+    (nconc (nth 0 default-table) '("EUR"))
+
+    ;; iterate in the rows starting at 4 (hline take 2 rows) until the end (-1 for pos)
+    (cl-loop for x from 4 to (1- (length default-table)) do
+	     (let ((y y-pos)
+		   val)
+	       (while
+		   (progn
+		     (setq val (funcall get-val default-table x y))
+		     (if (equal "" val) t nil))
+		 (setq y (1- y)))
+	       (nconc (nth x default-table)
+		      `(,(format "%.2f" (* pay-rate (mmss-to-decimal val)))))))
+
+    ;; Regenerate the table from the list and insert
+    (insert (orgtbl-to-orgtbl default-table nil))
+    (org-table-align)))
 
 (use-package org-roam-walker
   :straight (org-roam-walker :type git
