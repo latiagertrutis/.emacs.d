@@ -76,10 +76,9 @@
     (cl-loop for x from 4 to (1- (length default-table)) do
 	     (let ((y y-pos)
 		   val)
-	       (while
-		   (progn
-		     (setq val (funcall get-val default-table x y))
-		     (if (equal "" val) t nil))
+	       (while (progn
+			(setq val (funcall get-val default-table x y))
+			(if (equal "" val) t nil))
 		 (setq y (1- y)))
 	       (nconc (nth x default-table)
 		      `(,(format "%.2f" (* pay-rate (mmss-to-decimal val)))))))
