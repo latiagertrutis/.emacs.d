@@ -48,6 +48,9 @@
         lsp-ui-imenu-enable t
 	lsp-ui-sideline-ignore-duplicate t))
 
+;; To provide consult-lsp for dirvish and others
+(use-package consult-lsp)
+
 (use-package company
   :defer 20
   ;; This is not perfect yet. It completes too quickly outside programming modes, but while programming it is just right.

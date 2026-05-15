@@ -40,7 +40,8 @@
   (dirvish-narrow))
 
 (use-package dirvish
-  
+  :straight (dirvish :type git
+		     :repo "latiagertrutis/dirvish")
   :init
   (dirvish-override-dired-mode)
   :custom

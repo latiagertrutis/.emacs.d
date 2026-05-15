@@ -19,7 +19,6 @@
   )
 
 (use-package rg
-  
   :config
   (rg-define-search rg-c-mode
     "Search files in a C project"
@@ -29,7 +28,7 @@
     "Search files of all types in a C project"
     :dir (my/project-root-or-default)
     :files "*")
-  (setq rg-command-line-flags '("--sort path" "--hidden"))
+  (setq rg-command-line-flags '("--sort path" "--hidden" "--multiline"))
   :bind
   ("C-c w" . rg-all-mode)
   )
