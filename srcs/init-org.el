@@ -59,6 +59,7 @@
   (let ((pay-rate 14)
 	default-table
 	(not-paid-sum 0)
+	(worked-hours-sum 0)
 	(y-pos 4)
 	;; Add helper to get x y position
 	(get-val #'(lambda (l x y)
@@ -92,11 +93,12 @@
 	       ;; Compute what is left to be paid
 	       (when (string-match "<[^>]+>\\(--<[^>]+>\\)?" first-col)
 		 (unless (string-match "PAID" first-col)
-		   (setq not-paid-sum (+ not-paid-sum to-be-paid))))))
+		   (setq not-paid-sum (+ not-paid-sum to-be-paid))
+		   (setq worked-hours-sum (+ worked-hours-sum (mmss-to-decimal val)))))))
 
     ;; Add the sum row at the end
     (nconc default-table
-	   `(hline ("" "" "" "" " To be paid",(format "%.2f" not-paid-sum))))
+	   `(hline ("" "" "" " Total" ,(format "%.2f" worked-hours-sum) ,(format "%.2f" not-paid-sum))))
     ;; Regenerate the table from the list and insert
     (insert (orgtbl-to-orgtbl default-table nil))
     (org-table-align)))
