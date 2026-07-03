@@ -34,6 +34,7 @@
 (require 'init-web)
 (require 'init-robot)
 (require 'init-js)
+(require 'init-shell)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Interface Enhancement config
