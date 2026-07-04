@@ -6,6 +6,7 @@
 
 (use-package nushell-mode
   :hook
+  (nushell-mode . lsp)
   (nushell-mode . (lambda () (add-hook 'after-save-hook #'my-nushell-mode-format nil 'local))))
 
 (provide 'init-shell)
