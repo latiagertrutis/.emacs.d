@@ -56,8 +56,6 @@
   ;; This is not perfect yet. It completes too quickly outside programming modes, but while programming it is just right.
   :custom
   (company-idle-delay 0.1)
-  :custom-face
-  (company-preview ((nil(:background "dark slate blue"))))
   :config
   (setq company-frontends '(company-preview-frontend)))
 

@@ -8,11 +8,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package doom-themes
-  
   :config
   (load-theme 'doom-nord t)
-  :custom-face
-  (hl-line ((t (:background "#333A47"))))  
+  ;; If need to configure some faces of the theme
+  ;; :config
+  ;; (custom-theme-set-faces 'doom-nord
+  ;; 		       )
   )
 
 

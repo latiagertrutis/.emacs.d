@@ -58,8 +58,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(highlight ((t (:inherit isearch))))
- '(hl-line ((t (:background "#383838")))))
+ '(company-preview ((nil (:background "dark slate blue"))))
+ '(helm-ff-directory ((t (:foreground "light sky blue"))))
+ '(hl-line ((t (:background "#3b4252")))))
 
 ;;default font
 (add-to-list 'default-frame-alist '(font . "mononoki 12"))

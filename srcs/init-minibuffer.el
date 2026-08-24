@@ -42,9 +42,6 @@ With WITH-TYPES, ask for file types to search in."
   (helm-rg default-directory with-types))
 
 (use-package helm
-  
-  :custom-face
-  (helm-ff-directory ((t (:foreground "light sky blue"))))
   :config
   (setq helm-split-window-inside-p            nil ; open helm buffer inside current window, not occupy whole other window
         helm-move-to-line-cycle-in-source     nil ; move to end or beginning of source when reaching top or bottom of source.
