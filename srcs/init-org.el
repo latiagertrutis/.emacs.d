@@ -8,7 +8,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Org roam
-
 (use-package org-roam
   :custom
   (org-roam-directory "~/.org-roam")
@@ -114,6 +113,13 @@
   ("C-c C-x j" . org-mru-clock-goto)
   :config
   (setq org-mru-clock-how-many 100))
+
+
+;; Org Agenda
+
+(with-eval-after-load 'org-roam
+  (setq org-agenda-files (directory-files org-roam-directory t ".*\.org")))
+
 
 ;; Example on configuring org-publish.
 ;; NOTE: Use org-<format>-publish, not org-<format>-export
