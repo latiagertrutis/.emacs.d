@@ -120,6 +120,11 @@
 (with-eval-after-load 'org-roam
   (setq org-agenda-files (directory-files org-roam-directory t ".*\.org")))
 
+(keymap-global-set "C-c a" 'org-agenda)
+
+(setq
+ org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)" "CANCELED(c)"))
+ org-log-done 'note)
 
 ;; Example on configuring org-publish.
 ;; NOTE: Use org-<format>-publish, not org-<format>-export
