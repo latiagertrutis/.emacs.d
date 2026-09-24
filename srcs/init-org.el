@@ -114,13 +114,23 @@
   :config
   (setq org-mru-clock-how-many 100))
 
-
-;; Org Agenda
-
 (with-eval-after-load 'org-roam
-  (setq org-agenda-files (directory-files org-roam-directory t ".*\.org")))
+  (setq org-agenda-files (directory-files org-roam-directory t ".*\.org"))
+  (setq org-publish-project-alist
+      `(("org-roam-madvise"
+	 :base-directory ,org-roam-directory
+	 :base-extension "org"
+	 :exclude ".*"
+	 :include ("20260716140528-madvise.org")
+	 :publishing-function (org-roam-walker-publish-to-md)
+	 :publishing-directory "~/.org-publish/"
+	 :completion-function (lambda (plist)
+				(let ((output-file (file-name-concat (plist-get plist :publishing-directory)
+								     (file-name-with-extension (car (plist-get plist :include)) "md"))))
+				  (copy-file output-file "/ssh:root@madvise:/volume/leafwiki/data/root/notas/mateo.md" t)))))))
 
 (keymap-global-set "C-c a" 'org-agenda)
+(keymap-global-set "C-c C-o C-p" 'org-publish)
 
 (setq
  org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)" "CANCELED(c)"))
@@ -129,13 +139,13 @@
 ;; Example on configuring org-publish.
 ;; NOTE: Use org-<format>-publish, not org-<format>-export
 ;; (setq org-publish-project-alist
-;;       `(("org-roam-badass"
-;; 	 :base-directory "~/.org-roam/"
+;;       `(("org-roam-madvise"
+;; 	 :base-directory org-roam-directory
 ;; 	 :base-extension "org"
 ;; 	 :exclude ".*"
-;; 	 :include ("20260209163815-badass.org")
+;; 	 :include ("20260716140528-madvise.org")
 ;; 	 :publishing-function (org-md-publish-to-md)
-;; 	 :publishing-directory "~/workspace/BADASS/"
+;; 	 :publishing-directory "~/.org-publish/"
 ;; 	 :completion-function (lambda (plist)
 ;; 				(rename-file (concat
 ;; 					      (plist-get plist :publishing-directory)
@@ -144,7 +154,7 @@
 ;; 					     (concat
 ;; 					      (plist-get plist :publishing-directory)
 ;; 					      "README.md")
-;; 					     t)))
+;; 					     t)))))
 ;; 	("org-roam-walker"
 ;; 	 :base-directory "~/.org-roam/"
 ;; 	 :base-extension "org"
