@@ -127,10 +127,10 @@
 	 :completion-function (lambda (plist)
 				(let ((output-file (file-name-concat (plist-get plist :publishing-directory)
 								     (file-name-with-extension (car (plist-get plist :include)) "md"))))
-				  (copy-file output-file "/ssh:root@madvise:/volume/leafwiki/data/root/notas/mateo.md" t)))))))
+				  (copy-file output-file "/ssh:root@madvise:/volume/leafwiki/data/root/notas/mateo.md" t)
+				  (delete-file output-file)))))))
 
 (keymap-global-set "C-c a" 'org-agenda)
-(keymap-global-set "C-c C-o C-p" 'org-publish)
 
 (setq
  org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)" "CANCELED(c)"))
