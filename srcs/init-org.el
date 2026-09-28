@@ -133,6 +133,49 @@
  org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)" "CANCELED(c)"))
  org-log-done 'note)
 
+(defun org-copy-region-as-markdown ()
+"Copy Org region as GitHub Flavoured Markdown using Pandoc.
+
+Headings are shift automatically to level 2 and below.
+
+JSON code blocks are marked as json instead of js-json."
+  (interactive)
+  (if (use-region-p)
+      (let* (;; Get currently selected region
+             (region (buffer-substring-no-properties
+                      (region-beginning)
+                      (region-end)))
+             (text (with-temp-buffer
+                     (org-mode)
+                     ;; Accept headline up to level 9 to make sure Pandoc does not treat them as list items.
+                     (insert "#+OPTIONS: H:9\n")
+                     (insert region)
+                     (goto-char (point-min))
+                     ;; Replace js-json with json for wide compatiblity of JSON code blocks.
+                     (while (re-search-forward "#\\+begin_src js-json" nil t)
+                       (replace-match "#+begin_src json" nil nil))
+                     (goto-char (point-min))
+                     ;; Determine the level of the first Org heading for adjusting the heading shift.
+                     (if (not (org-at-heading-p))
+                         (org-next-visible-heading 1))
+                     (list
+                      (buffer-string)
+                      (let ((level (org-current-level)))
+                        (cond ((not level) 0)
+                              ((> level 2) (* (- (org-current-level) 2) -1))
+                              ((= level 1) 1)
+                              (t 0))))))
+             (org-file (make-temp-file "oxcm-" nil ".org" (car text)))
+             (markdown (with-temp-buffer
+                         (call-process
+                          "pandoc"
+                          nil t nil
+                          (concat "--shift-heading-level-by=" (number-to-string (car (cdr text))))
+                          "--wrap=none" "-f" "org" "-t" "gfm" "-o" "-" org-file)
+                         (buffer-string))))
+        (gui-set-selection 'CLIPBOARD markdown)
+        (delete-file org-file))))
+
 ;; Example on configuring org-publish.
 ;; NOTE: Use org-<format>-publish, not org-<format>-export
 ;; (setq org-publish-project-alist
