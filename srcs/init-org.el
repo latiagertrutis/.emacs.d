@@ -30,9 +30,6 @@
   :hook (org-mode . my/org-roam-git-sync))
 
 (with-eval-after-load 'org
-  (keymap-set org-mode-map "C-;" #'org-shiftleft)
-  (keymap-set org-mode-map "C-'" #'org-shiftright)
-  (keymap-set org-mode-map "M-p" #'org-publish-current-project)
   (setq org-startup-truncated nil
 	org-return-follows-link t
 	org-duration-format 'h:mm
