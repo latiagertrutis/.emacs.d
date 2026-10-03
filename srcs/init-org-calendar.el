@@ -1,5 +1,8 @@
 (use-package oauth2)
 
+(use-package calfw)
+(use-package calfw-org)
+
 (defvar org-caldav-sync-in-progress nil
   "Non-nil while an org-caldav sync is running.")
 
@@ -85,5 +88,32 @@
 
 ;; Sincroniza después de guardar un archivo Org configurado para CalDAV.
 (add-hook 'org-mode-hook #'org-caldav-enable-sync-on-save)
+
+(defface my/org-agenda-personal-face
+  '((t :foreground "#50fa7b"))
+  "Face for personal calendar entries.")
+
+(defface my/org-agenda-madvise-face
+  '((t :foreground "#bd93f9"))
+  "Face for Madvise calendar entries.")
+
+(defun my/org-agenda-color-by-source ()
+  (let ((inhibit-read-only t))
+    (save-excursion
+      (goto-char (point-min))
+      (while (< (point) (point-max))
+        (let* ((category (get-text-property (point) 'org-category))
+               (face
+                (cond
+                 ((and category (string-match-p "Personal" category))
+                  'my/org-agenda-personal-face)
+                 ((and category (string-match-p "Madvise" category))
+                  'my/org-agenda-madvise-face))))
+          (when face
+            (add-face-text-property
+             (line-beginning-position) (line-end-position) face)))
+        (forward-line 1)))))
+
+(add-hook 'org-agenda-finalize-hook #'my/org-agenda-color-by-source)
 
 (provide 'init-org-calendar)
