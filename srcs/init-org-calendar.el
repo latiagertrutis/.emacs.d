@@ -20,6 +20,20 @@
 (make-directory org-caldav-personal-state-directory t)
 (make-directory org-caldav-madvise-state-directory t)
 
+(defun my/org-caldav-list-all-files ()
+  (apply #'append
+         (mapcar (lambda (calendar)
+                   (append
+                    (plist-get calendar :files)
+                    (list (plist-get calendar :inbox))))
+                 org-caldav-calendars)))
+
+(defun my/org-roam-include-node-p ()
+  "Return non-nil for nodes outside the configured CalDAV files."
+  (let* ((file (buffer-file-name))
+         (calendar-files (my/org-caldav-list-all-files)))
+    (not (member file calendar-files))))
+
 (use-package org-caldav
   :after (oauth2 org-roam)
   :config
@@ -41,14 +55,15 @@
    org-caldav-debug-level 1
    org-caldav-show-sync-results nil
    org-caldav-resume-aborted 'never
-   org-icalendar-timezone "Europe/Madrid"))
+   org-icalendar-timezone "Europe/Madrid"
+   org-roam-db-node-include-function #'my/org-roam-include-node-p))
 
 (defun org-caldav-sync-personal ()
   (interactive)
   (let ((auth-sources '("~/.authinfo.personal"))
-         ;; Auth-source caches results by query, not by `auth-sources'.
-         ;; URL Basic auth also caches credentials.  Don't let one account's
-         ;; credentials leak into the next sync on the same host.
+        ;; Auth-source caches results by query, not by `auth-sources'.
+        ;; URL Basic auth also caches credentials.  Don't let one account's
+        ;; credentials leak into the next sync on the same host.
 	(auth-source-do-cache nil)
         (url-http-real-basic-auth-storage nil))
     (org-caldav-sync-calendar (nth 0 org-caldav-calendars))))
@@ -56,9 +71,9 @@
 (defun org-caldav-sync-madvise ()
   (interactive)
   (let ((auth-sources '("~/.authinfo.madvise"))
-         ;; Auth-source caches results by query, not by `auth-sources'.
-         ;; URL Basic auth also caches credentials.  Don't let one account's
-         ;; credentials leak into the next sync on the same host.
+        ;; Auth-source caches results by query, not by `auth-sources'.
+        ;; URL Basic auth also caches credentials.  Don't let one account's
+        ;; credentials leak into the next sync on the same host.
 	(auth-source-do-cache nil)
         (url-http-real-basic-auth-storage nil))
     (org-caldav-sync-calendar (nth 1 org-caldav-calendars))))
@@ -71,14 +86,7 @@
 (defun org-caldav-sync-my-files ()
   "Sync files only if they are one of the watched in any calendar"
   (let* ((file (buffer-file-name))
-         (files (and (boundp 'org-caldav-calendars)
-                     (apply #'append
-                            (mapcar (lambda (calendar)
-                                      (append
-                                       (plist-get calendar :files)
-                                       (let ((inbox (plist-get calendar :inbox)))
-                                         (and (stringp inbox) (list inbox)))))
-                                    org-caldav-calendars)))))
+         (files (my/org-caldav-list-all-files)))
     (when (member file files)
       (run-with-idle-timer 60 nil 'org-caldav-sync-all))))
 
