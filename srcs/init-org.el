@@ -113,10 +113,6 @@
 
 (with-eval-after-load 'org-roam
   (setq org-agenda-files (directory-files org-roam-directory t ".*\.org"))
-  (with-eval-after-load 'org-caldav
-    (add-to-list 'org-agenda-files org-caldav-inbox)
-    (dolist (file org-caldav-files)
-      (add-to-list 'org-agenda-files file)))
   (setq org-publish-project-alist
       `(("org-roam-madvise"
 	 :base-directory ,org-roam-directory
