@@ -119,6 +119,7 @@
 
 (set-face-attribute 'org-agenda-date-today nil
 		    :background "#5e81ac"
+		    :foreground "#e5e9f0"
 		    :extend t)
 
 (defun my/org-agenda-color-by-source ()
