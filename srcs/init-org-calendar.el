@@ -96,6 +96,18 @@
 
 ;; Sincroniza después de guardar un archivo Org configurado para CalDAV.
 (add-hook 'org-mode-hook #'org-caldav-enable-sync-on-save)
+(add-hook 'org-agenda-mode-hook (lambda () (make-thread #'org-caldav-sync-all)))
+
+
+(with-eval-after-load 'org-roam
+  (setq org-agenda-files (directory-files org-roam-directory t ".*\.org")))
+
+(keymap-global-set "C-c a" 'org-agenda)
+
+(setq
+ org-agenda-start-on-weekday nil
+ org-agenda-start-day "-7d"
+ org-agenda-span 'month)
 
 (defface my/org-agenda-personal-face
   '((t :foreground "#50fa7b"))
@@ -104,6 +116,10 @@
 (defface my/org-agenda-madvise-face
   '((t :foreground "#bd93f9"))
   "Face for Madvise calendar entries.")
+
+(set-face-attribute 'org-agenda-date-today nil
+		    :background "#5e81ac"
+		    :extend t)
 
 (defun my/org-agenda-color-by-source ()
   (let ((inhibit-read-only t))

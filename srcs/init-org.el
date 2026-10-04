@@ -112,7 +112,6 @@
   (setq org-mru-clock-how-many 100))
 
 (with-eval-after-load 'org-roam
-  (setq org-agenda-files (directory-files org-roam-directory t ".*\.org"))
   (setq org-publish-project-alist
       `(("org-roam-madvise"
 	 :base-directory ,org-roam-directory
@@ -127,7 +126,6 @@
 				  (copy-file output-file "/ssh:root@madvise:/volume/leafwiki/data/root/notas/mateo.md" t)
 				  (delete-file output-file)))))))
 
-(keymap-global-set "C-c a" 'org-agenda)
 
 (setq
  org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)" "CANCELED(c)"))
