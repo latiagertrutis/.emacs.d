@@ -83,25 +83,20 @@
   (org-caldav-sync-madvise)
   (org-caldav-sync-personal))
 
-(defun org-caldav-sync-my-files ()
+;; Add keymap only on calendar files
+(defun my/org-caldav-sync-calendar-files ()
   "Sync files only if they are one of the watched in any calendar"
+  (interactive)
   (let* ((file (buffer-file-name))
          (files (my/org-caldav-list-all-files)))
     (when (member file files)
-      (run-with-idle-timer 60 nil 'org-caldav-sync-all))))
-
-(defun org-caldav-enable-sync-on-save ()
-  "Enable calendar syncing after saving this Org buffer."
-  (add-hook 'after-save-hook #'org-caldav-sync-my-files nil t))
-
-;; Sincroniza después de guardar un archivo Org configurado para CalDAV.
-(add-hook 'org-mode-hook #'org-caldav-enable-sync-on-save)
-(add-hook 'org-agenda-mode-hook (lambda () (make-thread #'org-caldav-sync-all)))
-
+      (org-caldav-sync-all))))
 
 (with-eval-after-load 'org-roam
   (setq org-agenda-files (directory-files org-roam-directory t ".*\.org")))
 
+(keymap-set org-agenda-mode-map "C-c c s a" #'org-caldav-sync-all)
+(keymap-set org-mode-map "C-c c s a" #'my/org-caldav-sync-calendar-files)
 (keymap-global-set "C-c a" 'org-agenda)
 
 (setq
