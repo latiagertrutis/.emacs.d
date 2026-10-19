@@ -63,7 +63,7 @@
  '(hl-line ((t (:background "#3b4252")))))
 
 ;;default font
-(add-to-list 'default-frame-alist '(font . "mononoki 12"))
+(add-to-list 'default-frame-alist '(font . " Mononoki Nerd Font Mono 11"))
 
 
 (use-package ultra-scroll
