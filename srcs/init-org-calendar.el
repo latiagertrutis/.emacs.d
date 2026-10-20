@@ -49,7 +49,7 @@
 	   :calendar-id "default"
 	   :caldav-save-directory ,org-caldav-madvise-state-directory
 	   :inbox ,(expand-file-name "20261003004400-madvise_calendar_inbox.org" org-roam-directory)
-	   :files (,(expand-file-name "20261019191517-madvise_calendar_entries.org" org-roam-directory))))
+	   :files (,(expand-file-name "20261020110729-madvise_calendar_entries.org" org-roam-directory))))
    org-caldav-delete-calendar-entries 'always
    org-caldav-delete-org-entries 'always
    org-caldav-debug-level 1
