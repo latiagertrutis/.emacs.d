@@ -19,6 +19,10 @@
   (expand-file-name "org-caldav/madvise/" user-emacs-directory))
 (make-directory org-caldav-personal-state-directory t)
 (make-directory org-caldav-madvise-state-directory t)
+(defconst org-caldav-personal-entry-file
+  (expand-file-name "20261003004434-personal_calendar_entries.org" org-roam-directory))
+(defconst org-caldav-work-entry-file
+  (expand-file-name "20261020110729-madvise_calendar_entries.org" org-roam-directory))
 
 (defun my/org-caldav-list-all-files ()
   (apply #'append
@@ -44,12 +48,12 @@
 	   :calendar-id "default"
 	   :caldav-save-directory ,org-caldav-personal-state-directory
 	   :inbox ,(expand-file-name "20261003004340-personal_calendar_inbox.org" org-roam-directory)
-	   :files (,(expand-file-name "20261003004434-personal_calendar_entries.org" org-roam-directory)))
+	   :files (,org-caldav-personal-entry-file))
      (:url "https://posteo.de:8443/calendars/madvise"
 	   :calendar-id "default"
 	   :caldav-save-directory ,org-caldav-madvise-state-directory
 	   :inbox ,(expand-file-name "20261003004400-madvise_calendar_inbox.org" org-roam-directory)
-	   :files (,(expand-file-name "20261020110729-madvise_calendar_entries.org" org-roam-directory))))
+	   :files (,org-caldav-work-entry-file)))
    org-caldav-delete-calendar-entries 'always
    org-caldav-delete-org-entries 'always
    org-caldav-debug-level 1
@@ -95,8 +99,10 @@
 (with-eval-after-load 'org-roam
   (setq org-agenda-files (directory-files org-roam-directory t ".*\.org")))
 
-(keymap-set org-agenda-mode-map "C-c c s a" #'org-caldav-sync-all)
-(keymap-set org-mode-map "C-c c s a" #'my/org-caldav-sync-calendar-files)
+(keymap-global-set "C-c c s" #'org-caldav-sync-all)
+(keymap-global-set "C-c c p" (lambda () (interactive)(find-file org-caldav-personal-entry-file)))
+(keymap-global-set "C-c c w" (lambda () (interactive)(find-file org-caldav-work-entry-file)))
+(keymap-set org-mode-map "C-c c s" #'my/org-caldav-sync-calendar-files)
 (keymap-global-set "C-c a" 'org-agenda)
 
 (setq
