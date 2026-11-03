@@ -256,10 +256,6 @@ This command does not push text to `kill-ring'."
   :hook
   (prog-mode . rainbow-delimiters-mode))
 
-(use-package avy
-  :bind
-  ("C-o" . avy-goto-char-timer))
-
 (use-package symbol-overlay
   :hook
   (prog-mode . symbol-overlay-mode)
@@ -270,8 +266,6 @@ This command does not push text to `kill-ring'."
   (:map symbol-overlay-mode-map
 	("M-n" . symbol-overlay-jump-next)
 	("M-p" . symbol-overlay-jump-prev)))
-
-(use-package flycheck)
 
 (use-package yasnippet
   :hook
@@ -293,6 +287,38 @@ This command does not push text to `kill-ring'."
 
 (use-package indent-bars
   :hook ((rust-mode . indent-bars-mode)))
+
+(use-package gptel
+  :bind (("C-c g g" . gptel)             ; open gptel chat buffer
+         ("C-c g s" . gptel-send)        ; send prompt/region
+         ("C-c g m" . gptel-menu)        ; transient menu: model, backend, context
+         ("C-c g r" . gptel-rewrite)     ; rewrite region (diff-based)
+         ("C-c g c" . gptel-add)         ; add region/buffer to context
+         ("C-c g k" . gptel-abort))      ; cancel in-flight request
+  :config
+  (setopt
+   gptel-default-mode 'org-mode
+   gptel-backend
+	(gptel-make-openai "OpenRouter"
+	  :host "openrouter.ai"
+	  :endpoint "/api/v1/chat/completions"
+          :stream t
+          :key (funcall
+		(plist-get
+		 (car (auth-source-search :host "openrouter.ai" :user "gptel"))
+		 :secret))
+          :models '(nvidia/nemotron-3-ultra-550b-a55b:free
+		    openai/gpt-6-luna
+		    deepseek/deepseek-v4-flash-0731
+		    xiaomi/mimo-v2.6-pro
+		    openai/gpt-6-luna-pro)))
+  :hook
+  ((gptel-post-stream . gptel-auto-scroll)
+   (gptel-post-response . gptel-end-of-response))
+  )
+
+(use-package gptel-agent
+  :after gptel)
 
 (provide 'init-utils)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

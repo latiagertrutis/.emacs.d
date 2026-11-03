@@ -118,10 +118,21 @@
   '((t :foreground "#bd93f9"))
   "Face for Madvise calendar entries.")
 
-(set-face-attribute 'org-agenda-date-today nil
-		    :background "#5e81ac"
-		    :foreground "#e5e9f0"
-		    :extend t)
+(with-eval-after-load 'org-agenda
+  (set-face-attribute 'org-agenda-date-today nil
+		      :height 1.5
+		      :weight 'bold
+		      :background "#5e81ac"
+		      :foreground "#ebcb8b"
+		      :box "#ebcb8b"
+		      :extend t)
+  (set-face-attribute 'org-agenda-date nil
+		      :height 1.5
+		      :weight 'bold)
+  (set-face-attribute 'org-agenda-date-weekend nil
+		      :height 1.5
+		      :weight 'bold)
+  )
 
 (defun my/org-agenda-color-by-source ()
   (let ((inhibit-read-only t))

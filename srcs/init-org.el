@@ -35,6 +35,49 @@
 	org-duration-format 'h:mm
 	org-clock-persist nil))
 
+;;----------------------------------------------------------------------------
+;; Fonts: proportional font for prose, monospace for code blocks, inline
+;; code, tables and other alignment-sensitive elements.
+;;----------------------------------------------------------------------------
+
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode))
+
+(use-package org-appear
+  :hook (org-mode . org-appear-mode)
+  :config
+  (setq org-hide-emphasis-markers t
+	org-appear-autoentities t
+	org-appear-autosubmarkers t
+	org-pretty-entities t))
+
+(custom-set-faces
+  '(org-document-title ((t (:inherit bold :height 2.1))))
+  '(org-level-1 ((t (:foreground "#b48ead" :inherit bold :height 1.8))))
+  '(org-level-2 ((t (:foreground "#a3be8c" :inherit bold :height 1.4))))
+  '(org-level-3 ((t (:foreground "#ebcb8b" :inherit bold :height 1.1))))
+  '(org-level-4 ((t (:foreground "#d08770" :inherit bold :height 1))))
+  '(org-level-5 ((t (:foreground "#bf616a" :inherit bold :height 1)))))
+
+
+(use-package mixed-pitch
+  :hook (org-mode . mixed-pitch-mode)
+  :config
+  ;; Slightly larger than the default face (Mononoki 11) since
+  ;; proportional fonts read smaller at the same height.
+  (set-face-attribute 'variable-pitch nil
+		      :family "Alegreya"
+		      :height 1.2
+		      :weight 'regular)
+  (setopt mixed-pitch-set-height t)
+  ;; Keep monospace where alignment matters.  This extends the defaults
+  ;; of `mixed-pitch-fixed-pitch-faces' with the Org block machinery.
+  (dolist (face '(org-block org-block-begin-line org-block-end-line
+		  org-code org-verbatim org-table org-formula
+		  org-special-keyword org-property-value org-drawer
+		  org-meta-line org-checkbox))
+    (add-to-list 'mixed-pitch-fixed-pitch-faces face)))
+
 (defun my/org-clock-table-report-hours ()
   (interactive)
   (let ((org-clock-clocktable-default-properties

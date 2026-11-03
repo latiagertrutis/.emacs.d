@@ -16,7 +16,10 @@
 ;; loaded. For this reasons add lsp hooks on each individual package
 (use-package lsp-mode
   :init
-  (setq lsp-keymap-prefix "C-;")
+  (setq lsp-keymap-prefix "C-;"
+        ;; Route LSP diagnostics through Flycheck so Flyover can display them.
+        ;; :auto may select Flymake depending on which backends are available.
+        lsp-diagnostics-provider :flycheck)
   :commands (lsp)
   :config
   (setq lsp-clients-clangd-args '("--background-index")
@@ -43,10 +46,10 @@
   :config
   (setq lsp-ui-sideline-enable t
 	lsp-ui-sideline-delay 1
-	lsp-ui-sideline-diagnostic-max-line-length 90
+	lsp-ui-sideline-show-diagnostics nil
+	lsp-ui-sideline-ignore-duplicate t
 	lsp-ui-doc-position 'at-point
-        lsp-ui-imenu-enable t
-	lsp-ui-sideline-ignore-duplicate t))
+        lsp-ui-imenu-enable t))
 
 ;; To provide consult-lsp for dirvish and others
 (use-package consult-lsp)
