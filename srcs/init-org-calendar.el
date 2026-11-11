@@ -3,6 +3,17 @@
 (use-package calfw)
 (use-package calfw-org)
 
+(with-eval-after-load 'org-roam
+  (setq org-agenda-files (directory-files org-roam-directory t ".*\.org"))
+  (defconst org-caldav-personal-entry-file
+    (expand-file-name "20261003004434-personal_calendar_entries.org" org-roam-directory))
+  (defconst org-caldav-personal-inbox-file
+    (expand-file-name "20261003004340-personal_calendar_inbox.org" org-roam-directory))
+  (defconst org-caldav-work-entry-file
+    (expand-file-name "20261020110729-madvise_calendar_entries.org" org-roam-directory))
+  (defconst org-caldav-work-inbox-file
+    (expand-file-name "20261003004400-madvise_calendar_inbox.org" org-roam-directory)))
+
 (defvar org-caldav-sync-in-progress nil
   "Non-nil while an org-caldav sync is running.")
 
@@ -19,10 +30,6 @@
   (expand-file-name "org-caldav/madvise/" user-emacs-directory))
 (make-directory org-caldav-personal-state-directory t)
 (make-directory org-caldav-madvise-state-directory t)
-(defconst org-caldav-personal-entry-file
-  (expand-file-name "20261003004434-personal_calendar_entries.org" org-roam-directory))
-(defconst org-caldav-work-entry-file
-  (expand-file-name "20261020110729-madvise_calendar_entries.org" org-roam-directory))
 
 (defun my/org-caldav-list-all-files ()
   (apply #'append
@@ -47,12 +54,12 @@
    `((:url "https://posteo.de:8443/calendars/teorodrip"
 	   :calendar-id "default"
 	   :caldav-save-directory ,org-caldav-personal-state-directory
-	   :inbox ,(expand-file-name "20261003004340-personal_calendar_inbox.org" org-roam-directory)
+	   :inbox ,org-caldav-personal-inbox-file
 	   :files (,org-caldav-personal-entry-file))
      (:url "https://posteo.de:8443/calendars/madvise"
 	   :calendar-id "default"
 	   :caldav-save-directory ,org-caldav-madvise-state-directory
-	   :inbox ,(expand-file-name "20261003004400-madvise_calendar_inbox.org" org-roam-directory)
+	   :inbox ,org-caldav-work-inbox-file
 	   :files (,org-caldav-work-entry-file)))
    org-caldav-delete-calendar-entries 'always
    org-caldav-delete-org-entries 'always
@@ -96,9 +103,6 @@
     (when (member file files)
       (org-caldav-sync-all))))
 
-(with-eval-after-load 'org-roam
-  (setq org-agenda-files (directory-files org-roam-directory t ".*\.org")))
-
 (keymap-global-set "C-c c s" #'org-caldav-sync-all)
 (keymap-global-set "C-c c p" (lambda () (interactive)(find-file org-caldav-personal-entry-file)))
 (keymap-global-set "C-c c w" (lambda () (interactive)(find-file org-caldav-work-entry-file)))
@@ -131,8 +135,7 @@
 		      :weight 'bold)
   (set-face-attribute 'org-agenda-date-weekend nil
 		      :height 1.5
-		      :weight 'bold)
-  )
+		      :weight 'bold))
 
 (defun my/org-agenda-color-by-source ()
   (let ((inhibit-read-only t))
