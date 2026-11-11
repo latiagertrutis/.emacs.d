@@ -1,0 +1,11 @@
+#+TITLE: Mail
+#+STARTUP: showall
+
+* Search
+- [[mu:bm:Unread][Unread messages]]
+- [[mu:date:today..now][Today's messages]]
+- [[mu:bm:Work][Work account]]
+- [[mu:bm:Personal][Personal account]]
+- [[mu:bm:Attachments][Messages with attachments]]
+
+#+KEYMAP: q | mu4e-quit

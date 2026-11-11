@@ -7,8 +7,9 @@
 ;; Last-Updated: Fri May  1 13:52:00 2026 (+0200)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package vterm
-  
+;; -*- lexical-binding: t; -*-
+
+(use-package vterm  
   :bind (:map vterm-mode-map
          ("C-y" . vterm-yank)))
 
@@ -19,7 +20,6 @@
   (multi-vterm))
 
 (use-package multi-vterm
-  
   :bind ("C-c t" . multi-vterm)
   ("C-c o" . multi-vterm-other-window))
 
@@ -30,7 +30,6 @@
 (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
 (use-package eshell-prompt-extras
-  
   :config
   (autoload 'epe-theme-lambda "eshell-prompt-extras")
   (setq eshell-highlight-prompt nil
