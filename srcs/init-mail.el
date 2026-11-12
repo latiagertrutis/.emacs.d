@@ -298,6 +298,7 @@ three dots for truncated text (fewer only in extremely narrow windows)."
         (unless (bound-and-true-p mu4e-dashboard-mode)
           (mu4e-dashboard-mode 1)))
       (switch-to-buffer buffer)))
-  (add-hook 'mu4e-main-rendered-hook #'my/mu4e-show-dashboard))
+  (add-hook 'mu4e-main-rendered-hook #'my/mu4e-show-dashboard)
+  :bind (("C-c C-x m" . mu4e)))
 
 (provide 'init-mail)

@@ -1,11 +1,36 @@
-#+TITLE: Mail
-#+STARTUP: showall
 
-* Search
-- [[mu:bm:Unread][Unread messages]]
-- [[mu:date:today..now][Today's messages]]
-- [[mu:bm:Work][Work account]]
-- [[mu:bm:Personal][Personal account]]
-- [[mu:bm:Attachments][Messages with attachments]]
+* Mu for Emacs (mu4e)                                        *[[mu:flag:unread|%3d Unread][Unread messages]]*
 
-#+KEYMAP: q | mu4e-quit
+[[mu:flag:unread][Unread]] /[[mu:flag:unread|(%3d)][( 17)]]/ .... [u]  [[mu:date:today..now][Today]] /[[mu:date:today..now|(%3d)][(113)]]/ .......... [t]  *Compose* ...... [C]
+[[mu:m:/posteo-personal/inbox or m:/posteo-work/inbox][Inbox]]  /[[mu:m:/posteo-personal/inbox or m:/posteo-work/inbox|(%3d)][( 33)]]/ .... [i]  [[mu:date:2d..today and not date:today..now][Yesterday]] /[[mu:date:2d..today and not date:today..now|(%3d)][(242)]]/ ...... [y]  *Update* ....... [U]
+[[mu:m:/posteo-personal/drafts or m:/posteo-work/drafts][Drafts]] /[[mu:m:/posteo-personal/drafts or m:/posteo-work/drafts|(%3d)][(  2)]]/ .... [d]  [[mu:date:7d..now][Last week]] /[[mu:date:7d..now|(%4d)][( 989)]]/ ..... [w]  *Switch context* [;]
+[[mu:m:/posteo-personal/sent or m:/posteo-work/sent][Sent]] /[[mu:m:/posteo-personal/sent or m:/posteo-work/sent|(%5d)][( 7082)]]/ .... [s]  [[mu:date:4w..now][Last month]] /[[mu:date:4w..|(%4d)][(3606)]]/ .... [m]  *Quit* ......... [q]
+
+* Configuration
+:PROPERTIES:
+:VISIBILITY: hideall
+:END:
+
+#+STARTUP: showall showstars indent
+
+#+NAME: query
+#+BEGIN_SRC sh :results list raw :var query="flag:unread" count=5 
+export LANG="en_US.UTF-8"; export LC_ALL="en_US.UTF-8";
+mu find -n $count --sortfield=date --reverse --fields "f s" $query
+#+END_SRC
+
+#+KEYMAP: u | mu4e-headers-search "flag:unread"
+#+KEYMAP: i | mu4e-headers-search "m:/posteo-personal/inbox or m:/posteo-work/inbox"
+#+KEYMAP: d | mu4e-headers-search "m:/posteo-personal/drafts or m:/posteo-work/drafts"
+#+KEYMAP: s | mu4e-headers-search "m:/posteo-personal/sent or m:/posteo-work/sent"
+
+#+KEYMAP: t | mu4e-headers-search "date:today..now"
+#+KEYMAP: y | mu4e-headers-search "date:2d..today and not date:today..now"
+#+KEYMAP: w | mu4e-headers-search "date:7d..now"
+#+KEYMAP: m | mu4e-headers-search "date:4w..now"
+
+#+KEYMAP: C | mu4e-compose-new
+#+KEYMAP: U | mu4e-dashboard-update
+#+KEYMAP: ; | mu4e-context-switch
+#+KEYMAP: q | kill-current-buffer
+ 
