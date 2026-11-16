@@ -19,6 +19,13 @@
      :full-name "Mateo Rodriguez"
      :maildir  "/posteo-personal")))
 
+(defun my/mu4e-insert-signature ()
+  "Insert the HTML signature without Message's `-- ' separator."
+  (save-excursion
+    (goto-char (point-max))
+    (insert my/mu4e-signature))
+  nil)
+
 (defun my/mu4e-context-match (address)
   "Return a `mu4e-context' :match-func matching ADDRESS.
 The context is selected when ADDRESS appears in From, To or Cc of the
@@ -43,16 +50,57 @@ current message."
 
         mu4e-confirm-quit nil
         mu4e-attachment-dir "~/Downloads"
-        mu4e-sent-messages-behavior 'delete
+        mu4e-sent-messages-behavior 'sent
+
         mu4e-view-show-images t
         mu4e-compose-format-flowed t
         message-kill-buffer-on-exit t
+	mail-user-agent 'mu4e-user-agent
 
         ;; SMTP: never inline passwords, let auth-source supply them.
         smtpmail-smtp-server my/posteo-smtp-server
         smtpmail-smtp-service 587
         smtpmail-stream-type 'starttls
-        smtpmail-debug-info nil)
+        smtpmail-debug-info nil
+
+	my/mu4e-signature "\n#+BEGIN_EXPORT html
+<div class=\"moz-signature\">
+  <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:'Segoe UI',Arial,Helvetica,sans-serif\">
+    <tbody>
+      <tr>
+        <td style=\"padding-right:12px;vertical-align:middle\">
+          <a href=\"https://madvise.dev\">
+            <img src=\"file:///home/mateo/Pictures/logo.png\" alt=\"Madvise\" width=\"60\" style=\"display:block;width:60px;height:auto;border:0\">
+          </a>
+        </td>
+        <td style=\"border-left:2px solid #4067D3;padding-left:12px;vertical-align:middle\">
+          <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:'Segoe UI',Arial,Helvetica,sans-serif\">
+            <tbody>
+              <tr>
+                <td style=\"font-size:14px;line-height:16px;font-weight:bold;color:#17191C\"> Mateo Rodríguez </td>
+              </tr>
+              <tr>
+                <td style=\"padding-top:2px;font-size:11px;line-height:13px;color:#555555\"> Co-Founder & Lead Software Architect | Madvise </td>
+              </tr>
+              <tr>
+                <td style=\"padding-top:4px;font-size:11px;line-height:13px\">
+                  <a href=\"mailto:info@madvise.dev\" style=\"color:#4067D3;text-decoration:none\" class=\"moz-txt-link-freetext\"> info@madvise.dev </a>
+                </td>
+              </tr>
+              <tr>
+                <td style=\"padding-top:1px;font-size:11px;line-height:13px\">
+                  <a href=\"https://madvise.dev\" style=\"color:#4067D3;text-decoration:none\"> madvise.dev </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+#+END_EXPORT"
+	message-signature #'my/mu4e-insert-signature)
   :config
   (defface my/mu4e-thread-root-face
     '((t :inherit default :foreground "#eceff4" :background "#3b4252"
@@ -299,5 +347,18 @@ three dots for truncated text (fewer only in extremely narrow windows)."
           (mu4e-dashboard-mode 1)))
       (switch-to-buffer buffer)))
   :bind (("C-c C-x m" . my/mu4e-show-dashboard)))
+
+(use-package org-mime
+  :commands (org-mime-edit-mail-in-org-mode)
+  :hook (message-send . org-mime-htmlize)
+  :init
+  (with-eval-after-load 'mu4e-compose
+    (define-key mu4e-compose-mode-map (kbd "C-c M-o")
+                #'org-mime-edit-mail-in-org-mode)
+    (define-key mu4e-compose-mode-map (kbd "C-c M-h")
+                #'org-mime-htmlize))
+  :config
+  (setq org-mime-export-options
+	'(:section-numbers nil :with-author nil :with-toc nil)))
 
 (provide 'init-mail)
