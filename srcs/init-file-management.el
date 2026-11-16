@@ -46,8 +46,9 @@
   (dirvish-override-dired-mode)
   :custom
   (dirvish-quick-access-entries ; It's a custom option, `setq' won't work
-   '(("h" "~/"                          "Home"))
-   '(("w" "~/workspace/"                "Workspace")))
+   '(("h" "~/"                          "Home")
+     ("d" "~/Desktop/Downloads"         "Downloads")
+     ("w" "~/workspace/"                "Workspace")))
   :config
   ;; (dirvish-peek-mode)             ; Preview files in minibuffer
   ;; (dirvish-side-follow-mode)      ; similar to `treemacs-follow-mode'
@@ -75,6 +76,7 @@
    ("v"   . dirvish-vc-menu)           ; [v]ersion control commands
    ("*"   . dirvish-mark-menu)
    ("y"   . dirvish-yank-menu)
+   ("w"   . dirvish-renaming-menu)
    ("N"   . dirvish-fd-and-narrow)
    ("n"   . dirvish-narrow)
    ("^"   . dirvish-history-last)
