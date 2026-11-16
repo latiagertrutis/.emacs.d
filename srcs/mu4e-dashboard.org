@@ -1,16 +1,16 @@
 
-* Mu for Emacs (mu4e)                                        *[[mu:flag:unread|%3d Unread][++++++]]*
+* Mu for Emacs (mu4e)
 
-- [[mu:m:/posteo-work/inbox][Madvise Inbox]]  /[[mu:m:/posteo-work/inbox|(%3d)][(125)]]/ .... [wi]
+- [[mu:m:/posteo-work/inbox][Madvise Inbox]]  /[[mu:m:/posteo-work/inbox|(%3d)][(126)]]/ .... [wi]
 - [[mu:flag:unread and m:/posteo-work/inbox][Madvise Unread]]  /[[mu:flag:unread and m:/posteo-work/inbox|(%3d)][(  0)]]/ .... [wu]
 - [[mu:m:/posteo-personal/inbox][Personal Inbox]]  /[[mu:m:/posteo-personal/inbox|(%3d)][+++++]]/ .... [pi]
 - [[mu:flag:unread and m:/posteo-personal/inbox][Personal Unread]]  /[[mu:flag:unread and m:/posteo-personal/inbox|(%3d)][( 90)]]/ .... [pu]
 
-- [[mu:date:today..now and m:/posteo-work/inbox][Madvise Today]]  /[[mu:date:today..now and m:/posteo-work/inbox|(%3d)][(  4)]]/ .... [wt]
-- [[mu:date:today..now and m:/posteo-personal/inbox][Personal Today]]  /[[mu:date:today..now and m:/posteo-personal/inbox|(%3d)][(  0)]]/ .... [pt]
+- [[mu:date:today..now and m:/posteo-work/inbox][Madvise Today]]  /[[mu:date:today..now and m:/posteo-work/inbox|(%3d)][(  5)]]/ .... [wt]
+- [[mu:date:today..now and m:/posteo-personal/inbox][Personal Today]]  /[[mu:date:today..now and m:/posteo-personal/inbox|(%3d)][(  1)]]/ .... [pt]
 
 - [[mu:date:7d..now and m:/posteo-work/inbox][Madvise Week]]  /[[mu:date:7d..now and m:/posteo-work/inbox|(%3d)][( 12)]]/ .... [ww]
-- [[mu:date:7d..now and m:/posteo-personal/inbox][Personal Week]]  /[[mu:date:7d..now and m:/posteo-personal/inbox|(%3d)][(  5)]]/ .... [pw]
+- [[mu:date:7d..now and m:/posteo-personal/inbox][Personal Week]]  /[[mu:date:7d..now and m:/posteo-personal/inbox|(%3d)][( 11)]]/ .... [pw]
 
 - [[mu:m:/posteo-work/drafts][Madvise Drafts]]  /[[mu:m:/posteo-work/drafts|(%3d)][(  0)]]/ .... [wd]
 - [[mu:m:/posteo-personal/drafts][Personal Drafts]]  /[[mu:m:/posteo-personal/drafts|(%3d)][(  0)]]/ .... [pd]
