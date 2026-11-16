@@ -1,4 +1,3 @@
-
 * Mu for Emacs (mu4e)
 
 - [[mu:m:/posteo-work/inbox][Madvise Inbox]]  /[[mu:m:/posteo-work/inbox|(%3d)][(126)]]/ .... [wi]
