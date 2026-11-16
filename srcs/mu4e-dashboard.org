@@ -54,6 +54,7 @@ mu find -n $count --sortfield=date --reverse --fields "f s" $query
 #+KEYMAP: ps | mu4e-headers-search "m:/posteo-personal/sent"
 
 #+KEYMAP: c | mu4e-compose-new
+#+KEYMAP: u | mu4e-update-mail-and-index t
 #+KEYMAP: g | mu4e-dashboard-update
 #+KEYMAP: ; | mu4e-context-switch
 #+KEYMAP: q | kill-current-buffer
