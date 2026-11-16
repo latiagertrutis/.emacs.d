@@ -248,8 +248,8 @@ three dots for truncated text (fewer only in extremely narrow windows)."
             (mu4e-headers-for-each
              (lambda (msg)
                (when-let* ((start (text-property-any
-                                  (line-beginning-position) (line-end-position)
-                                  'my/mu4e-header t)))
+                                   (line-beginning-position) (line-end-position)
+                                   'my/mu4e-header t)))
                  (let ((length (- (line-end-position) start)))
                    (goto-char start)
                    ;; Insert first so overlays spanning the row retain their bounds.
@@ -282,23 +282,22 @@ three dots for truncated text (fewer only in extremely narrow windows)."
   (add-hook 'mu4e-headers-found-hook #'my/mu4e-update-all-thread-markers)
   (add-hook 'mu4e-message-changed-hook #'my/mu4e-update-all-thread-markers))
 
+
 (use-package mu4e-dashboard
   :straight (mu4e-dashboard :type git
                             :repo "https://github.com/rougier/mu4e-dashboard")
-  :after mu4e
-  :custom
-  (mu4e-dashboard-file (expand-file-name "srcs/mu4e-dashboard.org"
-                                         user-emacs-directory))
-  (mu4e-dashboard-propagate-keymap nil)
   :config
+  (setq mu4e-dashboard-propagate-keymap nil)
   (defun my/mu4e-show-dashboard ()
     "Show the dashboard after mu4e returns to its main view."
-    (let ((buffer (find-file-noselect mu4e-dashboard-file)))
+    (interactive)
+    (let ((buffer (find-file-noselect (expand-file-name
+				       "srcs/mu4e-dashboard.org"
+				       user-emacs-directory))))
       (with-current-buffer buffer
-        (unless (bound-and-true-p mu4e-dashboard-mode)
+	(unless (bound-and-true-p mu4e-dashboard-mode)
           (mu4e-dashboard-mode 1)))
       (switch-to-buffer buffer)))
-  (add-hook 'mu4e-main-rendered-hook #'my/mu4e-show-dashboard)
-  :bind (("C-c C-x m" . mu4e)))
+  :bind (("C-c C-x m" . my/mu4e-show-dashboard)))
 
 (provide 'init-mail)
