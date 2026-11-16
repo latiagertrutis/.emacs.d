@@ -1,10 +1,27 @@
 
-* Mu for Emacs (mu4e)                                        *[[mu:flag:unread|%3d Unread][Unread messages]]*
+* Mu for Emacs (mu4e)                                        *[[mu:flag:unread|%3d Unread][++++++]]*
 
-[[mu:flag:unread][Unread]] /[[mu:flag:unread|(%3d)][( 17)]]/ .... [u]  [[mu:date:today..now][Today]] /[[mu:date:today..now|(%3d)][(113)]]/ .......... [t]  *Compose* ...... [C]
-[[mu:m:/posteo-personal/inbox or m:/posteo-work/inbox][Inbox]]  /[[mu:m:/posteo-personal/inbox or m:/posteo-work/inbox|(%3d)][( 33)]]/ .... [i]  [[mu:date:2d..today and not date:today..now][Yesterday]] /[[mu:date:2d..today and not date:today..now|(%3d)][(242)]]/ ...... [y]  *Update* ....... [U]
-[[mu:m:/posteo-personal/drafts or m:/posteo-work/drafts][Drafts]] /[[mu:m:/posteo-personal/drafts or m:/posteo-work/drafts|(%3d)][(  2)]]/ .... [d]  [[mu:date:7d..now][Last week]] /[[mu:date:7d..now|(%4d)][( 989)]]/ ..... [w]  *Switch context* [;]
-[[mu:m:/posteo-personal/sent or m:/posteo-work/sent][Sent]] /[[mu:m:/posteo-personal/sent or m:/posteo-work/sent|(%5d)][( 7082)]]/ .... [s]  [[mu:date:4w..now][Last month]] /[[mu:date:4w..|(%4d)][(3606)]]/ .... [m]  *Quit* ......... [q]
+- [[mu:m:/posteo-work/inbox][Madvise Inbox]]  /[[mu:m:/posteo-work/inbox|(%3d)][(125)]]/ .... [wi]
+- [[mu:flag:unread and m:/posteo-work/inbox][Madvise Unread]]  /[[mu:flag:unread and m:/posteo-work/inbox|(%3d)][(  0)]]/ .... [wu]
+- [[mu:m:/posteo-personal/inbox][Personal Inbox]]  /[[mu:m:/posteo-personal/inbox|(%3d)][+++++]]/ .... [pi]
+- [[mu:flag:unread and m:/posteo-personal/inbox][Personal Unread]]  /[[mu:flag:unread and m:/posteo-personal/inbox|(%3d)][( 90)]]/ .... [pu]
+
+- [[mu:date:today..now and m:/posteo-work/inbox][Madvise Today]]  /[[mu:date:today..now and m:/posteo-work/inbox|(%3d)][(  4)]]/ .... [wt]
+- [[mu:date:today..now and m:/posteo-personal/inbox][Personal Today]]  /[[mu:date:today..now and m:/posteo-personal/inbox|(%3d)][(  0)]]/ .... [pt]
+
+- [[mu:date:7d..now and m:/posteo-work/inbox][Madvise Week]]  /[[mu:date:7d..now and m:/posteo-work/inbox|(%3d)][( 12)]]/ .... [ww]
+- [[mu:date:7d..now and m:/posteo-personal/inbox][Personal Week]]  /[[mu:date:7d..now and m:/posteo-personal/inbox|(%3d)][(  5)]]/ .... [pw]
+
+- [[mu:m:/posteo-work/drafts][Madvise Drafts]]  /[[mu:m:/posteo-work/drafts|(%3d)][(  0)]]/ .... [wd]
+- [[mu:m:/posteo-personal/drafts][Personal Drafts]]  /[[mu:m:/posteo-personal/drafts|(%3d)][(  0)]]/ .... [pd]
+
+- [[mu:m:/posteo-work/sent][Madvise Sent]]  /[[mu:m:/posteo-work/sent|(%3d)][( 37)]]/ .... [ws]
+- [[mu:m:/posteo-personal/sent][Personal Sent]]  /[[mu:m:/posteo-personal/sent|(%3d)][(123)]]/ .... [ps]
+
+- *Compose* ........... [c]
+- *Update* .............. [g]
+- *Switch context* ... [;]
+- *Quit* .................. [q]
 
 * Configuration
 :PROPERTIES:
@@ -19,18 +36,24 @@ export LANG="en_US.UTF-8"; export LC_ALL="en_US.UTF-8";
 mu find -n $count --sortfield=date --reverse --fields "f s" $query
 #+END_SRC
 
-#+KEYMAP: u | mu4e-headers-search "flag:unread"
-#+KEYMAP: i | mu4e-headers-search "m:/posteo-personal/inbox or m:/posteo-work/inbox"
-#+KEYMAP: d | mu4e-headers-search "m:/posteo-personal/drafts or m:/posteo-work/drafts"
-#+KEYMAP: s | mu4e-headers-search "m:/posteo-personal/sent or m:/posteo-work/sent"
+#+KEYMAP: wi | mu4e-headers-search "m:/posteo-work/inbox"
+#+KEYMAP: wu | mu4e-headers-search "flag:unread and m:/posteo-work/inbox"
+#+KEYMAP: pi | mu4e-headers-search "m:/posteo-personal/inbox"
+#+KEYMAP: pu | mu4e-headers-search "flag:unread and m:/posteo-personal/inbox"
 
-#+KEYMAP: t | mu4e-headers-search "date:today..now"
-#+KEYMAP: y | mu4e-headers-search "date:2d..today and not date:today..now"
-#+KEYMAP: w | mu4e-headers-search "date:7d..now"
-#+KEYMAP: m | mu4e-headers-search "date:4w..now"
+#+KEYMAP: wt | mu4e-headers-search "date:today..now and m:/posteo-work/inbox"
+#+KEYMAP: pt | mu4e-headers-search "date:today..now and m:/posteo-personal/inbox"
 
-#+KEYMAP: C | mu4e-compose-new
-#+KEYMAP: U | mu4e-dashboard-update
+#+KEYMAP: ww | mu4e-headers-search "date:7d..now and m:/posteo-work/inbox"
+#+KEYMAP: pw | mu4e-headers-search "date:7d..now and m:/posteo-personal/inbox"
+
+#+KEYMAP: wd | mu4e-headers-search "m:/posteo-work/drafts"
+#+KEYMAP: pd | mu4e-headers-search "m:/posteo-personal/drafts"
+
+#+KEYMAP: ws | mu4e-headers-search "m:/posteo-work/sent"
+#+KEYMAP: ps | mu4e-headers-search "m:/posteo-personal/sent"
+
+#+KEYMAP: c | mu4e-compose-new
+#+KEYMAP: g | mu4e-dashboard-update
 #+KEYMAP: ; | mu4e-context-switch
 #+KEYMAP: q | kill-current-buffer
- 

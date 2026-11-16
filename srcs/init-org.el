@@ -52,12 +52,15 @@
 	org-pretty-entities t))
 
 (custom-set-faces
-  '(org-document-title ((t (:inherit bold :height 2.1))))
-  '(org-level-1 ((t (:foreground "#b48ead" :inherit bold :height 1.8))))
-  '(org-level-2 ((t (:foreground "#a3be8c" :inherit bold :height 1.4))))
-  '(org-level-3 ((t (:foreground "#ebcb8b" :inherit bold :height 1.1))))
-  '(org-level-4 ((t (:foreground "#d08770" :inherit bold :height 1))))
-  '(org-level-5 ((t (:foreground "#bf616a" :inherit bold :height 1)))))
+ '(org-block ((t (:background "#1C1F26"))))
+ '(org-block-begin-line ((t (:background "#252A33"))))
+ '(org-block-end-line ((t (:background "#252A33"))))
+ '(org-document-title ((t (:inherit bold :height 2.1))))
+ '(org-level-1 ((t (:foreground "#b48ead" :inherit bold :height 1.8))))
+ '(org-level-2 ((t (:foreground "#a3be8c" :inherit bold :height 1.4))))
+ '(org-level-3 ((t (:foreground "#ebcb8b" :inherit bold :height 1.1))))
+ '(org-level-4 ((t (:foreground "#d08770" :inherit bold :height 1))))
+ '(org-level-5 ((t (:foreground "#bf616a" :inherit bold :height 1)))))
 
 
 (use-package mixed-pitch
@@ -73,9 +76,9 @@
   ;; Keep monospace where alignment matters.  This extends the defaults
   ;; of `mixed-pitch-fixed-pitch-faces' with the Org block machinery.
   (dolist (face '(org-block org-block-begin-line org-block-end-line
-		  org-code org-verbatim org-table org-formula
-		  org-special-keyword org-property-value org-drawer
-		  org-meta-line org-checkbox))
+			    org-code org-verbatim org-table org-formula
+			    org-special-keyword org-property-value org-drawer
+			    org-meta-line org-checkbox))
     (add-to-list 'mixed-pitch-fixed-pitch-faces face)))
 
 (defun my/org-clock-table-report-hours ()
@@ -156,18 +159,18 @@
 
 (with-eval-after-load 'org-roam
   (setq org-publish-project-alist
-      `(("org-roam-madvise"
-	 :base-directory ,org-roam-directory
-	 :base-extension "org"
-	 :exclude ".*"
-	 :include ("20260716140528-madvise.org")
-	 :publishing-function (org-roam-walker-publish-to-md)
-	 :publishing-directory "~/.org-publish/"
-	 :completion-function (lambda (plist)
-				(let ((output-file (file-name-concat (plist-get plist :publishing-directory)
-								     (file-name-with-extension (car (plist-get plist :include)) "md"))))
-				  (copy-file output-file "/ssh:root@madvise:/volume/leafwiki/data/root/notas/mateo.md" t)
-				  (delete-file output-file)))))))
+	`(("org-roam-madvise"
+	   :base-directory ,org-roam-directory
+	   :base-extension "org"
+	   :exclude ".*"
+	   :include ("20260716140528-madvise.org")
+	   :publishing-function (org-roam-walker-publish-to-md)
+	   :publishing-directory "~/.org-publish/"
+	   :completion-function (lambda (plist)
+				  (let ((output-file (file-name-concat (plist-get plist :publishing-directory)
+								       (file-name-with-extension (car (plist-get plist :include)) "md"))))
+				    (copy-file output-file "/ssh:root@madvise:/volume/leafwiki/data/root/notas/mateo.md" t)
+				    (delete-file output-file)))))))
 
 
 (setq
@@ -175,7 +178,7 @@
  org-log-done 'note)
 
 (defun org-copy-region-as-markdown ()
-"Copy Org region as GitHub Flavoured Markdown using Pandoc.
+  "Copy Org region as GitHub Flavoured Markdown using Pandoc.
 
 Headings are shift automatically to level 2 and below.
 
