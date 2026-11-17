@@ -134,12 +134,12 @@ madvise.dev
 	message-signature #'my/mu4e-insert-signature)
   :config
   (defface my/mu4e-thread-root-face
-    '((t :inherit default :foreground "#eceff4" :background "#3b4252"
+    '((t :inherit default :foreground "#eceff4" :background "#252A33"
          :extend t :underline nil :box nil))
     "Nord root-row face for a mail thread."
     :group 'mu4e-faces)
   (defface my/mu4e-thread-child-face
-    '((t :inherit default :foreground "#e5e9f0" :background "#434c5e"
+    '((t :inherit default :foreground "#e5e9f0" :background "#1C1F26"
          :extend t :underline nil :box nil))
     "Brighter Nord row face for a mail thread reply."
     :group 'mu4e-faces)
