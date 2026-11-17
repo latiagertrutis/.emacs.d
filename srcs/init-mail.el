@@ -44,7 +44,7 @@ current message."
         ;; Retrieval is delegated to isync/mbsync; credentials for the
         ;; IMAP connection are taken from auth-source (see above).
         mu4e-get-mail-command "mbsync --all"
-        mu4e-update-interval 300
+        mu4e-update-interval 60
         mu4e-update-in-background t
         mu4e-change-filenames-when-moving t
 
