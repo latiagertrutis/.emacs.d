@@ -71,32 +71,56 @@ madvise.dev
 #+END_EXPORT
 
 #+BEGIN_EXPORT html
-<div class=\"moz-signature\">
-  <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:'Segoe UI',Arial,Helvetica,sans-serif\">
+<div class=\"moz-signature\" style=\"padding-top:15pt;font-family:Inter,'Segoe UI',Arial,Helvetica,sans-serif\">
+  <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:inherit\">
     <tbody>
       <tr>
-        <td style=\"padding-right:12px;vertical-align:middle\">
+        <td style=\"vertical-align:middle\">
           <a href=\"https://madvise.dev\">
-            <img src=\"file:///home/mateo/Pictures/logo.png\" alt=\"Madvise\" width=\"60\" style=\"display:block;width:60px;height:auto;border:0\">
+            <img src=\"file:///home/mateo/Pictures/logo.png\"
+                 alt=\"Madvise\"
+                 width=\"110\"
+                 style=\"display:block;width:110px;height:auto;border:0\">
           </a>
         </td>
-        <td style=\"border-left:2px solid #4067D3;padding-left:12px;vertical-align:middle\">
-          <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:'Segoe UI',Arial,Helvetica,sans-serif\">
+        <td style=\"padding-left:24px;padding-right:35px;vertical-align:middle\">
+          <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"2\" style=\"width:2px;height:100%\">
             <tbody>
               <tr>
-                <td style=\"font-size:14px;line-height:16px;font-weight:bold;color:#17191C\"> Mateo Rodríguez </td>
+                <td style=\"width:2px;height:85px;background-color:#17191C;font-size:0;line-height:0\">
+                  &nbsp;
+                </td>
               </tr>
+            </tbody>
+          </table>
+        </td>
+        <td style=\"vertical-align:middle;white-space:nowrap\">
+          <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:inherit\">
+            <tbody>
               <tr>
-                <td style=\"padding-top:2px;font-size:11px;line-height:13px;color:#555555\"> Co-Founder & Lead Software Architect </td>
-              </tr>
-              <tr>
-                <td style=\"padding-top:4px;font-size:11px;line-height:13px\">
-                  <a href=\"mailto:info@madvise.dev\" style=\"color:#4067D3;text-decoration:none\" class=\"moz-txt-link-freetext\"> info@madvise.dev </a>
+                <td style=\"font-size:12pt;font-weight:700;color:#17191C;white-space:nowrap\">
+                  Mateo Rodríguez
                 </td>
               </tr>
               <tr>
-                <td style=\"padding-top:1px;font-size:11px;line-height:13px\">
-                  <a href=\"https://madvise.dev\" style=\"color:#4067D3;text-decoration:none\"> madvise.dev </a>
+                <td style=\"padding-top:0.5pt;font-size:10pt;font-weight:300;font-style:italic;color:#17191C;white-space:nowrap\">
+                  Co-Founder &amp; Lead Software Architect
+                </td>
+              </tr>
+              <tr>
+                <td style=\"padding-top:0.5pt;font-size:10pt;font-weight:300;font-style:normal;white-space:nowrap\">
+                  <a href=\"mailto:info@madvise.dev\"
+                     style=\"color:#4067D3;text-decoration:none\">
+                    info@madvise.dev
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td style=\"padding-top:0.5pt;font-size:10pt;font-weight:300;font-style:normal;white-space:nowrap\">
+                  <a href=\"https://madvise.dev\"
+                     style=\"color:#4067D3;text-decoration:none\">
+                    www.madvise.dev
+                  </a>
                 </td>
               </tr>
             </tbody>
