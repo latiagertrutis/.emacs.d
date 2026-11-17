@@ -63,7 +63,14 @@ current message."
         smtpmail-stream-type 'starttls
         smtpmail-debug-info nil
 
-	my/mu4e-signature "\n#+BEGIN_EXPORT html
+	my/mu4e-signature "\n#+BEGIN_EXPORT ascii
+Mateo Rodríguez
+Co-Founder & Lead Software Architect
+info@madvise.dev
+madvise.dev
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
 <div class=\"moz-signature\">
   <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:'Segoe UI',Arial,Helvetica,sans-serif\">
     <tbody>
@@ -80,7 +87,7 @@ current message."
                 <td style=\"font-size:14px;line-height:16px;font-weight:bold;color:#17191C\"> Mateo Rodríguez </td>
               </tr>
               <tr>
-                <td style=\"padding-top:2px;font-size:11px;line-height:13px;color:#555555\"> Co-Founder & Lead Software Architect | Madvise </td>
+                <td style=\"padding-top:2px;font-size:11px;line-height:13px;color:#555555\"> Co-Founder & Lead Software Architect </td>
               </tr>
               <tr>
                 <td style=\"padding-top:4px;font-size:11px;line-height:13px\">
@@ -359,6 +366,7 @@ three dots for truncated text (fewer only in extremely narrow windows)."
                 #'org-mime-htmlize))
   :config
   (setq org-mime-export-options
-	'(:section-numbers nil :with-author nil :with-toc nil)))
+	'(:section-numbers nil :with-author nil :with-toc nil)
+	org-mime-export-ascii 'utf-8))
 
 (provide 'init-mail)
