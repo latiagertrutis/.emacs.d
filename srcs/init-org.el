@@ -62,16 +62,15 @@
  '(org-level-4 ((t (:foreground "#d08770" :inherit bold :height 1))))
  '(org-level-5 ((t (:foreground "#bf616a" :inherit bold :height 1)))))
 
-
 (use-package mixed-pitch
   :hook (org-mode . mixed-pitch-mode)
   :config
   ;; Slightly larger than the default face (Mononoki 11) since
   ;; proportional fonts read smaller at the same height.
   (set-face-attribute 'variable-pitch nil
-		      :family "Alegreya"
-		      :height 1.2
-		      :weight 'regular)
+		      :family "PP Palma Spaced"
+		      :weight 'regular
+		      :height 1.1)
   (setopt mixed-pitch-set-height t)
   ;; Keep monospace where alignment matters.  This extends the defaults
   ;; of `mixed-pitch-fixed-pitch-faces' with the Org block machinery.
