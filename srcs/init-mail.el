@@ -48,7 +48,7 @@ current message."
         mu4e-update-in-background t
         mu4e-change-filenames-when-moving t
 
-        mu4e-confirm-quit nil
+        mu4e-confirm-quit t
         mu4e-attachment-dir "~/Downloads"
         mu4e-sent-messages-behavior 'sent
 
@@ -366,17 +366,23 @@ three dots for truncated text (fewer only in extremely narrow windows)."
   :straight (mu4e-dashboard :type git
                             :repo "https://github.com/rougier/mu4e-dashboard")
   :config
+  (setopt mu4e-dashboard-file
+	  (expand-file-name "srcs/mu4e-dashboard.org" user-emacs-directory))
   (setq mu4e-dashboard-propagate-keymap nil)
   (defun my/mu4e-show-dashboard ()
     "Show the dashboard after mu4e returns to its main view."
     (interactive)
-    (let ((buffer (find-file-noselect (expand-file-name
-				       "srcs/mu4e-dashboard.org"
-				       user-emacs-directory))))
-      (with-current-buffer buffer
-	(unless (bound-and-true-p mu4e-dashboard-mode)
-          (mu4e-dashboard-mode 1)))
-      (switch-to-buffer buffer)))
+    (let ((buffer (find-file-noselect mu4e-dashboard-file)))
+      (mu4e t)
+      (mu4e-dashboard)))
+  (defun dmg-mu4e-view (orig &rest args)
+    (interactive)
+    (mu4e-update-mail-and-index nil)
+    (if (find-buffer-visiting mu4e-dashboard-file)
+        (mu4e-dashboard)
+      (apply orig args)))
+
+  (advice-add 'mu4e--main-view :around #'dmg-mu4e-view)
   :bind (("C-c C-x m" . my/mu4e-show-dashboard)))
 
 (use-package org-mime
