@@ -45,7 +45,7 @@
 	      ("n" . lsp-ui-imenu--next-kind))
   :config
   (setq lsp-ui-sideline-enable t
-	lsp-ui-sideline-delay 1
+	lsp-ui-sideline-delay 5
 	lsp-ui-sideline-show-diagnostics nil
 	lsp-ui-sideline-ignore-duplicate t
 	lsp-ui-doc-position 'at-point

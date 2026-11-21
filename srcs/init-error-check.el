@@ -50,11 +50,11 @@
   (flyover-max-line-length 80)
 
   ;; Performance
-  (flyover-debounce-interval 0.2)
+  (flyover-debounce-interval 3)
   (flyover-cursor-debounce-interval 0.3)
 
   ;; Display mode (controls cursor-based visibility)
-  (flyover-display-mode 'always)
+  (flyover-display-mode 'hide-on-same-line)
 
   ;; Completion integration
   (flyover-hide-during-completion t))
