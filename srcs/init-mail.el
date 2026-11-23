@@ -48,6 +48,8 @@ current message."
         mu4e-update-in-background t
         mu4e-change-filenames-when-moving t
 
+	mu4e-split-view 'vertical
+	mu4e-headers-visible-columns 90
         mu4e-confirm-quit t
         mu4e-attachment-dir "~/Downloads"
         mu4e-sent-messages-behavior 'sent
