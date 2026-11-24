@@ -6,18 +6,23 @@
 (setq auth-sources '("~/.authinfo")
       auth-source-cache-tokens nil)
 
-(defconst my/posteo-smtp-server "posteo.de"
-  "SMTP server used by both Posteo accounts.")
-
 (defconst my/mu4e-accounts
   '(("work"
      :address  "madvise@posteo.net"
      :full-name "Madvise"
-     :maildir  "/posteo-work")
+     :maildir  "/posteo-work"
+     :smtp-server "posteo.de"
+     :smtp-service 587
+     :stream-type starttls
+     :debug-info nil)
     ("personal"
      :address  "teorodrip@posteo.net"
      :full-name "Mateo Rodriguez"
-     :maildir  "/posteo-personal")))
+     :maildir  "/posteo-personal"
+     :smtp-server "posteo.de"
+     :smtp-service 587
+     :stream-type starttls
+     :debug-info nil)))
 
 (defun my/mu4e-insert-signature ()
   "Insert the HTML signature without Message's `-- ' separator."
@@ -58,12 +63,6 @@ current message."
         mu4e-compose-format-flowed t
         message-kill-buffer-on-exit t
 	mail-user-agent 'mu4e-user-agent
-
-        ;; SMTP: never inline passwords, let auth-source supply them.
-        smtpmail-smtp-server my/posteo-smtp-server
-        smtpmail-smtp-service 587
-        smtpmail-stream-type 'starttls
-        smtpmail-debug-info nil
 
 	my/mu4e-signature "\n#+BEGIN_EXPORT ascii
 Mateo Rodríguez
@@ -184,42 +183,17 @@ madvise.dev
                       (mu4e-drafts-folder  . ,(concat root "/Drafts"))
                       (mu4e-trash-folder   . ,(concat root "/Trash"))
                       (mu4e-refile-folder  . ,(concat root "/Archive"))
-                      (smtpmail-smtp-user  . ,address)))))
+                      (smtpmail-smtp-user  . ,address)
+		      (smtpmail-smtp-server . ,(plist-get cfg :smtp-server))
+		      (smtpmail-smtp-service . ,(plist-get cfg :smtp-service))
+		      (smtpmail-stream-type . ,(plist-get cfg :stream-type))
+		      (smtpmail-debug-info . ,(plist-get cfg :debug-info))))))
          my/mu4e-accounts))
 
   ;; Choose an account automatically; new mail keeps it, replies match theirs.
   (setq mu4e-context-policy 'pick-first
         mu4e-compose-context-policy nil)
 
-  ;; --- Folders / shortcuts ---------------------------------------------
-  (setq mu4e-maildir-shortcuts
-        '((:maildir "/posteo-work/Inbox"     :key ?w)
-          (:maildir "/posteo-work/Archive"   :key ?W)
-          (:maildir "/posteo-personal/Inbox" :key ?p)
-          (:maildir "/posteo-personal/Archive" :key ?P)))
-
-  ;; --- Bookmarks ---------------------------------------------------------
-  (setq mu4e-bookmarks
-        '((:name "Unread"
-                 :query "flag:unread AND NOT flag:trashed"
-                 :key ?u)
-          (:name "Today"
-                 :query "date:today..now AND NOT flag:trashed"
-                 :key ?t)
-          (:name "Last 7 days"
-                 :query "date:7d..now AND NOT flag:trashed"
-                 :key ?d)
-          (:name "Work"
-                 :query "maildir:/posteo-work/* AND NOT flag:trashed"
-                 :key ?W)
-          (:name "Personal"
-                 :query "maildir:/posteo-personal/* AND NOT flag:trashed"
-                 :key ?P)
-          (:name "Attachments"
-                 :query "flag:attach AND NOT flag:trashed"
-                 :key ?a)))
-
-  ;; --- Compact, thread-aware headers -------------------------------------
   (defvar-local my/mu4e-header-width 80
     "Available header columns, excluding mu4e's mark area and the right edge.")
 
@@ -379,7 +353,7 @@ three dots for truncated text (fewer only in extremely narrow windows)."
       (mu4e-dashboard)))
   (defun dmg-mu4e-view (orig &rest args)
     (interactive)
-    (mu4e-update-mail-and-index nil)
+    (mu4e-update-mail-and-index t)
     (if (find-buffer-visiting mu4e-dashboard-file)
         (mu4e-dashboard)
       (apply orig args)))
